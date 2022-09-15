@@ -10,9 +10,9 @@ info:
   description: >
     # Introduction
     
-    Petstore illustrate the typical design decisions and tradeoffs a developer makes when building an enterprise application. 
+    svp illustrate the typical design decisions and tradeoffs a developer makes when building an enterprise application. 
     The demo shows how to document REST API services **OpenAPI format** and is based on
-    [Petstore sample](http://petstore.swagger.io/) by [swagger.io](http://swagger.io) team.
+    [svp sample](http://svp.swagger.io/) by [swagger.io](http://swagger.io) team.
     It was further **extended** by [ReDoc](https://github.com/Redocly/redoc) Team.
     
     ## API Categories
@@ -74,7 +74,7 @@ info:
       </head>
       <body>
         <rapi-doc 
-          spec-url = "https://petstore.swagger.io/v2/swagger.json" 
+          spec-url = "https://svp.two12.io/v2/swagger.json" 
         > </rapi-doc>
       </body> 
       </html>
@@ -94,7 +94,7 @@ info:
 
     # Authentication
   
-    Petstore offers two forms of authentication:
+    svp offers two forms of authentication:
       
       - API Key
       - OAuth2
@@ -108,7 +108,7 @@ tags:
   - name: pet
     description: Everything about your Pets
   - name: store
-    description: Access to Petstore orders
+    description: Access to svp orders
     x-tag-expanded: false
   - name: user
     description: Operations about user
@@ -136,7 +136,7 @@ paths:
         '405':
           description: Invalid input
       security:
-        - petstore_auth:
+        - svp_auth:
             - 'write:pets'
             - 'read:pets'
       x-code-samples:
@@ -186,13 +186,13 @@ paths:
         '405':
           description: Validation exception
       security:
-        - petstore_auth:
+        - svp_auth:
             - 'write:pets'
             - 'read:pets'
       x-code-samples:
         - lang: PHP
           source: |
-            $form = new \PetStore\Entities\Pet();
+            $form = new \svp\Entities\Pet();
             $form->setPetId(1);
             $form->setPetType("Dog");
             $form->setName("Rex");
@@ -254,7 +254,7 @@ paths:
         '405':
           description: Invalid input
       security:
-        - petstore_auth:
+        - svp_auth:
             - 'write:pets'
             - 'read:pets'
       requestBody:
@@ -293,7 +293,7 @@ paths:
         '400':
           description: Invalid pet value
       security:
-        - petstore_auth:
+        - svp_auth:
             - 'write:pets'
             - 'read:pets'
   '/pet/{petId}/uploadImage':
@@ -319,7 +319,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
       security:
-        - petstore_auth:
+        - svp_auth:
             - 'write:pets'
             - 'read:pets'
       requestBody:
@@ -369,7 +369,7 @@ paths:
         '400':
           description: Invalid status value
       security:
-        - petstore_auth:
+        - svp_auth:
             - 'write:pets'
             - 'read:pets'
   /pet/findByTags:
@@ -409,7 +409,7 @@ paths:
         '400':
           description: Invalid tag value
       security:
-        - petstore_auth:
+        - svp_auth:
             - 'write:pets'
             - 'read:pets'
   /store/inventory:
@@ -968,14 +968,14 @@ components:
     basic:
       type: http
       scheme: basic
-    petstore_auth:
+    svp_auth:
       description: |
         Get access to data while protecting your account credentials.
         OAuth2 is also a safer and more secure way to give you access.
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: 'http://petstore.swagger.io/api/oauth/dialog'
+          authorizationUrl: 'http://svp.swagger.io/api/oauth/dialog'
           scopes:
             'write:pets': modify pets in your account
             'read:pets': read your pets
