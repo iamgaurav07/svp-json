@@ -7,12 +7,12 @@ servers:
 info:
   title: TWO12 API Reference
   version: 1.0.0
-  description:
-    This API specification is currently beta. The schema definitions as described are not subject to change. However new fields or schemas may be added. Please contact support@glassboardtech.com for questions or feedback.
+  description: >
+    Note: This API specification is currently beta. The schema definitions as described are not subject to change. However new fields or schemas may be added. Please contact support@glassboardtech.com for questions or feedback.
     The Glassboard API is organized around REST. Our API has predictable resource-oriented URLs, accepts and returns JSON-encoded request and responses bodies, and uses standard HTTP response codes, authentication, and verbs.
 
     The Glassboard API may differ for every account as we release new versions and tailor functionality based on customer needs. The API specification below is universally available.
-    >
+    
     # Introduction
     
     SVP illustrate the typical design decisions and tradeoffs a developer makes when building an enterprise application. 
