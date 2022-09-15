@@ -1,12 +1,12 @@
 {
     "swagger": "2.0",
     "info": {
-      "description": "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.",
+      "description": "Note: This API specification is currently beta. The schema definitions as described are not subject to change. However new fields or schemas may be added. Please contact support@glassboardtech.com for questions or feedback.\n\n\nThe Glassboard API is organized around REST. Our API has predictable resource-oriented URLs, accepts and returns JSON-encoded request and responses bodies, and uses standard HTTP response codes, authentication, and verbs.\n\n\nThe Glassboard API may differ for every account as we release new versions and tailor functionality based on customer needs. The API specification below is universally available.",
       "version": "1.0.6",
-      "title": "Swagger Petstore",
+      "title": "TWO12 API Reference",
       "termsOfService": "http://swagger.io/terms/",
       "contact": {
-        "email": "apiteam@swagger.io"
+        "email": "apiteam@two12.co"
       },
       "license": {
         "name": "Apache 2.0",
