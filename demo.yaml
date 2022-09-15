@@ -15,7 +15,7 @@ info:
     >
     # Introduction
     
-    svp illustrate the typical design decisions and tradeoffs a developer makes when building an enterprise application. 
+    SVP illustrate the typical design decisions and tradeoffs a developer makes when building an enterprise application. 
     The demo shows how to document REST API services **OpenAPI format** and is based on
     [svp sample](http://svp.swagger.io/) by [swagger.io](http://swagger.io) team.
     It was further **extended** by [ReDoc](https://github.com/Redocly/redoc) Team.
