@@ -1,11 +1,11 @@
 openapi: 3.0.0
 servers:
-  - url: https://petstore.swagger.io/v2
-    description: Default server
-  - url: https://petstore.swagger.io/sandbox
+  - url: https://svp.two12.co/v2
+    description: Production server
+  - url: https://svp.two12.co/sandbox
     description: Sandbox server
 info:
-  title: Pet Store
+  title: TWO12 API Reference
   version: 1.0.0
   description: >
     # Introduction
