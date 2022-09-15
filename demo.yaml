@@ -7,7 +7,7 @@ servers:
 info:
   title: TWO12 API Reference
   version: 1.0.0
-  description: >
+  description: > 
     # Introduction
     
     SVP illustrate the typical design decisions and tradeoffs a developer makes when building an enterprise application. 
