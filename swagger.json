@@ -350,6 +350,7 @@
     },
     "/assets/{assetId}": {
       "get": {
+        "name": "Get an Asset by Id",
         "tags": [
           "Assets"
         ],
