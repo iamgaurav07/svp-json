@@ -422,6 +422,52 @@
             "name": "assetId",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "formData",
+            "type": "file",
+            "name": "file",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AssetsDocumentUploadResponse"
+            }
+          }
+        }
+      }
+    },
+    "/assets/{assetId}/update-documents/{fileId}": {
+      "put": {
+        "tags": [
+          "Assets"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "type": "file",
+            "name": "file",
+            "required": true
           }
         ],
         "responses": {
