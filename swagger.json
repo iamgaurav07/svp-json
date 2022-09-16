@@ -240,6 +240,27 @@
         }
       }
     },
+    "/accreditations": {
+      "post": {
+        "tags": [
+          "Accreditation"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccreditationRequestBody"
+            }
+          }
+        ]
+      }
+    },
     "/pet/findByStatus": {
       "get": {
         "tags": [
@@ -1100,6 +1121,55 @@
           "type": "string"
         },
         "profileSnapshot": {},
+        "result": {
+          "type": "string"
+        },
+        "providerMetaId": {
+          "type": "string"
+        }
+      }
+    },
+    "AccreditationRequestBody": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "date"
+        },
+        "updatedAt": {
+          "type": "date"
+        },
+        "providerMeta": {
+          "typeId": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "effectiveDate": {
+          "type": "date"
+        },
+        "expirationDate": {
+          "type": "date"
+        },
+        "exception":{
+          "type": "string"
+        },
+        "files": {
+          "type": "array"
+        },
+        "override": {
+          "type": "object"
+        },
+        "status": {
+          "type": "string"
+        },
+        "profileSnapshot": {
+          "type": "object"
+        },
         "result": {
           "type": "string"
         },
