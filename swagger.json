@@ -479,6 +479,27 @@
         }
       }
     },
+    "/assets-replace-assestId/{assetId}": {
+      "put": {
+        "tags": [
+          "Assets"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/store/order/{orderId}": {
       "get": {
         "tags": [
