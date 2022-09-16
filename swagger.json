@@ -350,10 +350,10 @@
     },
     "/assets/{assetId}": {
       "get": {
-        "name": "Get an Asset by Id",
         "tags": [
           "Assets"
         ],
+        "summary": "Get an Asset by Id",
         "consumes": [
           "application/json"
         ],
