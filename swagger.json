@@ -258,7 +258,14 @@
               "$ref": "#/definitions/AccreditationRequestBody"
             }
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AccreditationsResponse"
+            }
+          }
+        }
       }
     },
     "/pet/findByStatus": {
@@ -1155,7 +1162,7 @@
         "expirationDate": {
           "type": "date"
         },
-        "exception":{
+        "exception": {
           "type": "string"
         },
         "files": {
