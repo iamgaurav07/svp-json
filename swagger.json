@@ -124,7 +124,7 @@
     "/pet/{petId}/uploadImage": {
       "post": {
         "tags": [
-          "pet"
+          "Accreditation"
         ],
         "summary": "uploads an image",
         "description": "",
@@ -180,7 +180,7 @@
     "/pet": {
       "post": {
         "tags": [
-          "pet"
+          "Accreditation"
         ],
         "summary": "Add a new pet to the store",
         "description": "",
@@ -220,7 +220,7 @@
       },
       "put": {
         "tags": [
-          "pet"
+          "Accreditation"
         ],
         "summary": "Update an existing pet",
         "description": "",
@@ -268,7 +268,7 @@
     "/pet/findByStatus": {
       "get": {
         "tags": [
-          "pet"
+          "Accreditation"
         ],
         "summary": "Finds Pets by status",
         "description": "Multiple status values can be provided with comma separated strings",
@@ -323,7 +323,7 @@
     "/pet/findByTags": {
       "get": {
         "tags": [
-          "pet"
+          "Accreditation"
         ],
         "summary": "Finds Pets by tags",
         "description": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
@@ -373,7 +373,7 @@
     "/pet/{petId}": {
       "get": {
         "tags": [
-          "pet"
+          "Accreditation"
         ],
         "summary": "Find pet by ID",
         "description": "Returns a single pet",
@@ -414,7 +414,7 @@
       },
       "post": {
         "tags": [
-          "pet"
+          "Accreditation"
         ],
         "summary": "Updates a pet in the store with form data",
         "description": "",
@@ -466,7 +466,7 @@
       },
       "delete": {
         "tags": [
-          "pet"
+          "Accreditation"
         ],
         "summary": "Deletes a pet",
         "description": "",
