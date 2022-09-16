@@ -393,6 +393,7 @@
           {
             "in": "query",
             "name": "page",
+            "required": true,
             "type": "integer"
           },
           {
@@ -402,6 +403,34 @@
             "type": "string"
           }
         ]
+      }
+    },
+    "/assets/documents-upload/{assetId}": {
+      "put": {
+        "tags": [
+          "Assets"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AssetsDocumentUploadResponse"
+            }
+          }
+        }
       }
     },
     "/store/order/{orderId}": {
@@ -1037,6 +1066,9 @@
           "type": "string"
         }
       }
+    },
+    "AssetsDocumentUploadResponse": {
+      "type": "object"
     },
     "Pet": {
       "type": "object",
