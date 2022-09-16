@@ -121,7 +121,7 @@
     "http"
   ],
   "paths": {
-    "accreditations/count": {
+    "/accreditations/count": {
       "get": {
         "tags": [
           "Accreditation"
@@ -268,7 +268,7 @@
         }
       }
     },
-    "/delete-accreditations/{id}": {
+    "/accreditations-delete/{id}": {
       "delete": {
         "tags": [
           "Accreditation"
@@ -280,9 +280,72 @@
           {
             "name": "id",
             "in": "path",
-            "type": "string"
+            "type": "string",
+            "required": true
           }
         ]
+      }
+    },
+    "/accreditation-patch/{id}": {
+      "patch": {
+        "tags": [
+          "Accreditation"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccreditationRequestBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AccreditationsResponse"
+            }
+          }
+        }
+      }
+    },
+    "/accreditations-patch": {
+      "patch": {
+        "tags": [
+          "Accreditation"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AccreditationRequestBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AccreditationsResponse"
+            }
+          }
+        }
       }
     },
     "/pet/findByStatus": {
