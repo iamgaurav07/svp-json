@@ -348,43 +348,60 @@
         }
       }
     },
-    "/store/order": {
-      "post": {
+    "/assets/{assetId}": {
+      "get": {
         "tags": [
-          "store"
+          "Assets"
         ],
-        "summary": "Place an order for a pet",
-        "description": "",
-        "operationId": "placeOrder",
         "consumes": [
           "application/json"
         ],
         "produces": [
-          "application/json",
-          "application/xml"
+          "application/json"
         ],
         "parameters": [
           {
-            "in": "body",
-            "name": "body",
-            "description": "order placed for purchasing the pet",
+            "in": "path",
+            "name": "assetId",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/Order"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Order"
-            }
+            "type": "string"
           },
-          "400": {
-            "description": "Invalid Order"
+          {
+            "in": "query",
+            "name": "filter",
+            "description": "object",
+            "type": "string"
           }
-        }
+        ]
+      }
+    },
+    "/assets": {
+      "get": {
+        "tags": [
+          "Assets"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "perPage",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "description": "object",
+            "type": "string"
+          }
+        ]
       }
     },
     "/store/order/{orderId}": {
