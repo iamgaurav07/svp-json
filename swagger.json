@@ -149,6 +149,64 @@
       }
     },
     "/accreditations/{id}": {
+      "get": {
+        "tags": [
+          "Accreditation"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "object",
+            "type": "string"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "object",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AccreditationByID"
+            }
+          }
+        }
+      }
+    },
+    "/accreditations": {
+      "get": {
+        "tags": [
+          "Accreditation"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "object",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AccreditationsResponse"
+            }
+          }
+        }
+      }
+    },
+    "/accreditations/{id}": {
       "put": {
         "tags": [
           "Accreditation"
@@ -177,32 +235,6 @@
           "200": {
             "schema": {
               "type": "object"
-            }
-          }
-        }
-      }
-    },
-    "/accreditations": {
-      "get": {
-        "tags": [
-          "Accreditation"
-        ],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "filter",
-            "in": "query",
-            "description": "object",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": "#/definitions/AccreditationsResponse"
             }
           }
         }
