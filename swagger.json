@@ -268,6 +268,23 @@
         }
       }
     },
+    "/delete-accreditations/{id}": {
+      "delete": {
+        "tags": [
+          "Accreditation"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/pet/findByStatus": {
       "get": {
         "tags": [
