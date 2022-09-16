@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Note: This API specification is currently beta. The schema definitions as described are not subject to change. However new fields or schemas may be added. Please contact support@two12.com for questions or feedback.\n\n\nThe TWO12 API is organized around REST. Our API has predictable resource-oriented URLs, accepts and returns JSON-encoded request and responses bodies, and uses standard HTTP response codes, authentication, and verbs.\n\n\nThe TWO12 API may differ for every account as we release new versions and tailor functionality based on customer needs. The API specification below is universally available.",
+    "description": "Note: This API specification is currently beta. The schema definitions as described are not subject to change. However new fields or schemas may be added. Please contact support@two12.co for questions or feedback.\n\n\nThe TWO12 API is organized around REST. Our API has predictable resource-oriented URLs, accepts and returns JSON-encoded request and responses bodies, and uses standard HTTP response codes, authentication, and verbs.\n\n\nThe TWO12 API may differ for every account as we release new versions and tailor functionality based on customer needs. The API specification below is universally available.",
     "version": "1.0.6",
     "title": "TWO12 API Reference",
     "termsOfService": "http://swagger.io/terms/",
@@ -18,7 +18,7 @@
   "tags": [
     {
       "name": "Accreditation",
-      "description": "Everything about your Pets",
+      "description": "Accreditations and Accreditation Providers",
       "externalDocs": {
         "description": "Find out more",
         "url": "http://two12.io"
@@ -135,9 +135,41 @@
           {
             "name": "where",
             "in": "query",
-            "type": "string"
+            "type": "object"
           }
         ]
+      }
+    },
+    "/accreditations/{id}": {
+      "get": {
+        "tags": [
+          "Accreditation"
+        ],
+        "summary": "Accreditations count",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          }
+        }
       }
     },
     "/pet/{petId}/uploadImage": {
