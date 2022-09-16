@@ -381,6 +381,7 @@
         "tags": [
           "Assets"
         ],
+        "summary": "List Assets",
         "produces": [
           "application/json"
         ],
@@ -411,6 +412,7 @@
         "tags": [
           "Assets"
         ],
+        "summary": "Add Documents to an Asset",
         "consumes": [
           "multipart/form-data"
         ],
@@ -445,6 +447,7 @@
         "tags": [
           "Assets"
         ],
+        "summary": "Update Documents for an Asset",
         "consumes": [
           "multipart/form-data"
         ],
