@@ -555,6 +555,70 @@
           }
         }
       }
+    },
+    "/assets-delete/{assetId}": {
+      "delete": {
+        "tags": [
+          "Assets"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AssetsResponse"
+            }
+          }
+        }
+      }
+    },
+    "/assets-patch/{assetId}": {
+      "patch": {
+        "tags": [
+          "Assets"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AssestsRequestBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AssetsResponse"
+            }
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
