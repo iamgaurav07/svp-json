@@ -521,6 +521,40 @@
           "application/json"
         ]
       }
+    },
+    "/assets/{assetId}/delete-documents/{fileId}": {
+      "delete": {
+        "tags": [
+          "Assets"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "assetId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AssetsResponse"
+            }
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
