@@ -1030,30 +1030,50 @@
     },
     "AccreditationUpdateBody": {
       "type": "object",
-      "required": [
-        "name",
-        "photoUrls"
-      ],
       "properties": {
-        "id": "string",
-        "createdAt": "1970-01-01T00:00:00.000Z",
-        "updatedAt": "1970-01-01T00:00:00.000Z",
-        "providerMeta": {
-          "typeId": "string"
+        "id": {
+          "type": "string"
         },
-        "profileId": "string",
-        "type": "string",
-        "effectiveDate": "1970-01-01T00:00:00.000Z",
-        "expirationDate": "1970-01-01T00:00:00.000Z",
-        "exception": "string",
-        "files": [
-          "string"
-        ],
+        "createdAt": {
+          "type": "date"
+        },
+        "updatedAt": {
+          "type": "date"
+        },
+        "providerMeta": {
+          "typeId": {
+            "type": "string"
+          }
+        },
+        "profileId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "effectiveDate": {
+          "type": "date"
+        },
+        "expirationDate": {
+          "type": "date"
+        },
+        "exception": {
+          "type": "string"
+        },
+        "files": {
+          "type": "array"
+        },
         "override": {},
-        "status": "string",
+        "status": {
+          "type": "string"
+        },
         "profileSnapshot": {},
-        "result": "string",
-        "providerMetaId": "string"
+        "result": {
+          "type": "string"
+        },
+        "providerMetaId": {
+          "type": "string"
+        }
       }
     },
     "Pet": {
