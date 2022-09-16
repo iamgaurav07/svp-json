@@ -492,11 +492,33 @@
         ],
         "parameters": [
           {
-            "in": "path",
-            "name": "assetId",
+            "in": "body",
+            "name": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/AssestsRequestBody"
+            }
           }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/AssetsResponse"
+            }
+          }
+        }
+      }
+    },
+    "/assets-create": {
+      "post": {
+        "tags": [
+          "Assets"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
         ]
       }
     },
@@ -1136,6 +1158,18 @@
     },
     "AssetsDocumentUploadResponse": {
       "type": "object"
+    },
+    "AssestsRequestBody": {
+      "type": "object",
+      "properties": {
+        
+      }
+    },
+    "AssetsResponse": {
+      "type": "object",
+      "properties": {
+        
+      }
     },
     "Pet": {
       "type": "object",
