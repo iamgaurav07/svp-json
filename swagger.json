@@ -121,6 +121,25 @@
     "http"
   ],
   "paths": {
+    "accreditations/count": {
+      "get": {
+        "tags": [
+          "Accreditation"
+        ],
+        "summary": "Accreditations count",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "type": "string"
+          }
+        ]
+      }
+    },
     "/pet/{petId}/uploadImage": {
       "post": {
         "tags": [
