@@ -180,7 +180,7 @@
         }
       }
     },
-    "/accreditation": {
+    "/accreditations": {
       "get": {
         "tags": [
           "Accreditation"
@@ -206,7 +206,7 @@
         }
       }
     },
-    "/accreditation/{id}": {
+    "/accreditations/{id}": {
       "put": {
         "tags": [
           "Accreditation"
