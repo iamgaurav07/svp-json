@@ -941,6 +941,43 @@
           }
         }
       }
+    },
+    "/banking/account/{accountId}/wire": {
+      "post": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Create an Outgoing Wire Transaction",
+        "description": "Create a Wire Transaction with the supplied data",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "#ref": "#/definitions/OutgoingWireTransactionRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/OutgoingWireTransactionResponse"
+            }
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
@@ -1691,6 +1728,75 @@
     },
     "BankingACHAcountAddResponse": {
       "type": "any"
+    },
+    "OutgoingWireTransactionRequest": {
+      "type": "object",
+      "properties": {
+        "direction": {
+          "type": "enum",
+          "description": "Direction: The direction of the transaction from the perspective of the originating account. For Wire",
+          "required": true
+        },
+        "nameOnAccount": {
+          "type": "string",
+          "description": "Name on Account: The Account Holder's name on the receiving account",
+          "required": true
+        },
+        "addressOnAccount": {
+          "type": "object",
+          "description": "AddressOnAccount: (tsType: Address, schemaOptions: { title: 'AddressOnAccount' })",
+          "required": true,
+          "properties": {
+            "address1": {
+              "type": "string",
+              "required": true,
+              "description": "Address 1: Street Name Line 1"
+            }
+          }
+          
+        }
+      }
+    },
+    "OutgoingWireTransactionResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "transactionId": {
+          "type": "string"
+        },
+        "bankAccountId": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "integer"
+        },
+        "counterpartyId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "date"
+        },
+        "updatedAt": {
+          "type": "date"
+        },
+        "addedToNetwork": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        }
+      }
     }
   },
   "externalDocs": {
