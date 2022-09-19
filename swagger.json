@@ -488,6 +488,7 @@
         "tags": [
           "Assets"
         ],
+        "summary": "Replace an Asset by Id",
         "consumes": [
           "application/json"
         ],
@@ -518,6 +519,7 @@
         "tags": [
           "Assets"
         ],
+        "summary": "Create an Asset",
         "consumes": [
           "application/json"
         ],
@@ -531,6 +533,7 @@
         "tags": [
           "Assets"
         ],
+        "summary": "Delete an Asset Document",
         "consumes": [
           "application/json"
         ],
@@ -565,6 +568,7 @@
         "tags": [
           "Assets"
         ],
+        "summary": "Delete an Asset",
         "consumes": [
           "application/json"
         ],
@@ -593,6 +597,7 @@
         "tags": [
           "Assets"
         ],
+        "summary": "Update an Asset by Id",
         "consumes": [
           "application/json"
         ],
@@ -623,6 +628,14 @@
           }
         }
       }
+    }
+  },
+  "/banking/account/{bankAccountId}/transactions": {
+    "get": {
+      "tags": [
+        "Banking"
+      ],
+      "summary": "List Transactions from the Bank Account"
     }
   },
   "securityDefinitions": {
