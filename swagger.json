@@ -709,7 +709,7 @@
             "name": "perPage",
             "type": "integer",
             "minimum": 0,
-            "maximom": 100
+            "maximum": 100
           },
           {
             "in": "query",
