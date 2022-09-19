@@ -836,6 +836,43 @@
           }
         }
       }
+    },
+    "/banking/beneficiaries/{beneficiaryId}": {
+      "put": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Update a Beneficiary",
+        "description": "Update a Beneficiary with the supplied data",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "beneficiaryId",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/BankingBeneficiariesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BankingBeneficiariesResponse"
+            }
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
@@ -1361,6 +1398,133 @@
         },
         "type": {
           "type": "string"
+        }
+      }
+    },
+    "BankingBeneficiariesRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "serviceObjectId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "routingNumber": {
+          "type": "string",
+          "required": true
+        },
+        "accountNumber": {
+          "type": "string",
+          "required": true
+        },
+        "bankName": {
+          "type": "string",
+          "required": true
+        },
+        "bankAddress": {
+          "type": "object",
+          "required": "true",
+          "properties": {
+            "street_1": {
+              "type": "string"
+            },
+            "street_2": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            }
+          }
+        },
+        "addressOnAccount": {
+          "type": "object",
+          "properties": {
+            "street_1": {
+              "type": "string"
+            },
+            "street_2": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "region": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            }
+          }
+        },
+        "type": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "BankingBeneficiariesResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "serviceObjectId": {
+          "type": "string"
+        },
+        "createdAt":{
+          "type": "date"
+        },
+        "updatedAt":{
+          "type": "date"
+        },
+        "providerMeta": {
+          "type": "object"
+        },
+        "isDeleted": {
+          "type": "boolean"
         }
       }
     }
