@@ -873,6 +873,74 @@
           }
         }
       }
+    },
+    "/banking/ACHBeneficiaries": {
+      "post": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Create a ACH Banking Beneficiary",
+        "description": "Create a ACH Banking Beneficiary with the supplied data",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/BankingACHBeneficiariesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BankingACHBeneficiariesResponse"
+            }
+          }
+        }
+      }
+    },
+    "/banking/account/{accountId}/ach": {
+      "post": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Create an ACH Transaction",
+        "description": "Create an ACH Transaction with the supplied data",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/BankingACHAcountAddRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BankingACHAcountAddResponse"
+            }
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
@@ -1527,6 +1595,102 @@
           "type": "boolean"
         }
       }
+    },
+    "BankingACHBeneficiariesRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "nameOnAccount": {
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "routingNumber": {
+          "type": "string"
+        },
+        "accountType": {
+          "type": "string"
+        }
+      }
+    },
+    "BankingACHBeneficiariesResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "serviceObjectId": {
+          "type": "string"
+        },
+        "createdAt":{
+          "type": "date"
+        },
+        "updatedAt": {
+          "type": "date"
+        },
+        "providerMeta": {
+          "type": "object"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "BankingACHAcountAddRequest": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "integer"
+        },
+        "routing": {
+          "type": "string"
+        },
+        "account": {
+          "type": "string"
+        },
+        "typeOfAccount": {
+          "type": "string"
+        },
+        "accountId":{
+          "type": "string"
+        },
+        "subAccountId": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "nameOnAccount": {
+          "type": "string"
+        }
+      }
+    },
+    "BankingACHAcountAddResponse": {
+      "type": "any"
     }
   },
   "externalDocs": {
