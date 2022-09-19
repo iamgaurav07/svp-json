@@ -660,32 +660,77 @@
           }
         }
       }
-    }
-  },
-  "/banking/account/{accountId}": {
-    "get": {
-      "tags": [
-        "Banking"
-      ],
-      "summary": "Get Bank Account by ID",
-      "consumes": [
-        "application/json"
-      ],
-      "produces": [
-        "application/json"
-      ],
-      "parameters": [
-        {
-          "in": "path",
-          "name": "accountId",
-          "type": "string",
-          "required": true
+    },
+    "/banking/account/{accountId}": {
+      "get": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Get Bank Account by ID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "accountId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BackingAccountResponse"
+            }
+          }
         }
-      ],
-      "responses": {
-        "200": {
-          "schema": {
-            "$ref": "#/definitions/BackingAccountResponse"
+      }
+    },
+    "/banking/account": {
+      "get": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "List Bank Accounts",
+        "description": "List Bank Accounts for the current user",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "perPage",
+            "type": "integer",
+            "min": 0,
+            "max": 100
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "min": 0
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "type": "object"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GetBankAccountsResponse"
+              }
+            }
           }
         }
       }
@@ -1038,6 +1083,29 @@
           "type": "string"
         },
         "updatedAt": {
+          "type": "string"
+        }
+      }
+    },
+    "GetBankAccountsResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "routingNumber": {
+          "type": "string"
+        },
+        "accountName": {
+          "type": "string"
+        },
+        "bankName": {
           "type": "string"
         }
       }
