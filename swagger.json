@@ -986,13 +986,13 @@
       "name": "api_key",
       "in": "header"
     },
-    "petstore_auth": {
+    "svp_auth": {
       "type": "oauth2",
       "authorizationUrl": "https://svp.two12.co/oauth/authorize",
       "flow": "implicit",
       "scopes": {
-        "read:pets": "read your pets",
-        "write:pets": "modify pets in your account"
+        "read:pets": "read",
+        "write:pets": "modify"
       }
     }
   },
@@ -1751,6 +1751,27 @@
               "type": "string",
               "required": true,
               "description": "Address 1: Street Name Line 1"
+            },
+            "address2": {
+              "type": "string",
+              "description": "Address 2: Street Name Line 2"
+            },
+            "city": {
+              "type": "string",
+              "description": "City: City of Address"
+            },
+            "region": {
+              "type": "string",
+              "description": "Region: Region or State of Address"
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Postal Code: Postal (or ZIP) Code of Address",
+              "default": "84101"
+            },
+            "country": {
+              "type": "enum",
+              "description": "Country: ISO 3166-1 Full Country name in ISO-639-1 (EN) Format"
             }
           }
           
