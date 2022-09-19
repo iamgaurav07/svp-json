@@ -635,7 +635,31 @@
       "tags": [
         "Banking"
       ],
-      "summary": "List Transactions from the Bank Account"
+      "summary": "List Transactions from the Bank Account",
+      "consumes": [
+        "application/json"
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "bankAccountId",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "responses": {
+        "200": {
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/BankingAccountTransactionsResponse"
+            }
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
@@ -882,6 +906,56 @@
       "type": "object",
       "properties": {
         
+      }
+    },
+    "BankingAccountTransactionsResponse": {
+      "type": "object",
+      "properties": {
+        "check_id": {
+          "type": "string"
+        },
+        "type_source": {
+          "type": "string"
+        },
+        "amount":{
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "wire_id": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "wire": {
+          "type": "string"
+        },
+        "book_id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "incoming_wire": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "ach_id": {
+          "type": "string"
+        },
+        "fingerprint": {
+          "type": "string"
+        }
       }
     }
   },
