@@ -770,8 +770,8 @@
         "tags": [
           "Banking"
         ],
-        "summary": "Get Banking Beneficiary by Id",
-        "description": "Get Banking Beneficiaries with the provided Id",
+        "summary": "List Banking Beneficiaries",
+        "description": "List Banking Beneficiaries for the current user",
         "consumes": [
           "application/json"
         ],
@@ -798,6 +798,43 @@
           }
         }
         
+      }
+    },
+    "/banking/ach-beneficiaries/{beneficiaryId}": {
+      "put": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Update an ACH Beneficiary",
+        "description": "Update an ACH Beneficiary with the supplied data",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "properties": [
+          {
+            "in": "path",
+            "name": "beneficiaryId",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateAchBeneficiariesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/UpdateAchBeneficiariesResponse"
+            }
+          }
+        }
       }
     }
   },
@@ -1242,8 +1279,12 @@
               "serviceObjectId": {
                 "type": "string"
               },
-              "createdAt": "Date",
-              "updatedAt": "Date",
+              "createdAt": {
+                "type": "date"
+              },
+              "updatedAt": {
+                "type": "date"
+              },
               "providerMeta": {
                 "type": "object"
               },
@@ -1261,6 +1302,65 @@
         },
         "totalCount": {
           "type": "integer"
+        }
+      }
+    },
+    "UpdateAchBeneficiariesRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "nameOnAccount": {
+          "type": "string",
+          "required": "true"
+        },
+        "accountNumber": {
+          "type": "string",
+          "required": "true"
+        },
+        "routingNumber": {
+          "type": "string",
+          "required": "true"
+        },
+        "accountType": {
+          "type": "string",
+          "required": "true"
+        }
+      }
+    },
+    "UpdateAchBeneficiariesResponse": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "nameOnAccount": {
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "routingNumber": {
+          "type": "string"
+        },
+        "accountType": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
         }
       }
     }
