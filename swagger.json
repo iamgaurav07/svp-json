@@ -628,34 +628,34 @@
           }
         }
       }
-    }
-  },
-  "/banking/account/{bankAccountId}/transactions": {
-    "get": {
-      "tags": [
-        "Banking"
-      ],
-      "summary": "List Transactions from the Bank Account",
-      "consumes": [
-        "application/json"
-      ],
-      "produces": [
-        "application/json"
-      ],
-      "parameters": [
-        {
-          "in": "path",
-          "name": "bankAccountId",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "responses": {
-        "200": {
-          "schema": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/BankingAccountTransactionsResponse"
+    },
+    "/banking/account/{bankAccountId}/transactions": {
+      "get": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "List Transactions from the Bank Account",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "bankAccountId",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BankingAccountTransactionsResponse"
+              }
             }
           }
         }
