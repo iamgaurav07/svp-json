@@ -1041,7 +1041,7 @@
         }
       }
     },
-    "/banking/beneficiaries/{beneficiaryId}": {
+    "/banking/beneficiary/{beneficiaryId}": {
       "delete": {
         "tags": [
           "Banking"
