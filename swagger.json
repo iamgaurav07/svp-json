@@ -764,6 +764,41 @@
           }
         }
       }
+    },
+    "/banking/beneficiaries": {
+      "get": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Get Banking Beneficiary by Id",
+        "description": "Get Banking Beneficiaries with the provided Id",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "properties": [
+          {
+            "in": "query",
+            "name": "perPage",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BakingBeneficiariesResponse"
+            }
+          }
+        }
+        
+      }
     }
   },
   "securityDefinitions": {
@@ -1175,6 +1210,57 @@
         },
         "isDeleted": {
           "type": "boolean"
+        }
+      }
+    },
+    "BakingBeneficiariesResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "ownerId": {
+                "type": "string"
+              },
+              "tenantId": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "serviceObjectId": {
+                "type": "string"
+              },
+              "createdAt": "1970-01-01T00:00:00.000Z",
+              "updatedAt": "1970-01-01T00:00:00.000Z",
+              "providerMeta": {
+                "type": "object"
+              },
+              "isDeleted": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "page": {
+          "type": "integer"
+        },
+        "perPage": {
+          "type": "integer"
+        },
+        "totalCount": {
+          "type": "integer"
         }
       }
     }
