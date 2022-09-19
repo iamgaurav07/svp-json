@@ -813,7 +813,7 @@
         "produces": [
           "application/json"
         ],
-        "properties": [
+        "parameters": [
           {
             "in": "path",
             "name": "beneficiaryId",
