@@ -978,6 +978,37 @@
           }
         }
       }
+    },
+    "/banking/account-create": {
+      "post": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Create a Bank Account",
+        "description": "Create a Bank Account with the supplied data",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/BankingAccountRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BankingAccountResponse"
+            }
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
@@ -1775,6 +1806,65 @@
             }
           }
           
+        },
+        "bankAddress": {
+          "type": "object",
+          "description": "BankAddress: (tsType: Address, schemaOptions: { title: 'BankAddress' })",
+          "required": true,
+          "properties": {
+            "address1": {
+              "type": "string",
+              "required": true,
+              "description": "Address 1: Street Name Line 1"
+            },
+            "address2": {
+              "type": "string",
+              "description": "Address 2: Street Name Line 2"
+            },
+            "city": {
+              "type": "string",
+              "description": "City: City of Address"
+            },
+            "region": {
+              "type": "string",
+              "description": "Region: Region or State of Address"
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Postal Code: Postal (or ZIP) Code of Address",
+              "default": "84101"
+            },
+            "country": {
+              "type": "enum",
+              "description": "Country: ISO 3166-1 Full Country name in ISO-639-1 (EN) Format"
+            }
+          }
+          
+        },
+        "bankName": {
+          "type": "string",
+          "required": true,
+          "description": "Bank Name: The Name of the receiving Bank"
+        },
+        "account": {
+          "type": "string",
+          "required": true,
+          "description": "Account Number: The account number of the receiving account"
+        },
+        "routing": {
+          "type": "string",
+          "required": true,
+          "description": "Routing: The routing number of the receiving account"
+        },
+        "instructions": {
+          "type": "string",
+          "required": true,
+          "description": "Instructions: Additional instructions for the Wire. Limited to 140 characters."
+        },
+        "amount": {
+          "type": "integer",
+          "required": true,
+          "description": "Amount: Amount"
         }
       }
     },
@@ -1816,6 +1906,59 @@
         },
         "instructions": {
           "type": "string"
+        }
+      }
+    },
+    "BankingAccountRequest": {
+      "type": "object",
+      "properties": {
+        "ein": {
+          "type": "string",
+          "required": "true",
+          "description": "Constraints: Max 11 chars"
+        },
+        "entityName": {
+          "type": "string",
+          "required": "true",
+          "description": "Constraints: Max 36 chars"
+        }
+      }
+    },
+    "BankingAccountResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "routingNumber": {
+          "type": "string"
+        },
+        "accountName": {
+          "type": "string"
+        },
+        "bankName": {
+          "type": "string"
+        },
+        "bankContact": {
+          "type": "string"
+        },
+        "swiftCode": {
+          "type": "string"
+        },
+        "bankAddress": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "date"
+        },
+        "updatedAt": {
+          "type": "date"
         }
       }
     }
