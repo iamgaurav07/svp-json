@@ -1242,8 +1242,8 @@
               "serviceObjectId": {
                 "type": "string"
               },
-              "createdAt": "1970-01-01T00:00:00.000Z",
-              "updatedAt": "1970-01-01T00:00:00.000Z",
+              "createdAt": "Date",
+              "updatedAt": "Date",
               "providerMeta": {
                 "type": "object"
               },
