@@ -1009,6 +1009,37 @@
           }
         }
       }
+    },
+    "/banking/beneficiaries-create": {
+      "post": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Create a Banking Beneficiary",
+        "description": "Create a Banking Beneficiary with the supplied data",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/BankingBeneficiariesCreateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BankingBeneficiariesCreateResponse"
+            }
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
@@ -1959,6 +1990,111 @@
         },
         "updatedAt": {
           "type": "date"
+        }
+      }
+    },
+    "BankingBeneficiariesCreateRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "routingNumber": {
+          "type": "string"
+        },
+        "accountNumber": {
+          "type": "string"
+        },
+        "bankName": {
+          "type": "string"
+        },
+        "bankAddress": {
+          "street_1": {
+            "type": "string"
+          },
+          "street_2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string",
+            "description": "Constraints: Max 2 chars"
+          },
+          "country": {
+            "type": "string",
+            "description": "Constraints: Max 2 chars"
+          }
+        },
+        "addressOnAccount": {
+          "street_1": {
+            "type": "string"
+          },
+          "street_2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string",
+            "description": "Constraints: Max 2 chars"
+          },
+          "country": {
+            "type": "string",
+            "description": "Constraints: Max 2 chars"
+          }
+        }
+      }
+    },
+    "BankingBeneficiariesCreateResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "serviceObjectId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "date"
+        },
+        "updatedAt": {
+          "type": "date"
+        },
+        "providerMeta": {
+          "type": "object"
+        },
+        "isDeleted": {
+          "type": "object"
         }
       }
     }
