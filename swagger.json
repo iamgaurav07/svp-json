@@ -734,6 +734,36 @@
           }
         }
       }
+    },
+    "/banking/beneficiaries/{id}": {
+      "get": {
+        "tags": [
+          "Banking"
+        ],
+        "summary": "Get Banking Beneficiary by Id",
+        "description": "Get Banking Beneficiaries with the provided Id",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/GetBankingBeneficiaries"
+            }
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
@@ -1107,6 +1137,44 @@
         },
         "bankName": {
           "type": "string"
+        }
+      }
+    },
+    "GetBankingBeneficiaries": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "serviceObjectId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "providerMeta": {
+          "type": "object"
+        },
+        "isDeleted": {
+          "type": "boolean"
         }
       }
     }
