@@ -12,7 +12,7 @@
     }
   },
   "paths": {
-    "/": {
+    "/captable": {
       "get": {
         "x-controller-name": "CaptablesController",
         "x-operation-name": "count",
