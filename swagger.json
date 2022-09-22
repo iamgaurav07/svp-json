@@ -13,31 +13,33 @@
   },
   "paths": {
     "/captable": {
-      "tags": [
-        "Captable"
-      ],
-      "summary": "Delete user",
-      "description": "This can only be done by the logged in user.",
-      "operationId": "deleteUser",
-      "produces": [
-        "application/json",
-        "application/xml"
-      ],
-      "parameters": [
-        {
-          "name": "username",
-          "in": "path",
-          "description": "The name that needs to be deleted",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "responses": {
-        "400": {
-          "description": "Invalid username supplied"
-        },
-        "404": {
-          "description": "User not found"
+      "get": {
+        "tags": [
+          "Captable"
+        ],
+        "summary": "Delete user",
+        "description": "This can only be done by the logged in user.",
+        "operationId": "deleteUser",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "The name that needs to be deleted",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid username supplied"
+          },
+          "404": {
+            "description": "User not found"
+          }
         }
       }
     },
