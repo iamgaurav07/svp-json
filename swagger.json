@@ -49,7 +49,7 @@
               "application/json": {
                 "example": {
                   "schema": {
-                    "$ref":"#/components/schemas/Attribute DatatypeWithRelations"
+                    "$ref": "#/components/schemas/Attribute DatatypeWithRelations"
                   }
                 },
                 "schema": {
@@ -58,7 +58,7 @@
                     "data": {
                       "type": "array",
                       "items": {
-                        "$ref":"#/components/schemas/GetAllCaptableResponse"
+                        "$ref": "#/components/schemas/GetAllCaptableResponse"
                       }
                     }
                   }
@@ -38653,26 +38653,21 @@
         "type": "object",
         "properties": {
           "data": {
-            "type": "object",
-            "properties": {
-              "data": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "roundName": {
-                      "type": "string"
-                    },
-                    "roundNumber": {
-                      "type": "integer"
-                    },
-                    "roundType": {
-                      "type": "string"
-                    },
-                    "_id": {
-                      "type": "string"
-                    }
-                  }
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "roundName": {
+                  "type": "string"
+                },
+                "roundNumber": {
+                  "type": "integer"
+                },
+                "roundType": {
+                  "type": "string"
+                },
+                "_id": {
+                  "type": "string"
                 }
               }
             }
