@@ -1,10 +1,10 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Two12 API Reference",
-    "description": "<aside class=\"warning\">Note:  This API specification is currently beta.  The schema definitions as described are not subject to change.  However new fields or schemas may be added.  Please contact <a href=\"mailto:support@svp.two.co\">support@svp.two.co</a> for questions or feedback.</aside>\n\nThe Two12 API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer).  Our API has predictable resource-oriented URLs, accepts and returns [JSON-encoded](http://www.json.org/) request and responses bodies, and uses standard HTTP response codes, authentication, and verbs.\n\nThe Two12 API may differ for every account as we release new versions and tailor functionality based on customer needs.  The API specification below is universally available.\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/). And that allows cross-domain communication from the browser.\n\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n## Request Basics\n### Headers\nCurrently, this API only communicates with JSON, so in some situations you may need to set `Accept` or `Content-Type` to `application/json`.\nTwo12 Technology enables platforms and applications for a variety of organizations and users. To ensure an orderly separation of resource ownership this API requires a tenant identification in all requests.  In the request header, set the value `x-tenant-id` to your id. All requests without this value will be rejected with a 401 response.\n",
+    "title": "TWO12 API Reference",
+    "description": "<aside class=\"warning\">Note:  This API specification is currently beta.  The schema definitions as described are not subject to change.  However new fields or schemas may be added.  Please contact <a href=\"mailto:support@svp.two.co\">support@svp.two.co</a> for questions or feedback.</aside>\n\nThe TWO12 API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer).  Our API has predictable resource-oriented URLs, accepts and returns [JSON-encoded](http://www.json.org/) request and responses bodies, and uses standard HTTP response codes, authentication, and verbs.\n\nThe TWO12 API may differ for every account as we release new versions and tailor functionality based on customer needs.  The API specification below is universally available.\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/). And that allows cross-domain communication from the browser.\n\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n## Request Basics\n### Headers\nCurrently, this API only communicates with JSON, so in some situations you may need to set `Accept` or `Content-Type` to `application/json`.\nTwo12 Technology enables platforms and applications for a variety of organizations and users. To ensure an orderly separation of resource ownership this API requires a tenant identification in all requests.  In the request header, set the value `x-tenant-id` to your id. All requests without this value will be rejected with a 401 response.\n",
     "version": "1",
-    "termsOfService": "https://svp.two.co",
+    "termsOfService": "https://svp.TWO12.co",
     "contact": {
       "name": "API Support",
       "url": "https://svp.two.co",
@@ -47,10 +47,20 @@
           "304": {
             "content": {
               "application/json": {
+                "example": {
+                  "schema": {
+                    "$ref":"#/components/schemas/Attribute DatatypeWithRelations"
+                  }
+                },
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref":"#/components/schemas/GetAllCaptableResponse"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref":"#/components/schemas/GetAllCaptableResponse"
+                      }
+                    }
                   }
                 }
               }
@@ -1148,7 +1158,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - Example - 11gkqangdfdfs",
+                        "desc": "TWO12 Tech - Example - 11gkqangdfdfs",
                         "wire": null,
                         "book_id": null,
                         "type": "deposit",
@@ -1170,7 +1180,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - Example - 11gkqangdfdfs",
+                        "desc": "TWO12 Tech - Example - 11gkqangdfdfs",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -1214,7 +1224,7 @@
                         "amount": "4.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - Example - 11gkq9scddwdsdf",
+                        "desc": "TWO12 Tech - Example - 11gkq9scddwdsdf",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -1236,7 +1246,7 @@
                         "amount": "5.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - Example - 11gkq9g1dwvts",
+                        "desc": "TWO12 Tech - Example - 11gkq9g1dwvts",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -1258,7 +1268,7 @@
                         "amount": "5.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkq9g0dd12d23s",
+                        "desc": "TWO12 Tech - ACH - 11gkq9g0dd12d23s",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -1280,7 +1290,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkq9g0dddws4s",
+                        "desc": "TWO12 Tech - ACH - 11gkq9g0dddws4s",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -1302,7 +1312,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkq8x83sd229",
+                        "desc": "TWO12 Tech - ACH - 11gkq8x83sd229",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -1324,7 +1334,7 @@
                         "amount": "5.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkq8x8nsdfy",
+                        "desc": "TWO12 Tech - ACH - 11gkq8x8nsdfy",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -1346,7 +1356,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH- 11gkq8x8ddwddsb",
+                        "desc": "TWO12 Tech - ACH- 11gkq8x8ddwddsb",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -1434,7 +1444,7 @@
                         "amount": "5.00",
                         "date": "2021-09-09",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH- 11gkj0dgdb4dfdw",
+                        "desc": "TWO12 Tech - ACH- 11gkj0dgdb4dfdw",
                         "wire": null,
                         "book_id": null,
                         "type": "deposit",
@@ -1456,7 +1466,7 @@
                         "amount": "10.00",
                         "date": "2021-09-09",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH- 11gkj0dsdfkp9h",
+                        "desc": "TWO12 Tech - ACH- 11gkj0dsdfkp9h",
                         "wire": null,
                         "book_id": null,
                         "type": "deposit",
@@ -1478,7 +1488,7 @@
                         "amount": "5.00",
                         "date": "2021-09-09",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkj19mmabbm299",
+                        "desc": "TWO12 Tech - ACH - 11gkj19mmabbm299",
                         "wire": null,
                         "book_id": null,
                         "type": "deposit",
@@ -4003,7 +4013,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - Example - 11gkqangdfdfs",
+                        "desc": "TWO12 Tech - Example - 11gkqangdfdfs",
                         "wire": null,
                         "book_id": null,
                         "type": "deposit",
@@ -4025,7 +4035,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - Example - 11gkqangdfdfs",
+                        "desc": "TWO12 Tech - Example - 11gkqangdfdfs",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -4069,7 +4079,7 @@
                         "amount": "4.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - Example - 11gkq9scddwdsdf",
+                        "desc": "TWO12 Tech - Example - 11gkq9scddwdsdf",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -4091,7 +4101,7 @@
                         "amount": "5.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - Example - 11gkq9g1dwvts",
+                        "desc": "TWO12 Tech - Example - 11gkq9g1dwvts",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -4113,7 +4123,7 @@
                         "amount": "5.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkq9g0dd12d23s",
+                        "desc": "TWO12 Tech - ACH - 11gkq9g0dd12d23s",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -4135,7 +4145,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkq9g0dddws4s",
+                        "desc": "TWO12 Tech - ACH - 11gkq9g0dddws4s",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -4157,7 +4167,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkq8x83sd229",
+                        "desc": "TWO12 Tech - ACH - 11gkq8x83sd229",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -4179,7 +4189,7 @@
                         "amount": "5.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkq8x8nsdfy",
+                        "desc": "TWO12 Tech - ACH - 11gkq8x8nsdfy",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -4201,7 +4211,7 @@
                         "amount": "10.00",
                         "date": "2021-09-13",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH- 11gkq8x8ddwddsb",
+                        "desc": "TWO12 Tech - ACH- 11gkq8x8ddwddsb",
                         "wire": null,
                         "book_id": null,
                         "type": "withdrawal",
@@ -4289,7 +4299,7 @@
                         "amount": "5.00",
                         "date": "2021-09-09",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH- 11gkj0dgdb4dfdw",
+                        "desc": "TWO12 Tech - ACH- 11gkj0dgdb4dfdw",
                         "wire": null,
                         "book_id": null,
                         "type": "deposit",
@@ -4311,7 +4321,7 @@
                         "amount": "10.00",
                         "date": "2021-09-09",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH- 11gkj0dsdfkp9h",
+                        "desc": "TWO12 Tech - ACH- 11gkj0dsdfkp9h",
                         "wire": null,
                         "book_id": null,
                         "type": "deposit",
@@ -4333,7 +4343,7 @@
                         "amount": "5.00",
                         "date": "2021-09-09",
                         "wire_id": null,
-                        "desc": "Two12 Tech - ACH - 11gkj19mmabbm299",
+                        "desc": "TWO12 Tech - ACH - 11gkj19mmabbm299",
                         "wire": null,
                         "book_id": null,
                         "type": "deposit",
@@ -38643,7 +38653,29 @@
         "type": "object",
         "properties": {
           "data": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "roundName": {
+                      "type": "string"
+                    },
+                    "roundNumber": {
+                      "type": "integer"
+                    },
+                    "roundType": {
+                      "type": "string"
+                    },
+                    "_id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           "message": {
             "type": "string"
