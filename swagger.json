@@ -13,32 +13,51 @@
   },
   "paths": {
     "/captable": {
-      "get": {
+      "post": {
+        "x-controller-name": "CaptableController",
+        "x-operation-name": "createCaptable",
         "tags": [
-          "Captable"
+          "Users"
         ],
-        "summary": "Delete user",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "deleteUser",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
+        "operationId": "createCaptable",
+        "summary": "Create a user",
+        "deprecated": true,
+        "description": "This will create a user that can sign in to the system, and return the user's id",
+        "security": [
           {
-            "name": "username",
-            "in": "path",
-            "description": "The name that needs to be deleted",
-            "required": true,
-            "type": "string"
+            "oAuth2": [
+              "clientCredentials",
+              "authorizationCode"
+            ]
           }
         ],
         "responses": {
-          "400": {
-            "description": "Invalid username supplied"
+          "200": {
+            "description": "Expected response to a valid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
-          "404": {
-            "description": "User not found"
+          "422": {
+            "description": "Unprocessable Entity. Phone number is required to create an account"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
           }
         }
       }
