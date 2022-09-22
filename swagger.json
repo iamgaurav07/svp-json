@@ -48,9 +48,59 @@
             "content": {
               "application/json": {
                 "example": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Attribute DatatypeWithRelations"
-                  }
+                  "data": {
+                    "6037b8aee2099f001894c58a": {
+                      "_id": "6037b8aee20912301894c58a",
+                      "accessControl": "FULL",
+                      "capTableVisibility": "DETAILED",
+                      "isSuspended": false,
+                      "investmentDocuments": [],
+                      "certificates": [],
+                      "isSpv": true,
+                      "simulationVisibility": "DETAILED",
+                      "company": "6037b884e20123001894c584",
+                      "user": "5eeb9cc48fefdas2018338020",
+                      "role": "FOUNDER",
+                      "partnerNumber": "7d1233880-7778-11eb-a24e-4d9780834211",
+                      "ventureName": "",
+                      "invitedBy": "",
+                      "former": false,
+                      "firstName": "John",
+                      "lastName": "Doe",
+                      "isInvited": true,
+                      "vestingPauseDates": [],
+                      "__v": 0,
+                      "boardApprover": true,
+                      "death": {
+                        "type": "Months",
+                        "num": "6"
+                      },
+                      "disability": {
+                        "type": "Months",
+                        "num": "6"
+                      },
+                      "involuntaryTermination": {
+                        "type": "Months",
+                        "num": "3"
+                      },
+                      "retirement": {
+                        "type": "Months",
+                        "num": "6"
+                      },
+                      "shareImpact": false,
+                      "terminationWithCause": {
+                        "type": "Days",
+                        "num": "0"
+                      },
+                      "voluntaryTermination": {
+                        "type": "Months",
+                        "num": "3"
+                      },
+                      "email": "sample@example.co",
+                      "shareReport": "FULL"
+                    }
+                  },
+                  "success": true
                 },
                 "schema": {
                   "type": "object",
