@@ -38728,8 +38728,183 @@
               "createdDate": {
                 "type": "date"
               },
+              "data": {
+                "type": "object",
+                "properties": {
+                  "attachedToFund": {
+                    "type": "string"
+                  },
+                  "attachedToFundParticipant": {
+                    "type": "string"
+                  },
+                  "attachedToFundParticipantId": {
+                    "type": "string"
+                  },
+                  "boardApproval": {
+                    "type": "boolean"
+                  },
+                  "cap": {
+                    "type": "string"
+                  },
+                  "captableId": {
+                    "type": "string"
+                  },
+                  "cashPaid": {
+                    "type": "string"
+                  },
+                  "certType": {
+                    "type": "string"
+                  },
+                  "cliff": {
+                    "type": "string"
+                  },
+                  "companyParticipantId": {
+                    "type": "string"
+                  },
+                  "controlledShare": {
+                    "type": "string"
+                  },
+                  "dilutionProtection": {
+                    "type": "string"
+                  },
+                  "discount": {
+                    "type": "string"
+                  },
+                  "exercisePrice": {
+                    "type": "string"
+                  },
+                  "expirationDate": {
+                    "type": "string"
+                  },
+                  "federalExemption": {
+                    "type": "string"
+                  },
+                  "firstSetToVest": {
+                    "type": "string"
+                  },
+                  "firstVestingOnStartDate": {
+                    "type": "boolean"
+                  },
+                  "grantDate": {
+                    "type": "string"
+                  },
+                  "interestEndDate": {
+                    "type": "string"
+                  },
+                  "investmentAmount": {
+                    "type": "string"
+                  },
+                  "investmentDate": {
+                    "type": "date"
+                  },
+                  "investorId": {
+                    "type": "string"
+                  },
+                  "isAutoConverted": {
+                    "type": "boolean"
+                  },
+                  "isProRataActive": {
+                    "type": "boolean"
+                  },
+                  "maintainPercent": {
+                    "type": "string"
+                  },
+                  "maturityDate": {
+                    "type": "string"
+                  },
+                  "multiple": {
+                    "type": "string"
+                  },
+                  "notes": {
+                    "type": "string"
+                  },
+                  "participantClassTypeId": {
+                    "type": "string"
+                  },
+                  "participantPps": {
+                    "type": "string"
+                  },
+                  "preference": {
+                    "type": "string"
+                  },
+                  "principalConverts": {
+                    "type": "boolean"
+                  },
+                  "selectedCompanyId": {
+                    "type": "string"
+                  },
+                  "share": {
+                    "type": "string"
+                  },
+                  "shareMultiplier": {
+                    "type": "string"
+                  },
+                  "sharesToVest": {
+                    "type": "string"
+                  },
+                  "stockType": {
+                    "type": "string"
+                  },
+                  "subType": {
+                    "type": "string"
+                  },
+                  "vestingDuration": {
+                    "type": "string"
+                  },
+                  "vestingSchedule": {
+                    "type": "string"
+                  },
+                  "vestingStartDate": {
+                    "type": "string"
+                  }
+                }
+              },
               "document": {
                 "type": "string"
+              },
+              "initiatedBy": {
+                "type": "object",
+                "properties": {
+                  "accessControl": {
+                    "type": "string"
+                  },
+                  "certificates": {
+                    "type": "array"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "former": {
+                    "type": "boolean"
+                  },
+                  "investmentDocuments": {
+                    "type": "array"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "partnerNumber": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  },
+                  "ventureName": {
+                    "type": "string"
+                  },
+                  "vestingPauseDates": {
+                    "type": "array"
+                  },
+                  "_id": {
+                    "type": "string"
+                  }
+                }
               },
               "isTransferApproved": {
                 "type": "string"
