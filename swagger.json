@@ -12,12 +12,12 @@
     }
   },
   "paths": {
-    "/captable": {
-      "post": {
+    "/captable/all": {
+      "get": {
         "x-controller-name": "CaptableController",
-        "x-operation-name": "createCaptable",
+        "x-operation-name": "getAllCaptable",
         "tags": ["Captable"],
-        "operationId": "createCaptable",
+        "operationId": "",
         "deprecated": false,
         "description": "Captable",
         "security": [
@@ -25,17 +25,26 @@
             "oAuth2": ["clientCredentials", "authorizationCode"]
           }
         ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "companyId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tabNumber",
+            "type": "string"
+          }
+        ],
         "responses": {
-          "200": {
-            "description": "Captable",
+          "304": {
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "id": {
-                      "type": "string"
-                    }
                   }
                 }
               }
@@ -43,15 +52,6 @@
           },
           "422": {
             "description": "error"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
           }
         }
       }
