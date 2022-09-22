@@ -24,6 +24,7 @@
             "oAuth2": ["authorization"]
           }
         ],
+        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
@@ -31,8 +32,7 @@
                 "$ref": "#/components/schemas/CreateCaptableRequest"
               }
             }
-          },
-          "x-parameter-index": 1
+          }
         },
         "responses": {
           "200": {
