@@ -17,7 +17,7 @@
         "x-controller-name": "CaptableController",
         "x-operation-name": "createCaptable",
         "tags": [
-          "Users"
+          "Captable"
         ],
         "operationId": "createCaptable",
         "summary": "Create a user",
