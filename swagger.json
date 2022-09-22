@@ -30,6 +30,43 @@
             "description": "Captable",
             "content": {
               "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/captable/participant/transfer_agent": {
+      "get": {
+        "x-controller-name": "TransferAgentController",
+        "x-operation-name": "getTransferAgent",
+        "tags": ["Transfer Agent"],
+        "description": "Fetch all transfer requests",
+        "responses": {
+          "304": {
+            "description": "Transfer Requests have been successfully fetched",
+            "content": {
+              "application/json": {
                 "example": {
                   "data": [
                     {
@@ -126,43 +163,6 @@
                   "success": true,
                   "message": "Transfer Requests have been successfully fetched"
                 },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "error"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/captable/participant/transfer_agent": {
-      "get": {
-        "x-controller-name": "TransferAgentController",
-        "x-operation-name": "getTransferAgent",
-        "tags": ["Transfer Agent"],
-        "description": "Fetch all transfer requests",
-        "responses": {
-          "304": {
-            "description": "Transfer Requests have been successfully fetched",
-            "content": {
-              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/FetchAllTransferRequest"
                 }
