@@ -102,10 +102,7 @@
                   "success": true
                 },
                 "schema": {
-                  "type": "object",
-                  "schema": {
-                    "$ref": "#/components/schemas/GetAllCaptableResponse"
-                  }
+                  "$ref": "#/components/schemas/GetAllCaptableResponse"
                 }
               }
             }
