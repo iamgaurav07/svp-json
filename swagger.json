@@ -12,6 +12,39 @@
     }
   },
   "paths": {
+    "/captable": {
+      "tags": [
+        "Captable"
+      ],
+      "responses": {
+        "200": {
+          "description": "Accreditation model count",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/loopback.Count"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "where",
+          "in": "query",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "title": "Validation.WhereFilter",
+                "additionalProperties": true,
+                "x-typescript-type": "@loopback/repository#Where<Validation>"
+              }
+            }
+          }
+        }
+      ]
+    },
     "/accreditations/count": {
       "get": {
         "x-controller-name": "AccreditationController",
@@ -40843,8 +40876,20 @@
   ],
   "tags": [
     {
+      "name": "Captable",
+      "description": "Captable apis."
+    },
+    {
+      "name": "Transfer Agent",
+      "description": "Tranfer agent apis."
+    },
+    {
       "name": "OAuth2",
       "description": "This set of authorization endpoints describe how to securely communicate with the API."
+    },
+    {
+      "name": "Accreditation",
+      "description": "Accreditations and Accreditation Providers"
     },
     {
       "name": "Accounts",
@@ -40929,10 +40974,6 @@
     {
       "name": "KYC",
       "description": "Background and Monitored Lists checks for KYC"
-    },
-    {
-      "name": "Accreditation",
-      "description": "Accreditations and Accreditation Providers"
     },
     {
       "name": "Documents",
