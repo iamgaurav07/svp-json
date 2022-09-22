@@ -27,15 +27,20 @@
         ],
         "parameters": [
           {
-            "in": "query",
             "name": "companyId",
-            "required": true,
-            "type": "string"
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           },
           {
-            "in": "query",
             "name": "tabNumber",
-            "type": "string"
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -49,9 +54,6 @@
                 }
               }
             }
-          },
-          "422": {
-            "description": "error"
           }
         }
       }
