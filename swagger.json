@@ -22,7 +22,7 @@
         "description": "Captable",
         "security": [
           {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
+            "oAuth2": ["authorization"]
           }
         ],
         "parameters": [
@@ -48,8 +48,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
+                  "type": "array",
+                  "items": {
+                    "$ref":"#/components/schemas/GetAllCaptableResponse"
                   }
                 }
               }
@@ -38651,6 +38652,10 @@
             "type": "boolean"
           }
         }
+      },
+      "GetAllCaptableResponse": {
+        "type": "object",
+        "properties": {}
       }
     }
   },
