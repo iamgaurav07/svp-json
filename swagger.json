@@ -28,7 +28,7 @@
         "parameters": [
           {
             "name": "companyId",
-            "in": "path",
+            "in": "query",
             "schema": {
               "type": "string"
             },
@@ -36,7 +36,7 @@
           },
           {
             "name": "tabNumber",
-            "in": "path",
+            "in": "query",
             "schema": {
               "type": "string"
             },
