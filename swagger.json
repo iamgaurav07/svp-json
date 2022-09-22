@@ -20,9 +20,9 @@
           "Captable"
         ],
         "operationId": "createCaptable",
-        "summary": "Create a user",
+        "summary": "asdf asdf asdf ",
         "deprecated": true,
-        "description": "This will create a user that can sign in to the system, and return the user's id",
+        "description": "asdf asdf asdf a",
         "security": [
           {
             "oAuth2": [
@@ -33,7 +33,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Expected response to a valid request",
+            "description": "asdf asdf asdf asdf",
             "content": {
               "application/json": {
                 "schema": {
@@ -48,7 +48,7 @@
             }
           },
           "422": {
-            "description": "Unprocessable Entity. Phone number is required to create an account"
+            "description": "asdfasd fasdf asdf "
           }
         },
         "requestBody": {
