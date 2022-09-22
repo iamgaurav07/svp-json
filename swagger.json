@@ -13,6 +13,8 @@
   },
   "paths": {
     "/captable": {
+      "x-controller-name": "AccreditationController",
+      "x-operation-name": "count",
       "tags": [
         "Captable"
       ],
@@ -43,7 +45,8 @@
             }
           }
         }
-      ]
+      ],
+      "operationId": "AccreditationController.count"
     },
     "/accreditations/count": {
       "get": {
