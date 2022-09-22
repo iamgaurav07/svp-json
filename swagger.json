@@ -17,7 +17,7 @@
         "x-controller-name": "CaptableController",
         "x-operation-name": "createCaptable",
         "tags": [
-          "Trans"
+          "Captable"
         ],
         "operationId": "createCaptable",
         "deprecated": true,
@@ -47,7 +47,7 @@
             }
           },
           "422": {
-            "description": "asdfasd fasdf asdf "
+            "description": "error"
           }
         },
         "requestBody": {
