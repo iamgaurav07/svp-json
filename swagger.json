@@ -41166,9 +41166,6 @@
                   },
                   "isTransferApproved": {
                     "type": "boolean"
-                  },
-                  "type": {
-                    "type": "string"
                   }
                 }
               }
