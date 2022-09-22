@@ -20,7 +20,7 @@
           "Captable"
         ],
         "operationId": "createCaptable",
-        "deprecated": true,
+        "deprecated": false,
         "description": "Captable",
         "security": [
           {
@@ -69,7 +69,7 @@
           "Transfer Agent"
         ],
         "operationId": "TransferAgentList",
-        "deprecated": true,
+        "deprecated": false,
         "description": "Fetch all transfer requests",
         "responses": {
           "304": {
