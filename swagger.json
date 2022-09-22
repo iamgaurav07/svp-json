@@ -38674,6 +38674,68 @@
                     }
                   }
                 }
+              },
+              "comments": {
+                "type": "string"
+              },
+              "companyId": {
+                "type": "string"
+              },
+              "companyParticipantId": {
+                "type": "object",
+                "properties": {
+                  "accessControl": {
+                    "type": "string"
+                  },
+                  "certificates": {
+                    "type": "array"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "former": {
+                    "type": "boolean"
+                  },
+                  "investmentDocuments": {
+                    "type": "array"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "partnerNumber": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  },
+                  "ventureName": {
+                    "type": "string"
+                  },
+                  "vestingPauseDates": {
+                    "type": "array"
+                  },
+                  "_id": {
+                    "type": "string"
+                  }
+                }
+              },
+              "createdDate": {
+                "type": "date"
+              },
+              "document": {
+                "type": "string"
+              },
+              "isTransferApproved": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
               }
             }
           },
