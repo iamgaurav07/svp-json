@@ -13,40 +13,16 @@
   },
   "paths": {
     "/captable": {
-      "x-controller-name": "AccreditationController",
-      "x-operation-name": "count",
       "tags": [
         "Captable"
       ],
-      "responses": {
-        "200": {
-          "description": "Accreditation model count",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/loopback.Count"
-              }
-            }
-          }
-        }
-      },
       "parameters": [
         {
           "name": "where",
           "in": "query",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "title": "Validation.WhereFilter",
-                "additionalProperties": true,
-                "x-typescript-type": "@loopback/repository#Where<Validation>"
-              }
-            }
-          }
+          "type": "string"
         }
-      ],
-      "operationId": "AccreditationController.count"
+      ]
     },
     "/accreditations/count": {
       "get": {
