@@ -41176,6 +41176,12 @@
                 }
               }
             }
+          },
+          "message": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
           }
         }
       }
