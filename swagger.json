@@ -69,7 +69,6 @@
                       "lastName": "Doe",
                       "isInvited": true,
                       "vestingPauseDates": [],
-                      "__v": 0,
                       "boardApprover": true,
                       "death": {
                         "type": "Months",
@@ -104,13 +103,8 @@
                 },
                 "schema": {
                   "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/GetAllCaptableResponse"
-                      }
-                    }
+                  "schema": {
+                    "$ref": "#/components/schemas/GetAllCaptableResponse"
                   }
                 }
               }
@@ -38974,7 +38968,153 @@
       },
       "GetAllCaptableResponse": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string"
+                  },
+                  "accessControl": {
+                    "type": "string"
+                  },
+                  "capTableVisibility": {
+                    "type": "string"
+                  },
+                  "isSuspended": {
+                    "type": "boolean"
+                  },
+                  "investmentDocuments": {
+                    "type": "array"
+                  },
+                  "certificates": {
+                    "type": "array"
+                  },
+                  "isSpv": {
+                    "type": "boolean"
+                  },
+                  "simulationVisibility": {
+                    "type": "string"
+                  },
+                  "company": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "partnerNumber": {
+                    "type": "string"
+                  },
+                  "ventureName": {
+                    "type": "string"
+                  },
+                  "invitedBy": {
+                    "type": "string"
+                  },
+                  "former": {
+                    "type": "boolean"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "isInvited": {
+                    "type": "boolean"
+                  },
+                  "vestingPauseDates": {
+                    "type": "array"
+                  },
+                  "boardApprover": {
+                    "type": "boolean"
+                  },
+                  "death": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "num": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "disability": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "num": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "involuntaryTermination": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "num": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "retirement": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "num": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "shareImpact": {
+                    "type": "boolean"
+                  },
+                  "terminationWithCause": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "num": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "voluntaryTermination": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "num": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "shareReport": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
