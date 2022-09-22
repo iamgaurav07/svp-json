@@ -17,10 +17,58 @@
         "x-controller-name": "CaptableController",
         "x-operation-name": "createCaptable",
         "tags": [
-          "Captable"
+          "Trans"
         ],
         "operationId": "createCaptable",
-        "summary": "asdf asdf asdf ",
+        "deprecated": true,
+        "description": "Captable",
+        "security": [
+          {
+            "oAuth2": [
+              "clientCredentials",
+              "authorizationCode"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Captable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "asdfasd fasdf asdf "
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transferagent": {
+      "post": {
+        "x-controller-name": "TransferAgentController",
+        "x-operation-name": "createTrasnferagent",
+        "tags": [
+          "Transfer Agent"
+        ],
+        "operationId": "Transferagentcreate",
         "deprecated": true,
         "description": "asdf asdf asdf a",
         "security": [
