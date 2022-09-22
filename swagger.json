@@ -61,27 +61,19 @@
         }
       }
     },
-    "/transferagent": {
-      "post": {
+    "/captable/participant/transfer_agent": {
+      "get": {
         "x-controller-name": "TransferAgentController",
-        "x-operation-name": "createTrasnferagent",
+        "x-operation-name": "getTransferAgent",
         "tags": [
           "Transfer Agent"
         ],
-        "operationId": "Transferagentcreate",
+        "operationId": "TransferAgentList",
         "deprecated": true,
-        "description": "asdf asdf asdf a",
-        "security": [
-          {
-            "oAuth2": [
-              "clientCredentials",
-              "authorizationCode"
-            ]
-          }
-        ],
+        "description": "Fetch all transfer requests (Pending and Complete)",
         "responses": {
           "200": {
-            "description": "asdf asdf asdf asdf",
+            "description": "Transfer Requests have been successfully fetched",
             "content": {
               "application/json": {
                 "schema": {
@@ -99,15 +91,7 @@
             "description": "asdfasd fasdf asdf "
           }
         },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object"
-              }
-            }
-          }
-        }
+        "parameters": []
       }
     },
     "/accreditations/count": {
