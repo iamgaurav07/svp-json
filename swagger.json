@@ -81,9 +81,6 @@
                 }
               }
             }
-          },
-          "422": {
-            "description": "asdfasd fasdf asdf "
           }
         },
         "parameters": []
