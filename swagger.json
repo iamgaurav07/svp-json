@@ -853,6 +853,43 @@
             }
           }
         }
+      },
+      "delete": {
+        "x-controller-name": "CaptableController",
+        "x-operation-name": "deleteParticipant",
+        "summary": "Delete Participant",
+        "tags": ["Captable"],
+        "operationId": "",
+        "deprecated": false,
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "id": "632cad1c7234dfsd1201330a04b",
+                "isConversionDelete": false
+              },
+              "schema": {
+                "$ref": "#/components/schemas/DeleteParticipant"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                },
+                "schema": {}
+              }
+            }
+          }
+        }
       }
     },
     "/captable/participant/transfer_agent": {
@@ -40425,6 +40462,17 @@
           },
           "manualDiluted": {
             "type": "string"
+          }
+        }
+      },
+      "DeleteParticipant": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "isConversionDelete": {
+            "type": "boolean"
           }
         }
       }
