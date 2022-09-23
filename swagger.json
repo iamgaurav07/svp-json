@@ -327,7 +327,7 @@
           }
         }
       },
-      "/delete": {
+      "delete": {
         "x-controller-name": "CaptableController",
         "x-operation-name": "deleteCaptable",
         "tags": ["Captable"],
