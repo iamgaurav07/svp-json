@@ -601,9 +601,81 @@
             }
           }
         },
-        "responses": {
-
-        }
+        "responses": {}
+      },
+      "put": {
+        "x-controller-name": "CaptableController",
+        "x-operation-name": "editParticipant",
+        "summary": "Update Participant",
+        "tags": ["Captable"],
+        "operationId": "",
+        "deprecated": false,
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "id": "632d92baddw129fd0013b484d6",
+                "companyParticipantId": "62bae895533211024952cafb4",
+                "share": 1,
+                "investmentAmount": "",
+                "stockType": "COMMON",
+                "certType": "None",
+                "controlledShare": "YES",
+                "expirationDate": "",
+                "investmentDate": "2022-09-23T11:04:26.370Z",
+                "grantDate": "2022-09-23T10:52:47.835Z",
+                "vestingStartDate": "2022-09-23T10:52:47.835Z",
+                "firstVestingOnStartDate": false,
+                "firstSetToVest": "",
+                "cliff": "12",
+                "vestingDuration": "4",
+                "vestingSchedule": "YEARLY",
+                "exercisePrice": "1.61953",
+                "subType": "",
+                "federalExemption": "None",
+                "cashPaid": "",
+                "boardApproval": false,
+                "isProRataActive": false,
+                "principalConverts": false,
+                "interestEndDate": "",
+                "notes": "",
+                "preference": "NO",
+                "multiple": "",
+                "cap": "",
+                "netProceeds": "",
+                "stockTypeConvertedFrom": "",
+                "percent": 0.000004721313519165,
+                "dilutionProtection": "NONE",
+                "cNoteConvertedDate": "",
+                "shareMultiplier": "",
+                "participantPps": "",
+                "attachedToFund": "",
+                "attachedToFundParticipantId": "",
+                "attachedToFundParticipant": "",
+                "participantClassTypeId": "62baebsdfw23542024952cc6c5",
+                "conversionDate": "",
+                "isConversionEdit": false,
+                "cancelEdit": false,
+                "attachedToSpvRound": "",
+                "attachedToSpvFund": "",
+                "reason": "",
+                "discount": "",
+                "maintainPercent": "",
+                "manualOutstanding": "",
+                "manualDiluted": ""
+              },
+              "schema": {
+                "$ref": "#/components/schemas/UpdateParticipantCaptableRequest"
+              }
+            }
+          }
+        },
+        "responses": {}
       }
     },
     "/captable/participant/transfer_agent": {
@@ -40024,6 +40096,158 @@
           },
           "isAutoConverted": {
             "type": "boolean"
+          }
+        }
+      },
+      "UpdateParticipantCaptableRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "companyParticipantId": {
+            "type": "string"
+          },
+          "share": {
+            "type": "integer"
+          },
+          "investmentAmount": {
+            "type": "string"
+          },
+          "stockType": {
+            "type": "string"
+          },
+          "certType": {
+            "type": "string"
+          },
+          "controlledShare": {
+            "type": "string"
+          },
+          "expirationDate": {
+            "type": "string"
+          },
+          "investmentDate": {
+            "type": "date"
+          },
+          "grantDate": {
+            "type": "date"
+          },
+          "vestingStartDate": {
+            "type": "date"
+          },
+          "firstVestingOnStartDate": {
+            "type": "boolean"
+          },
+          "firstSetToVest": {
+            "type": "string"
+          },
+          "cliff": {
+            "type": "string"
+          },
+          "vestingDuration": {
+            "type": "string"
+          },
+          "vestingSchedule": {
+            "type": "string"
+          },
+          "exercisePrice": {
+            "type": "string"
+          },
+          "subType": {
+            "type": "string"
+          },
+          "federalExemption": {
+            "type": "string"
+          },
+          "cashPaid": {
+            "type": "string"
+          },
+          "boardApproval": {
+            "type": "boolean"
+          },
+          "isProRataActive": {
+            "type": "boolean"
+          },
+          "principalConverts": {
+            "type": "boolean"
+          },
+          "interestEndDate": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "preference": {
+            "type": "string"
+          },
+          "multiple": {
+            "type": "string"
+          },
+          "cap": {
+            "type": "string"
+          },
+          "netProceeds": {
+            "type": "string"
+          },
+          "stockTypeConvertedFrom": {
+            "type": "string"
+          },
+          "percent": {
+            "type": "integer"
+          },
+          "dilutionProtection": {
+            "type": "string"
+          },
+          "cNoteConvertedDate": {
+            "type": "string"
+          },
+          "shareMultiplier": {
+            "type": "string"
+          },
+          "participantPps": {
+            "type": "string"
+          },
+          "attachedToFund": {
+            "type": "string"
+          },
+          "attachedToFundParticipantId": {
+            "type": "string"
+          },
+          "attachedToFundParticipant": {
+            "type": "string"
+          },
+          "participantClassTypeId": {
+            "type": "string"
+          },
+          "conversionDate": {
+            "type": "string"
+          },
+          "isConversionEdit": {
+            "type": "boolean"
+          },
+          "cancelEdit": {
+            "type": "boolean"
+          },
+          "attachedToSpvRound": {
+            "type": "string"
+          },
+          "attachedToSpvFund": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "string"
+          },
+          "maintainPercent": {
+            "type": "string"
+          },
+          "manualOutstanding": {
+            "type": "string"
+          },
+          "manualDiluted": {
+            "type": "string"
           }
         }
       }
