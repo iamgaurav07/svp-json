@@ -16,6 +16,7 @@
       "get": {
         "x-controller-name": "CaptableController",
         "x-operation-name": "getAllCaptable",
+        "summary": "Fetch Captables",
         "tags": ["Captable"],
         "operationId": "",
         "deprecated": false,
