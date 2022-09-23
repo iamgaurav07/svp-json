@@ -534,6 +534,75 @@
         }
       }
     },
+    "/captable/participant": {
+      "post": {
+        "x-controller-name": "CaptableController",
+        "x-operation-name": "createParticipant",
+        "summary": "Add Participant",
+        "tags": ["Captable"],
+        "operationId": "",
+        "deprecated": false,
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyParticipantId": "62bae895432542024952cafb4",
+                "id": "632ca7f671aad3200gty33091d8",
+                "investorId": "62bae89123ssd542024952cafb3",
+                "share": "1",
+                "investmentAmount": "",
+                "stockType": "WARRANT",
+                "certType": "None",
+                "controlledShare": "YES",
+                "expirationDate": "2026-09-22T18:22:06.765Z",
+                "investmentDate": "2022-09-23T10:33:41.692Z",
+                "grantDate": "2022-09-22T18:22:06.765Z",
+                "firstVestingOnStartDate": false,
+                "firstSetToVest": "",
+                "sharesToVest": "",
+                "vestingDuration": "MANUAL",
+                "exercisePrice": "2",
+                "subType": "",
+                "federalExemption": "None",
+                "cashPaid": "",
+                "boardApproval": false,
+                "isProRataActive": false,
+                "principalConverts": false,
+                "interestEndDate": "",
+                "notes": "",
+                "preference": "NO",
+                "multiple": "",
+                "cap": "",
+                "maturityDate": "",
+                "dilutionProtection": "NONE",
+                "shareMultiplier": "",
+                "participantPps": "",
+                "attachedToFund": "",
+                "attachedToFundParticipantId": "",
+                "attachedToFundParticipant": "",
+                "participantClassTypeId": "",
+                "conversionDate": "",
+                "attachedToCapTableParticipantId": "",
+                "senderId": "",
+                "attachedToSpvRound": "",
+                "attachedToSpvFund": "",
+                "discount": "",
+                "maintainPercent": "",
+                "isAutoConverted": false
+              },
+              "schema": {
+                "$ref": "#/components/schemas/AddParticipantCaptableRequest"
+              }
+            }
+          }
+        }
+      }
+    },
     "/captable/participant/transfer_agent": {
       "get": {
         "x-controller-name": "TransferAgentController",
@@ -39818,6 +39887,138 @@
         "properties": {
           "id": {
             "type": "string"
+          }
+        }
+      },
+      "AddParticipantCaptableRequest": {
+        "type": "object",
+        "properties": {
+          "companyParticipantId": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "investorId": {
+            "type": "string"
+          },
+          "share": {
+            "type": "string"
+          },
+          "investmentAmount": {
+            "type": "string"
+          },
+          "stockType": {
+            "type": "string"
+          },
+          "certType": {
+            "type": "string"
+          },
+          "controlledShare": {
+            "type": "string"
+          },
+          "expirationDate": {
+            "type": "date"
+          },
+          "investmentDate": {
+            "type": "date"
+          },
+          "grantDate": {
+            "type": "date"
+          },
+          "firstVestingOnStartDate": {
+            "type": "boolean"
+          },
+          "firstSetToVest": {
+            "type": "string"
+          },
+          "sharesToVest": {
+            "type": "string"
+          },
+          "vestingDuration": {
+            "type": "string"
+          },
+          "exercisePrice": {
+            "type": "string"
+          },
+          "subType": {
+            "type": "string"
+          },
+          "federalExemption": {
+            "type": "string"
+          },
+          "cashPaid": {
+            "type": "string"
+          },
+          "boardApproval": {
+            "type": "boolean"
+          },
+          "isProRataActive": {
+            "type": "boolean"
+          },
+          "principalConverts": {
+            "type": "boolean"
+          },
+          "interestEndDate": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "preference": {
+            "type": "string"
+          },
+          "multiple": {
+            "type": "string"
+          },
+          "cap": {
+            "type": "string"
+          },
+          "maturityDate": {
+            "type": "string"
+          },
+          "dilutionProtection": {
+            "type": "string"
+          },
+          "shareMultiplier": {
+            "type": "string"
+          },
+          "participantPps": {
+            "type": "string"
+          },
+          "attachedToFund": {
+            "type": "string"
+          },
+          "attachedToFundParticipantId": {
+            "type": "string"
+          },
+          "attachedToFundParticipant": {
+            "type": "string"
+          },
+          "participantClassTypeId": {
+            "type": "string"
+          },
+          "conversionDate": "",
+          "attachedToCapTableParticipantId": {
+            "type": "string"
+          },
+          "senderId": {
+            "type": "string"
+          },
+          "attachedToSpvRound": {
+            "type": "string"
+          },
+          "attachedToSpvFund": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "string"
+          },
+          "maintainPercent": {
+            "type": "string"
+          },
+          "isAutoConverted": {
+            "type": "boolean"
           }
         }
       }
