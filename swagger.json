@@ -326,6 +326,120 @@
             }
           }
         }
+      },
+      "/delete": {
+        "x-controller-name": "CaptableController",
+        "x-operation-name": "deleteCaptable",
+        "tags": ["Captable"],
+        "operationId": "",
+        "deprecated": false,
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "id": "632cad1c7234a4001330a04b"
+              },
+              "schema": {
+                "$ref": "#/components/schemas/DeleteCaptableRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "_id": "62basd1210353542024952cc770",
+                      "customStockSplitInfo": {
+                        "allParticipants": false,
+                        "capTableParticipantIds": []
+                      },
+                      "manualStockGrantsInfo": {
+                        "allParticipants": false,
+                        "capTableParticipants": []
+                      },
+                      "roundName": "FORMATION",
+                      "roundType": "FORMATION",
+                      "cNoteType": "PRE_MONEY",
+                      "multiClass": false,
+                      "dilutionProtection": "NONE",
+                      "displayAllShares": false,
+                      "footNote": false,
+                      "updateAllProRata": false,
+                      "isFavourite": false,
+                      "isPostSafe": false,
+                      "dividend": false,
+                      "documents": [],
+                      "splitRatio": {
+                        "current": "0",
+                        "new": "0"
+                      },
+                      "companyId": "62bae3d4343542024952caeea",
+                      "startDate": "2016-06-15T11:57:00.000Z",
+                      "pricePerShare": 0.000001,
+                      "precisionDigits": "5",
+                      "roundNumber": 1,
+                      "preMoneyValuation": "0",
+                      "valuationCap": "",
+                      "interestRate": "",
+                      "discountRate": "",
+                      "optionPoolShareCount": "0",
+                      "duration": "0",
+                      "seniority": "1",
+                      "allowPreVested": false,
+                      "preference": "NO",
+                      "multiple": "",
+                      "cap": "",
+                      "classTypeId": "62baebd11fw542024952cc6c5",
+                      "updateAllMaturityDates": false,
+                      "safeConvertOnExit": false,
+                      "dividendRate": "",
+                      "pricePerShareCf": 0.000001,
+                      "preMoneyValuationCf": "0",
+                      "totalShareCount": 8300000,
+                      "totalShareCountActual": 8300000,
+                      "totalShareCountCf": 8300000,
+                      "totalShareCountCfActual": 8300000,
+                      "totalActualShareCount": 8300000,
+                      "totalOutstandingShareCount": 8300000,
+                      "unIssuedOptions": 0,
+                      "unIssuedWarrants": 0,
+                      "unIssuedCommons": 0,
+                      "postMoneyValuation": 0,
+                      "overrideCalculation": false,
+                      "convertsTo": "",
+                      "commonPoolShareCount": "0",
+                      "participation": "NON_PARTICIPATING",
+                      "participants": [],
+                      "investmentAmount": 0,
+                      "totalActualShareCountForPercent": 8300000,
+                      "totalOutstandingShareCountForPercent": 8300000,
+                      "dilutionFactorMap": {
+                        "BROAD_WEIGHTED_AVERAGE": 1,
+                        "NARROW_WEIGHTED_AVERAGE": 1,
+                        "FULL_RATCHET": 1,
+                        "NONE": 1
+                      },
+                      "fullyDilutedShareCount": 8300000,
+                      "fullyDilutedShareCountForPercent": 8300000
+                    }
+                  ]
+                },
+                "schema": {
+                  
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/captable/all": {
@@ -39699,6 +39813,14 @@
             "type": "string"
           },
           "warrantPoolShareCount": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteCaptableRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
             "type": "string"
           }
         }
