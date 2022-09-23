@@ -600,6 +600,9 @@
               }
             }
           }
+        },
+        "responses": {
+
         }
       }
     },
@@ -39998,7 +40001,9 @@
           "participantClassTypeId": {
             "type": "string"
           },
-          "conversionDate": "",
+          "conversionDate": {
+            "type": "string"
+          },
           "attachedToCapTableParticipantId": {
             "type": "string"
           },
