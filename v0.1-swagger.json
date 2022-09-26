@@ -125,9 +125,6 @@
                   "email": "john@example.com",
                   "amount": "6,000",
                   "companyUrl": "https://www.example.com"
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/CreateSurveyResponse"
                 }
               }
             }
