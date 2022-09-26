@@ -7,11 +7,131 @@
     "termsOfService": "https://svp.TWO12.co",
     "contact": {
       "name": "API Support",
-      "url": "https://svp.two.co",
-      "email": "info@svp.two.co"
+      "url": "https://svp.two12.co",
+      "email": "info@svp.two12.co"
     }
   },
   "paths": {
+    "/sign-up": {
+      "post": {
+        "x-controller-name": "organizerSignUp",
+        "tags": ["Organizer Sign-Up"],
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "firstName": "John",
+                "lastName": "Doe",
+                "email": "john@example.com",
+                "amount": "6,000",
+                "companyUrl": "https://www.example.com"
+              },
+              "schema": {
+                "$ref": "#/components/schemas/OrganizerSignUp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "_id": "62basd1210353542024952cc770",
+                  "firstName": "John",
+                  "lastName": "Doe",
+                  "email": "john@example.com",
+                  "amount": "6,000",
+                  "companyUrl": "https://www.example.com"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companySurvey": {
+      "get": {
+        "x-controller-name": "companySurvey",
+        "tags": ["Survey"],
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "companyId",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "62basd1210353542024952cc770"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "_id": "62basd1210353542024952cc770",
+                  "firstName": "John",
+                  "lastName": "Doe",
+                  "email": "john@example.com",
+                  "amount": "6,000",
+                  "companyUrl": "https://www.example.com"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "x-controller-name": "companySurvey",
+        "tags": ["Survey"],
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "legelName": "TWO12",
+                "subscriptionAmount": "6000",
+                "email": "john@example.com",
+                "isSvp": true,
+                "companyId": "62basd1213542024952cc770"
+              },
+              "schema": {
+                "$ref": "#/components/schemas/CreateSurvey"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "_id": "62basd1210353542024952cc770",
+                  "firstName": "John",
+                  "lastName": "Doe",
+                  "email": "john@example.com",
+                  "amount": "6,000",
+                  "companyUrl": "https://www.example.com"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/captable/all": {
       "get": {
         "x-controller-name": "CaptableController",
@@ -6117,18 +6237,48 @@
         ]
       }
     },
-    "/identity/kyc": {
+    "apply/kyc": {
       "post": {
         "x-controller-name": "KycController",
-        "x-operation-name": "create",
-        "tags": ["Identity", "KYC"],
+        "x-operation-name": "createKyc",
+        "tags": ["KYC"],
         "responses": {
           "200": {
-            "description": "KYC model instance",
             "content": {
               "application/json": {
+                "example": {
+                  "object_id": "apsn_11h5e0ya9hxknt",
+                  "object_type": "person",
+                  "middesk_full": null,
+                  "middesk": null,
+                  "apply_true": null,
+                  "updated_at": "2022-06-08T20:16:10Z",
+                  "id": "akyc_11h5ejd29hz86r",
+                  "alloy_full": {
+                    "error": null,
+                    "summary": {
+                      "tags": ["FakeKYCTag"],
+                      "score": 0.1,
+                      "result": "success",
+                      "outcome": "Approved",
+                      "services": {
+                        "mockservice1": "executed",
+                        "mockservice2": "executed"
+                      }
+                    },
+                    "diligence": {
+                      "kyc": "fake"
+                    }
+                  },
+                  "alloy": {
+                    "status": "ok",
+                    "entity_token": null
+                  },
+                  "created_at": "2022-04-13T22:07:30Z",
+                  "kyc_product_id": null
+                },
                 "schema": {
-                  "$ref": "#/components/schemas/Kyc"
+                  "$ref": "#/components/schemas/CreateKYCResponse"
                 }
               }
             }
@@ -6137,38 +6287,174 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/KycCheckRequest"
+              "example": {
+                "kyc_product_id": "123123123",
+                "object_id": "123123123sddfwe123",
+                "object_type": "person"
               },
-              "examples": {
-                "example-1": {
-                  "description": "Data to KYC Check",
-                  "value": {
-                    "firstName": "John",
-                    "lastName": "Doe",
-                    "email": "jdoe@test.com",
-                    "address": {
-                      "street1": "123 E St",
-                      "street2": "Unit 2",
-                      "city": "Salt Lake City",
-                      "region": "Utah",
-                      "country": "United States of America",
-                      "postalCode": "84121"
+              "schema": {
+                "$ref": "#/components/schemas/CreateKYCRequest"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "x-controller-name": "KycController",
+        "x-operation-name": "getKyc",
+        "tags": ["KYC"],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "object_id": "apsn_11grpcbjmxct",
+                      "middesk_full": null,
+                      "middesk": null,
+                      "apply_true": null,
+                      "updated_at": "2021-11-10T02:42:13Z",
+                      "id": "akyc_11grpcc5mxdg",
+                      "alloy_full": {
+                        "error": null,
+                        "summary": {
+                          "tags": ["FakeKYCTag"],
+                          "score": 0.1,
+                          "result": "success",
+                          "outcome": "Manual Review",
+                          "services": {
+                            "mockservice1": "executed",
+                            "mockservice2": "executed"
+                          }
+                        },
+                        "diligence": {
+                          "kyc": "fake"
+                        }
+                      },
+                      "alloy": {
+                        "status": "pending",
+                        "entity_token": null
+                      },
+                      "created_at": "2021-11-10T02:42:13Z"
                     },
-                    "dateOfBirth": "02-21-1972",
-                    "identificationNumbers": [
-                      {
-                        "type": "ssn",
-                        "value": "111-11-1111"
-                      }
-                    ]
-                  }
+                    {
+                      "object_id": "apsn_11grpawtmx64",
+                      "middesk_full": null,
+                      "middesk": null,
+                      "apply_true": null,
+                      "updated_at": "2021-11-10T02:17:20Z",
+                      "id": "akyc_11grpaxgmx6w",
+                      "alloy_full": {
+                        "error": null,
+                        "summary": {
+                          "tags": ["FakeKYCTag"],
+                          "score": 0.1,
+                          "result": "success",
+                          "outcome": "Approved",
+                          "services": {
+                            "mockservice1": "executed",
+                            "mockservice2": "executed"
+                          }
+                        },
+                        "diligence": {
+                          "kyc": "fake"
+                        }
+                      },
+                      "alloy": {
+                        "status": "ok",
+                        "entity_token": null
+                      },
+                      "created_at": "2021-11-10T02:17:20Z"
+                    }
+                  ]
                 }
               }
             }
           }
-        },
-        "operationId": "KycController.create"
+        }
+      }
+    },
+    "/apply/kyc/{kyc_id}": {
+      "get": {
+        "x-controller-name": "KycController",
+        "x-operation-name": "getKycByKyc_id",
+        "tags": ["KYC"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "kyc_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "object_id": "apsn_11h5e0ya9hxknt",
+                  "object_type": "person",
+                  "middesk_full": null,
+                  "middesk": null,
+                  "apply_true": null,
+                  "updated_at": "2022-06-08T20:16:10Z",
+                  "id": "akyc_11h5ejd29hz86r",
+                  "alloy_full": {
+                    "error": null,
+                    "summary": {
+                      "tags": ["FakeKYCTag"],
+                      "score": 0.1,
+                      "result": "success",
+                      "outcome": "Approved",
+                      "services": {
+                        "mockservice1": "executed",
+                        "mockservice2": "executed"
+                      }
+                    },
+                    "diligence": {
+                      "kyc": "fake"
+                    }
+                  },
+                  "alloy": {
+                    "status": "ok",
+                    "entity_token": null
+                  },
+                  "created_at": "2022-04-13T22:07:30Z",
+                  "kyc_product_id": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "apply/kyc_product/{kyc_product_id}": {
+      "get": {
+        "x-controller-name": "KycController",
+        "x-operation-name": "create",
+        "tags": ["KYC"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "kyc_product_id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "created_at": "2022-04-15T06:59:14Z",
+                  "updated_at": "2022-04-15T06:59:14Z",
+                  "id": "akpt_11h5j5y2q7mp",
+                  "product": "person",
+                  "apply_type": "person"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/identity/validations/count": {
@@ -10089,238 +10375,6 @@
           }
         }
       }
-    },
-    "/webhooks/{id}": {
-      "get": {
-        "x-controller-name": "WebhooksController",
-        "x-operation-name": "getWebhookById",
-        "tags": ["Webhooks"],
-        "operationId": "getWebhook",
-        "summary": "Get Webhook By Id",
-        "description": "Returns a stored webhook. Note that the `token` will be returned as the `SHA-256` hashed value",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected Response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/WebhookExcluding__id_"
-                },
-                "examples": {
-                  "example-1": {
-                    "description": "Example Response for Webhook",
-                    "value": {
-                      "id": "614a10cc0bad65fde41e0670",
-                      "token": "z4DNiu1ILV0VJ9fccvzv+E5jJlkoSER9LcCw6H38mpA=",
-                      "url": "https://example.com/incoming-webhook",
-                      "enabled": true,
-                      "resources": [
-                        {
-                          "events": ["CREATE", "UPDATE", "DELETE"],
-                          "id": "legal/formation/requests"
-                        },
-                        {
-                          "events": ["CREATE", "UPDATE"],
-                          "id": "banking/account"
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Webhook ID not found"
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
-      },
-      "delete": {
-        "x-controller-name": "WebhooksController",
-        "x-operation-name": "deleteWebhookById",
-        "tags": ["Webhooks"],
-        "operationId": "deleteWebhook",
-        "summary": "Delete Webhook By Id",
-        "description": "Deletes the specified webhook",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Expected Response to a valid request"
-          },
-          "404": {
-            "description": "Webhook ID not found"
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
-      }
-    },
-    "/webhooks": {
-      "post": {
-        "x-controller-name": "WebhooksController",
-        "x-operation-name": "newWebhook",
-        "tags": ["Webhooks"],
-        "operationId": "createWebhook",
-        "summary": "Create Webhook",
-        "description": "You can create a webhook to subscribe to event updates on\n     various resources and events using a POST call to an endpoint you specify.\n     \n     When creating webhooks, you can supply the `token` value to validate that the calls you are receiving\n     are valid. POST calls from our system will contain a header `X-Webhook-Token` that will be set to the `SHA256`\n     value of the token.\n     \n     Currently, only the following resource IDs are supported: \n     \n     - legal/formation/requests\n     - banking/account\n     \n     If you need an additional resource available via Webhook, please contact support",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected Response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/WebhookExcluding__id_"
-                },
-                "examples": {
-                  "example-1": {
-                    "description": "Example Creation for Webhook",
-                    "value": {
-                      "id": "614a10cc0bad65fde41e0670",
-                      "token": "z4DNiu1ILV0VJ9fccvzv+E5jJlkoSER9LcCw6H38mpA=",
-                      "url": "https://example.com/incoming-webhook",
-                      "enabled": true,
-                      "resources": [
-                        {
-                          "events": ["CREATE", "UPDATE", "DELETE"],
-                          "id": "legal/formation/requests"
-                        },
-                        {
-                          "events": ["CREATE", "UPDATE"],
-                          "id": "banking/account"
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Webhook"
-              },
-              "examples": {
-                "example-1": {
-                  "description": "Example Webhook Creation Request",
-                  "value": {
-                    "url": "https://example.com/incoming-webhook",
-                    "token": "MySecretToken1234%!",
-                    "enabled": true,
-                    "resources": [
-                      {
-                        "events": ["CREATE", "UPDATE", "DELETE"],
-                        "id": "legal/formation/requests"
-                      },
-                      {
-                        "events": ["CREATE", "UPDATE"],
-                        "id": "banking/account"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "get": {
-        "x-controller-name": "WebhooksController",
-        "x-operation-name": "listWebhooks",
-        "tags": ["Webhooks"],
-        "operationId": "getWebhooks",
-        "summary": "List Webhooks",
-        "description": "List Webhooks for the current account",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected Response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/List",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "itemType": {
-                        "$ref": "#/components/schemas/Webhook",
-                        "definitions": {
-                          "WebhookResourceEvents": {
-                            "$ref": "#/components/schemas/WebhookResourceEvents"
-                          },
-                          "Webhook": {
-                            "$ref": "#/components/schemas/Webhook"
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "description": "Example Listing for Webhooks",
-                    "value": [
-                      {
-                        "id": "614a10cc0bad65fde41e0670",
-                        "url": "https://example.com/incoming-webhook",
-                        "enabled": true,
-                        "resources": [
-                          {
-                            "events": ["CREATE", "UPDATE", "DELETE"],
-                            "id": "legal/formation/requests"
-                          },
-                          {
-                            "events": ["CREATE", "UPDATE"],
-                            "id": "banking/account"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
@@ -10331,11 +10385,7 @@
         "flows": {
           "clientCredentials": {
             "tokenUrl": "/oauth2/token",
-            "refreshUrl": "/oauth2/refresh",
-            "scopes": {
-              "read": "Grant read-only access to all your data except for the account and user info",
-              "write": "Grant write-only access to all your data except for the account and user info"
-            }
+            "refreshUrl": "/oauth2/refresh"
           },
           "authorizationCode": {
             "authorizationUrl": "http://localhost:8081/auth/realms/gbt/protocol/openid-connect/auth",
@@ -33327,81 +33377,6 @@
         "additionalProperties": false,
         "x-typescript-type": "Partial<Transaction>"
       },
-      "WebhookResourceEvents": {
-        "title": "WebhookResourceEvents",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "events": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "enum": ["CREATE", "UPDATE", "DELETE"]
-            }
-          }
-        },
-        "required": ["id", "events"],
-        "additionalProperties": false
-      },
-      "WebhookExcluding__id_": {
-        "title": "WebhookExcluding__id_",
-        "type": "object",
-        "description": "(tsType: Omit<Webhook, '_id'>, schemaOptions: { exclude: [ '_id' ] })",
-        "properties": {
-          "url": {
-            "type": "string"
-          },
-          "enabled": {
-            "type": "boolean"
-          },
-          "tenantId": {
-            "type": "string"
-          },
-          "resources": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WebhookResourceEvents"
-            }
-          },
-          "token": {
-            "type": "string"
-          }
-        },
-        "required": ["url", "token"],
-        "additionalProperties": false,
-        "x-typescript-type": "Omit<Webhook, '_id'>"
-      },
-      "Webhook": {
-        "title": "Webhook",
-        "type": "object",
-        "properties": {
-          "_id": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "enabled": {
-            "type": "boolean"
-          },
-          "tenantId": {
-            "type": "string"
-          },
-          "resources": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WebhookResourceEvents"
-            }
-          },
-          "token": {
-            "type": "string"
-          }
-        },
-        "required": ["url", "token"],
-        "additionalProperties": false
-      },
       "paletteEntry": {
         "type": "object",
         "properties": {
@@ -40475,6 +40450,86 @@
             "type": "boolean"
           }
         }
+      },
+      "OrganizerSignUp": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "string"
+          },
+          "companyUrl": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateSurvey": {
+        "type": "object",
+        "properties": {
+          "legelName": {
+            "type": "string"
+          },
+          "subscriptionAmount": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "isSvp": {
+            "type": "boolean"
+          },
+          "companyId": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateSurveyResponse": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "legelName": {
+            "type": "string"
+          },
+          "subscriptionAmount": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "isSvp": {
+            "type": "boolean"
+          },
+          "companyId": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateKYCResponse": {
+        "type": "object"
+      },
+      "CreateKYCRequest": {
+        "type": "object",
+        "properties": {
+          "kyc_product_id": {
+            "type": "string"
+          },
+          "object_id": {
+            "type": "string"
+          },
+          "object_type": {
+            "type": "string"
+          }
+        }
       }
     }
   },
@@ -40484,6 +40539,31 @@
     }
   ],
   "tags": [
+    {
+      "name": "Organizer Sign-Up",
+      "description": "Organizer Sign Up"
+    },
+    {
+      "name": "Survey",
+      "description": "Survey (Organizer)"
+    },
+    {
+      "name": "Upload documents",
+      "description": "Upload Documents"
+    },
+
+    {
+      "name": "Invite LPs",
+      "description": "Invide Lps (Deal docs and Commits)"
+    },
+    {
+      "name": "Banking",
+      "description": "Everything about banking"
+    },
+    {
+      "name": "KYC",
+      "description": "Background and Monitored Lists checks for KYC"
+    },
     {
       "name": "Captable",
       "description": "Captable apis."
@@ -40512,10 +40592,7 @@
       "name": "Assets",
       "description": "Assets represent the investment vehicle for a deal.  An asset can take one of many forms, such as, shares of common stock in a company, real estate, crypocurrency, or even fractional ownership in a private jet.  The object specification is general enough to include a complete description of the asset, supporting documentation, and profiles of the key team members."
     },
-    {
-      "name": "Banking",
-      "description": "Everything about banking"
-    },
+
     {
       "name": "Closes",
       "description": "A Close groups Subscriptions together for completion of the investment process. A close can represent the close of the entire deal or just a subset of investments (i.e. a tranche)."
@@ -40569,20 +40646,12 @@
       "description": "User objects are a generic type that includes all users in the system"
     },
     {
-      "name": "Webhooks",
-      "description": "Webhooks allow your system to subscribe to updates via an HTTPS POST request\n       from our system to yours. \n       \n       You can selectively subscribe to different resources and events"
-    },
-    {
       "name": "Workflows",
       "description": "Workflows group together common operations"
     },
     {
       "name": "Identity",
       "description": "Operations related to validating individual identities"
-    },
-    {
-      "name": "KYC",
-      "description": "Background and Monitored Lists checks for KYC"
     },
     {
       "name": "Documents",
