@@ -117,16 +117,18 @@
         "responses": {
           "200": {
             "content": {
-              "example": {
-                "_id": "62basd1210353542024952cc770",
-                "legelName": "TWO12",
-                "subscriptionAmount": "6000",
-                "email": "john@example.com",
-                "isSvp": true,
-                "companyId": "62basd1213542024952cc770"
-              },
-              "schema": {
-                "$ref": "#/components/schemas/CreateSurveyResponse"
+              "application/json": {
+                "example": {
+                  "_id": "62basd1210353542024952cc770",
+                  "legelName": "TWO12",
+                  "subscriptionAmount": "6000",
+                  "email": "john@example.com",
+                  "isSvp": true,
+                  "companyId": "62basd1213542024952cc770"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSurveyResponse"
+                }
               }
             }
           }
