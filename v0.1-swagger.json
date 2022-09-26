@@ -91,6 +91,46 @@
             }
           }
         }
+      },
+      "post": {
+        "x-controller-name": "companySurvey",
+        "tags":["Survey"],
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "legelName": "TWO12",
+                "subscriptionAmount": "6000",
+                "email": "john@example.com",
+                "isSvp": true,
+                "companyId": "62basd1213542024952cc770"
+              },
+              "schema": {
+                "$ref": "#/components/schemas/CreateSurvey"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "example": {
+                "_id": "62basd1210353542024952cc770",
+                "legelName": "TWO12",
+                "subscriptionAmount": "6000",
+                "email": "john@example.com",
+                "isSvp": true,
+                "companyId": "62basd1213542024952cc770"
+              },
+              "schema": {
+                "$ref": "#/components/schemas/CreateSurveyResponse"
+              }
+            }
+          }
+        }
       }
     },
     "/captable/all": {
@@ -40569,6 +40609,49 @@
             "type": "string"
           },
           "companyUrl": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateSurvey": {
+        "type": "object",
+        "properties": {
+          "legelName": {
+            "type": "string"
+          },
+          "subscriptionAmount": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "isSvp": {
+            "type": "boolean"
+          },
+          "companyId": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateSurveyResponse": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "legelName": {
+            "type": "string"
+          },
+          "subscriptionAmount": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "isSvp": {
+            "type": "boolean"
+          },
+          "companyId": {
             "type": "string"
           }
         }
