@@ -6298,6 +6298,134 @@
             }
           }
         }
+      },
+      "get": {
+        "x-controller-name": "KycController",
+        "x-operation-name": "getKyc",
+        "tags": ["KYC"],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "object_id": "apsn_11grpcbjmxct",
+                      "middesk_full": null,
+                      "middesk": null,
+                      "apply_true": null,
+                      "updated_at": "2021-11-10T02:42:13Z",
+                      "id": "akyc_11grpcc5mxdg",
+                      "alloy_full": {
+                        "error": null,
+                        "summary": {
+                          "tags": ["FakeKYCTag"],
+                          "score": 0.1,
+                          "result": "success",
+                          "outcome": "Manual Review",
+                          "services": {
+                            "mockservice1": "executed",
+                            "mockservice2": "executed"
+                          }
+                        },
+                        "diligence": {
+                          "kyc": "fake"
+                        }
+                      },
+                      "alloy": {
+                        "status": "pending",
+                        "entity_token": null
+                      },
+                      "created_at": "2021-11-10T02:42:13Z"
+                    },
+                    {
+                      "object_id": "apsn_11grpawtmx64",
+                      "middesk_full": null,
+                      "middesk": null,
+                      "apply_true": null,
+                      "updated_at": "2021-11-10T02:17:20Z",
+                      "id": "akyc_11grpaxgmx6w",
+                      "alloy_full": {
+                        "error": null,
+                        "summary": {
+                          "tags": ["FakeKYCTag"],
+                          "score": 0.1,
+                          "result": "success",
+                          "outcome": "Approved",
+                          "services": {
+                            "mockservice1": "executed",
+                            "mockservice2": "executed"
+                          }
+                        },
+                        "diligence": {
+                          "kyc": "fake"
+                        }
+                      },
+                      "alloy": {
+                        "status": "ok",
+                        "entity_token": null
+                      },
+                      "created_at": "2021-11-10T02:17:20Z"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apply/kyc/{kyc_id}": {
+      "get": {
+        "x-controller-name": "KycController",
+        "x-operation-name": "getKycByKyc_id",
+        "tags": ["KYC"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "kyc_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "object_id": "apsn_11h5e0ya9hxknt",
+                  "object_type": "person",
+                  "middesk_full": null,
+                  "middesk": null,
+                  "apply_true": null,
+                  "updated_at": "2022-06-08T20:16:10Z",
+                  "id": "akyc_11h5ejd29hz86r",
+                  "alloy_full": {
+                    "error": null,
+                    "summary": {
+                      "tags": ["FakeKYCTag"],
+                      "score": 0.1,
+                      "result": "success",
+                      "outcome": "Approved",
+                      "services": {
+                        "mockservice1": "executed",
+                        "mockservice2": "executed"
+                      }
+                    },
+                    "diligence": {
+                      "kyc": "fake"
+                    }
+                  },
+                  "alloy": {
+                    "status": "ok",
+                    "entity_token": null
+                  },
+                  "created_at": "2022-04-13T22:07:30Z",
+                  "kyc_product_id": null
+                }
+              }
+            }
+          }
+        }
       }
     },
     "apply/kyc_product/{kyc_product_id}": {
