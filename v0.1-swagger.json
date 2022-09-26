@@ -12,6 +12,157 @@
     }
   },
   "paths": {
+    "/sign-up": {
+      "post": {
+        "x-controller-name": "organizerSignUp",
+        "tags":["Organizer Sign-Up"],
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "62bae312353542024952caeea",
+                "startDate": "2022-09-22T18:22:46.470Z",
+                "pricePerShare": "21.61953",
+                "roundName": "COMMON",
+                "roundNumber": "25",
+                "preMoneyValuation": "0",
+                "roundType": "COMMON",
+                "conversionMethod": "",
+                "valuationCap": "",
+                "interestRate": "",
+                "discountRate": "",
+                "interestType": "",
+                "maturityDate": "",
+                "dilutionProtection": "NONE",
+                "totalAuthorizedCommonShares": "",
+                "totalAuthorizedPreferredShares": "",
+                "optionPoolSharePercent": "",
+                "commonPoolShareCount": "",
+                "currentSplit": "",
+                "newSplit": "",
+                "duration": "",
+                "optionPoolShareCount": "5495595",
+                "warrantPoolShareCount": "",
+                "classTypeId": "62baebd153542024952cc6c5",
+                "principalConverts": false,
+                "interestEndDate": "",
+                "stage": "",
+                "seniority": "1",
+                "allowPreVested": false,
+                "convertsTo": "",
+                "precisionDigits": "5",
+                "convertNotes": [],
+                "preference": "NO",
+                "multiple": "",
+                "cap": "",
+                "footNote": false,
+                "dividend": false,
+                "dividendRate": "",
+                "customStockSplitInfo": false,
+                "manualStockGrantsInfo": false,
+                "safeConvertOnExit": false,
+                "isPostSafe": false,
+                "multiClass": false,
+                "selectedCfRound": ""
+              },
+              "schema": {
+                "$ref": "#/components/schemas/CreateCaptableRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "_id": "62basd1210353542024952cc770",
+                      "customStockSplitInfo": {
+                        "allParticipants": false,
+                        "capTableParticipantIds": []
+                      },
+                      "manualStockGrantsInfo": {
+                        "allParticipants": false,
+                        "capTableParticipants": []
+                      },
+                      "roundName": "FORMATION",
+                      "roundType": "FORMATION",
+                      "cNoteType": "PRE_MONEY",
+                      "multiClass": false,
+                      "dilutionProtection": "NONE",
+                      "displayAllShares": false,
+                      "footNote": false,
+                      "updateAllProRata": false,
+                      "isFavourite": false,
+                      "isPostSafe": false,
+                      "dividend": false,
+                      "documents": [],
+                      "splitRatio": {
+                        "current": "0",
+                        "new": "0"
+                      },
+                      "companyId": "62bae3d4343542024952caeea",
+                      "startDate": "2016-06-15T11:57:00.000Z",
+                      "pricePerShare": 0.000001,
+                      "precisionDigits": "5",
+                      "roundNumber": 1,
+                      "preMoneyValuation": "0",
+                      "valuationCap": "",
+                      "interestRate": "",
+                      "discountRate": "",
+                      "optionPoolShareCount": "0",
+                      "duration": "0",
+                      "seniority": "1",
+                      "allowPreVested": false,
+                      "preference": "NO",
+                      "multiple": "",
+                      "cap": "",
+                      "classTypeId": "62baebd11fw542024952cc6c5",
+                      "updateAllMaturityDates": false,
+                      "safeConvertOnExit": false,
+                      "dividendRate": "",
+                      "pricePerShareCf": 0.000001,
+                      "preMoneyValuationCf": "0",
+                      "totalShareCount": 8300000,
+                      "totalShareCountActual": 8300000,
+                      "totalShareCountCf": 8300000,
+                      "totalShareCountCfActual": 8300000,
+                      "totalActualShareCount": 8300000,
+                      "totalOutstandingShareCount": 8300000,
+                      "unIssuedOptions": 0,
+                      "unIssuedWarrants": 0,
+                      "unIssuedCommons": 0,
+                      "postMoneyValuation": 0,
+                      "overrideCalculation": false,
+                      "convertsTo": "",
+                      "commonPoolShareCount": "0",
+                      "participation": "NON_PARTICIPATING",
+                      "participants": [],
+                      "investmentAmount": 0,
+                      "totalActualShareCountForPercent": 8300000,
+                      "totalOutstandingShareCountForPercent": 8300000,
+                      "dilutionFactorMap": {
+                        "BROAD_WEIGHTED_AVERAGE": 1,
+                        "NARROW_WEIGHTED_AVERAGE": 1,
+                        "FULL_RATCHET": 1,
+                        "NONE": 1
+                      },
+                      "fullyDilutedShareCount": 8300000,
+                      "fullyDilutedShareCountForPercent": 8300000
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/captable/all": {
       "get": {
         "x-controller-name": "CaptableController",
@@ -40480,6 +40631,22 @@
     }
   ],
   "tags": [
+    {
+      "name": "Organizer Sign-Up",
+      "description": "Organizer Sign Up"
+    },
+    {
+      "name": "Survey (Organizer)",
+      "description": "Survey (Organizer)"
+    },
+    {
+      "name": "Upload documents",
+      "description": "Upload Documents"
+    },
+    {
+      "name": "Invite LPs",
+      "description": "Invide Lps (Deal docs and Commits)"
+    },
     {
       "name": "Captable",
       "description": "Captable apis."
