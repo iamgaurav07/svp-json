@@ -53,6 +53,46 @@
         }
       }
     },
+    "/companySurvey": {
+      "get": {
+        "x-controller-name": "companySurvey",
+        "tags":["Survey"],
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "in": "path",
+            "name": "companyId",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "62basd1210353542024952cc770"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "_id": "62basd1210353542024952cc770",
+                  "firstName": "John",
+                  "lastName": "Doe",
+                  "email": "john@example.com",
+                  "amount": "6,000",
+                  "companyUrl": "https://www.example.com"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/captable/all": {
       "get": {
         "x-controller-name": "CaptableController",
@@ -40546,7 +40586,7 @@
       "description": "Organizer Sign Up"
     },
     {
-      "name": "Survey (Organizer)",
+      "name": "Survey",
       "description": "Survey (Organizer)"
     },
     {
