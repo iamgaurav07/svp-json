@@ -1164,6 +1164,113 @@
         "parameters": []
       }
     },
+    "/apply/business_application": {
+      "post": {
+        "x-controller-name": "AccreditationController",
+        "x-operation-name": "replaceById",
+        "tags": ["Banking"],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "example": {
+                  "description": "Our company is engaged in the buying and selling of [...]",
+                  "urls": ["http://example.com"],
+                  "bankdata": null,
+                  "phone_number": "+1 415-555-1111",
+                  "bank_id": "bank_treasuryprime",
+                  "tin": "11-3344555",
+                  "legal_structure": "llc",
+                  "mailing_address": {
+                    "street_line_1": "1300 L St",
+                    "street_line_2": null,
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "postal_code": "95814",
+                    "country": "US"
+                  },
+                  "naics_description": "Wholesale Trade",
+                  "name": "Acme Goods Inc",
+                  "org_id": "org_1fc9c4m1qh0",
+                  "physical_address": {
+                    "street_line_1": "115 W G St",
+                    "street_line_2": null,
+                    "city": "Benicia",
+                    "state": "CA",
+                    "postal_code": "94510",
+                    "country": "US"
+                  },
+                  "naics": "42",
+                  "incorporation_state": "DE",
+                  "dba": null,
+                  "updated_at": "2021-09-28T20:44:23Z",
+                  "document_ids": [],
+                  "id": "abus_11gn6zn74k8tgh",
+                  "established_on": "2014-08-01",
+                  "parent_businesses": [],
+                  "person_applications": [
+                    {
+                      "id": "apsn_11gn6ydt4k5dr0",
+                      "roles": ["control_person", "signer"],
+                      "ownership_percentage": 30,
+                      "title": "CFO"
+                    }
+                  ],
+                  "created_at": "2021-09-28T20:44:23Z",
+                  "userdata": null
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/CreateBusinessAccountResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "description": "Our company is engaged in the buying and selling of [...]",
+                "established_on": "2014-08-01",
+                "incorporation_state": "DE",
+                "legal_structure": "llc",
+                "mailing_address": {
+                  "street_line_1": "1300 L St",
+                  "city": "Sacramento",
+                  "state": "CA",
+                  "postal_code": "95814"
+                },
+                "naics": "42",
+                "naics_description": "Wholesale Trade",
+                "name": "Acme Goods Inc",
+                "person_applications": [
+                  {
+                    "id": "{{person_application_id}}",
+                    "roles": ["control_person", "signer"],
+                    "ownership_percentage": 30,
+                    "title": "CFO"
+                  }
+                ],
+                "phone_number": "4155551111",
+                "physical_address": {
+                  "street_line_1": "115 W G St",
+                  "city": "Benicia",
+                  "state": "CA",
+                  "postal_code": "94510"
+                },
+                "urls": ["http://example.com"],
+                "tin": "11-3344555"
+              },
+              "schema": {
+                "$ref": "#/components/schemas/CreateBusinessAccountRequest"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        }
+      }
+    },
     "/accreditations/count": {
       "get": {
         "x-controller-name": "AccreditationController",
@@ -1866,1458 +1973,6 @@
                   "$ref": "#/components/schemas/Asset.Filter1"
                 }
               }
-            }
-          }
-        ]
-      }
-    },
-    "/banking/ACHBeneficiaries": {
-      "post": {
-        "x-controller-name": "BankingBeneficiariesController",
-        "x-operation-name": "createACHBankingBeneficiary",
-        "tags": ["Banking"],
-        "operationId": "createACHBankingBeneficiary",
-        "summary": "Create a ACH Banking Beneficiary",
-        "description": "Create a ACH Banking Beneficiary with the supplied data",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankingBeneficiary"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "nameOnAccount",
-                  "accountNumber",
-                  "routingNumber",
-                  "accountType"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "phone": {
-                    "type": "string"
-                  },
-                  "nameOnAccount": {
-                    "type": "string"
-                  },
-                  "accountNumber": {
-                    "type": "string"
-                  },
-                  "routingNumber": {
-                    "type": "string"
-                  },
-                  "accountType": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/banking/account/{accountId}/ach": {
-      "post": {
-        "x-controller-name": "BankAccountController",
-        "x-operation-name": "createACHTransaction",
-        "tags": ["Banking"],
-        "operationId": "createACHTransaction",
-        "summary": "Create an ACH Transaction",
-        "description": "Create an ACH Transaction with the supplied data",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "accountId": {
-                    "type": "string"
-                  },
-                  "subAccountId": {
-                    "type": "string"
-                  },
-                  "direction": {
-                    "type": "string",
-                    "enum": ["CREDIT", "DEBIT"]
-                  },
-                  "nameOnAccount": {
-                    "type": "string"
-                  }
-                },
-                "allOf": [
-                  {
-                    "required": [
-                      "accountId",
-                      "subAccountId",
-                      "direction",
-                      "amount"
-                    ]
-                  },
-                  {
-                    "properties": {
-                      "amount": {
-                        "type": "number",
-                        "minimum": 0.01,
-                        "multipleOf": 0.01
-                      },
-                      "routing": {
-                        "type": "string"
-                      },
-                      "account": {
-                        "type": "string"
-                      },
-                      "typeOfAccount": {
-                        "type": "string",
-                        "enum": ["CHECKING", "SAVINGS"]
-                      }
-                    },
-                    "required": [
-                      "amount",
-                      "routing",
-                      "account",
-                      "typeOfAccount",
-                      "direction"
-                    ]
-                  }
-                ]
-              }
-            }
-          },
-          "required": true,
-          "x-parameter-index": 1
-        }
-      }
-    },
-    "/banking/account/{bankAccountId}/transactions": {
-      "get": {
-        "x-controller-name": "BankAccountController",
-        "x-operation-name": "getTransactions",
-        "tags": ["Banking"],
-        "operationId": "getBankAccountTransactions",
-        "summary": "List Transactions from the Bank Account",
-        "description": "Returns the Transaction Listing from the Bank Account",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "amount": {
-                        "type": "number",
-                        "minimum": 0.01,
-                        "multipleOf": 0.01,
-                        "description": "Transaction amount.  Note that transactions with type `hold` have an amount, but they do not change the balance."
-                      },
-                      "date": {
-                        "type": "string",
-                        "format": "date",
-                        "description": "ISO 8601 format (\"YYYY-MM-DD\")"
-                      },
-                      "desc": {
-                        "type": "string",
-                        "description": "Transaction description."
-                      },
-                      "book_id": {
-                        "type": "string",
-                        "nullable": true,
-                        "description": "The ID of the Booking Transfer object that originated this transaction, if any. Otherwise null."
-                      },
-                      "type": {
-                        "type": "string",
-                        "nullable": true,
-                        "enum": [
-                          "charge",
-                          "deposit",
-                          "hold",
-                          "hold_release",
-                          "interest",
-                          "reversal",
-                          "withdrawal"
-                        ],
-                        "description": "Type of transaction. One of `charge`, `deposit`, `hold`, `hold_release`, `interest`, `payment`, `reversal`, `withdrawal`, or `null`."
-                      },
-                      "summary": {
-                        "type": "string",
-                        "description": "Summary description of the transaction."
-                      },
-                      "balance": {
-                        "type": "string",
-                        "minLength": 1,
-                        "multipleOf": 0.01,
-                        "description": "Account balance immediately after this transaction. Transactions of type `hold` do not affect the balance."
-                      },
-                      "id": {
-                        "type": "string",
-                        "description": "ID for this transaction."
-                      },
-                      "ach_id": {
-                        "type": "string",
-                        "nullable": true,
-                        "description": "The ID of the ACH object that originated this transaction, if any. Otherwise null."
-                      },
-                      "wire_id": {
-                        "type": "string",
-                        "nullable": true,
-                        "description": "The ID of the Wire object that originated this transaction, if any. Otherwise null."
-                      },
-                      "wire": {
-                        "type": "string",
-                        "nullable": true,
-                        "description": "For wire transactions, the Fedwire description, if any. Otherwise null."
-                      },
-                      "fingerprint": {
-                        "type": "string",
-                        "description": "A unique fingerprint for this transaction."
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "Incoming ACH Transaction": {
-                    "description": "Example of DEBIT ACH Transaction",
-                    "value": [
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "10.00",
-                        "date": "2021-09-13",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - Example - 11gkqangdfdfs",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "deposit",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "5.00",
-                        "id": "ctx_1k8s7102egddtgs",
-                        "ach_id": "ach_11gkqangdfdfs",
-                        "fingerprint": "4ef07ba7ce76451240bce807089faf672267bbe5"
-                      }
-                    ]
-                  },
-                  "Outgoing ACH Transaction": {
-                    "description": "Example of CREDIT ACH Transaction",
-                    "value": [
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "10.00",
-                        "date": "2021-09-13",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - Example - 11gkqangdfdfs",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "withdrawal",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "5.00",
-                        "id": "ctx_1k8s7102egdgtbk6",
-                        "ach_id": "ach_11gkqangdfdfs",
-                        "fingerprint": "4ef07ba7ce76451240bce807089faf672267beb7"
-                      }
-                    ]
-                  },
-                  "Multiple Transaction Types": {
-                    "description": "Example of Multiple Transaction Types",
-                    "value": [
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "113.00",
-                        "date": "2021-09-17",
-                        "wire_id": "wire_11gm9qnadpsdsw",
-                        "desc": "WIRE OUT John Doe",
-                        "wire": "ACME CORP VENDOR PMT",
-                        "book_id": "book_1k8s7102ehgtbk3",
-                        "type": "withdrawal",
-                        "incoming_wire": null,
-                        "summary": "ACME CORP VENDOR PMT",
-                        "balance": "0.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s7502epdp5ws1",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": null,
-                        "fingerprint": "bbd13484e9b77e6e9e96cb571b2bf1b7c76dfdsa2",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "4.00",
-                        "date": "2021-09-13",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - Example - 11gkq9scddwdsdf",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "withdrawal",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "113.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s7102endse3s",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkq9scddwdsdf",
-                        "fingerprint": "b1efec6fc9d429dbe10a8794e091c47933b0dfsdf",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "5.00",
-                        "date": "2021-09-13",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - Example - 11gkq9g1dwvts",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "withdrawal",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "117.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s7102emdfae4s",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkq9g1dwvts",
-                        "fingerprint": "b696b8dbce64ac98a7d3990779314afac3sd23sa4",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "5.00",
-                        "date": "2021-09-13",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - ACH - 11gkq9g0dd12d23s",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "withdrawal",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "122.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s7102ekdsds34sd",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkq9g0dd12d23s",
-                        "fingerprint": "c7977c438c1c21451f3b664ceaeasdfa3sdf23sd",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "10.00",
-                        "date": "2021-09-13",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - ACH - 11gkq9g0dddws4s",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "withdrawal",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "127.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s7102ea11ds",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkq9g0dddws4s",
-                        "fingerprint": "0af22c3404976a8d7556b29ebe7f7ab6033ds23s",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "10.00",
-                        "date": "2021-09-13",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - ACH - 11gkq8x83sd229",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "withdrawal",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "137.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s7102ehdgtbfs",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkq8x83sd229",
-                        "fingerprint": "3fc6f1929404f2b2c4bbe04d8900adfdc233aa3se",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "5.00",
-                        "date": "2021-09-13",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - ACH - 11gkq8x8nsdfy",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "withdrawal",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "147.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s71dfsdftbft",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkq8x8nsdfy",
-                        "fingerprint": "3c384ecf210afe3c72d8bd399b12fb213234adc8c1",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "10.00",
-                        "date": "2021-09-13",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - ACH- 11gkq8x8ddwddsb",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "withdrawal",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "152.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s7102dgdgtbfv",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkq8x8ddwddsb",
-                        "fingerprint": "4d2453eb1585981ec7141495ac846444adsded102",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "1.00",
-                        "date": "2021-09-09",
-                        "wire_id": null,
-                        "desc": "Transfer from 420433323",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "deposit",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "162.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s2eeasd86",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": null,
-                        "fingerprint": "90966551c9a79b2d03c87f477aa88434c922232397",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "1.00",
-                        "date": "2021-09-09",
-                        "wire_id": null,
-                        "desc": "Transfer from 42049933",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "deposit",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "161.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s6x02eddcvn87",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": null,
-                        "fingerprint": "1a4998bb6d94462886f5ec1d2934ac782drd00e",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "100.00",
-                        "date": "2021-09-09",
-                        "wire_id": null,
-                        "desc": "WIRE IN JOHN DOE",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "deposit",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "160.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s6x02ssbssda23eg",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": null,
-                        "fingerprint": "e411211d334a01e44fe50b413216099151d91003",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "5.00",
-                        "date": "2021-09-09",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - ACH- 11gkj0dgdb4dfdw",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "deposit",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "60.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s6x02ebdc7z4r",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkj0dgdb4dfdw",
-                        "fingerprint": "6114a6969f0002424abdbde82c82383a3sdf53ed2b",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "10.00",
-                        "date": "2021-09-09",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - ACH- 11gkj0dsdfkp9h",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "deposit",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "55.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s6x02a3sdc7z4s",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkj0dsdfkp9h",
-                        "fingerprint": "b26a8712ae05528a6ad09e5d3454s86f1636c81081",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      },
-                      {
-                        "check_id": null,
-                        "type_source": null,
-                        "amount": "5.00",
-                        "date": "2021-09-09",
-                        "wire_id": null,
-                        "desc": "TWO12 Tech - ACH - 11gkj19mmabbm299",
-                        "wire": null,
-                        "book_id": null,
-                        "type": "deposit",
-                        "incoming_wire": null,
-                        "summary": "",
-                        "balance": "45.00",
-                        "billpay_payment_id": null,
-                        "id": "ctx_1k8s6x02e9dc7z4t",
-                        "trace_id": null,
-                        "extended_timestamp": null,
-                        "ach_id": "ach_11gkj19mmabbm299",
-                        "fingerprint": "5cad515b1fec309e5f86aba36bd389a5445d8d459",
-                        "check_number": null,
-                        "related_transfer_ids": []
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "bankAccountId",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
-      }
-    },
-    "/banking/account/{accountId}/wire": {
-      "post": {
-        "x-controller-name": "BankAccountController",
-        "x-operation-name": "createWireTransaction",
-        "tags": ["Banking"],
-        "operationId": "createWireTransaction",
-        "summary": "Create an Outgoing Wire Transaction",
-        "description": "Create a Wire Transaction with the supplied data",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "example": {
-                  "id": "6151b6dbd4ad990013efdf12ed",
-                  "transactionId": "wire_11gn467cdzdfw1sd",
-                  "bankAccountId": "qwe123123",
-                  "amount": 100.01,
-                  "counterpartyId": "cp_q231232",
-                  "createdAt": "2021-03-31T16:04:08Z",
-                  "updatedAt": "2021-03-31T16:04:08Z",
-                  "addedToNetwork": "2021-03-31T16:04:08Z",
-                  "direction": "CREDIT",
-                  "type": "WIRE",
-                  "status": "SENT",
-                  "instructions": "Payment on Example"
-                },
-                "schema": {
-                  "$ref": "#/components/schemas/Transaction1"
-                }
-              }
-            }
-          },
-          "412": {
-            "description": "Insufficient current balance to initiate the transaction"
-          }
-        },
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "direction",
-                  "nameOnAccount",
-                  "addressOnAccount",
-                  "bankAddress",
-                  "bankName",
-                  "account",
-                  "routing",
-                  "amount"
-                ],
-                "properties": {
-                  "direction": {
-                    "title": "Direction",
-                    "description": "The direction of the transaction from the perspective \n                of the originating account. For Wire transactions, this can only be `CREDIT` ",
-                    "type": "string",
-                    "enum": ["CREDIT"]
-                  },
-                  "nameOnAccount": {
-                    "title": "Name on Account",
-                    "description": "The Account Holder's name on the receiving account",
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "addressOnAccount": {
-                    "$ref": "#/components/schemas/AddressOnAccount"
-                  },
-                  "bankAddress": {
-                    "$ref": "#/components/schemas/BankAddress"
-                  },
-                  "bankName": {
-                    "title": "Bank Name",
-                    "description": "The Name of the receiving Bank",
-                    "type": "string",
-                    "minLength": 3
-                  },
-                  "account": {
-                    "title": "Account Number",
-                    "description": "The account number of the receiving account",
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "routing": {
-                    "title": "Routing",
-                    "description": "The routing number of the receiving account",
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "instructions": {
-                    "title": "Instructions",
-                    "description": "Additional instructions for the Wire. Limited to 140 characters.",
-                    "type": "string",
-                    "maxLength": 140
-                  },
-                  "amount": {
-                    "title": "Amount",
-                    "description": "Amount",
-                    "type": "number"
-                  }
-                },
-                "example": {
-                  "description": "Wire Transaction Example",
-                  "value": {
-                    "direction": "CREDIT",
-                    "nameOnAccount": "John Smith",
-                    "addressOnAccount": {
-                      "address1": "123 Main St",
-                      "address2": "200 S",
-                      "city": "Salt Lake City",
-                      "region": "Utah",
-                      "postalCode": "84101",
-                      "country": "United States of America"
-                    },
-                    "bankAddress": {
-                      "address1": "123 Main St",
-                      "address2": "200 S",
-                      "city": "Salt Lake City",
-                      "region": "Utah",
-                      "postalCode": "84101",
-                      "country": "United States of America"
-                    },
-                    "bankName": "Example Bank",
-                    "account": "10000000",
-                    "routing": "021000021",
-                    "instructions": "Payment on Example",
-                    "amount": 100.01
-                  }
-                }
-              }
-            }
-          },
-          "required": true,
-          "x-parameter-index": 1
-        }
-      }
-    },
-    "/banking/account/{accountId}": {
-      "get": {
-        "x-controller-name": "BankAccountController",
-        "x-operation-name": "getBankAccountById",
-        "tags": ["Banking"],
-        "operationId": "getBankAccountById",
-        "summary": "Get Bank Account by ID",
-        "description": "Get Bank Account by Id",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankAccountExcluding_providerMeta_",
-                  "parameters": {
-                    "currentBalance": {
-                      "type": "number"
-                    },
-                    "availableBalance": {
-                      "type": "number"
-                    }
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "description": "Example Get Bank Account By Id",
-                    "value": {
-                      "id": "d203b77d-c860-491c-a9fa-bf4110e4e8a7",
-                      "status": "OPEN",
-                      "accountNumber": "111111111",
-                      "routingNumber": "912312312",
-                      "accountName": "Test Account",
-                      "bankName": "The Provident Bank",
-                      "currentBalance": 10000.11,
-                      "availableBalance": 2000.85,
-                      "bankContact": {
-                        "name": "John Doe",
-                        "phone": "555-555-5555",
-                        "email": "john@test.com"
-                      },
-                      "swiftCode": "PRDIUS33",
-                      "bankAddress": "5 Market Street Amesbury, MA 01913",
-                      "createdAt": "2021-03-29T14:45:20.140Z",
-                      "updatedAt": "2021-03-29T14:45:30.430Z"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "accountId",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
-      }
-    },
-    "/banking/account": {
-      "post": {
-        "x-controller-name": "BankAccountController",
-        "x-operation-name": "createBankAccount",
-        "tags": ["Banking"],
-        "operationId": "createBankAccount",
-        "summary": "Create a Bank Account",
-        "description": "Create a Bank Account with the supplied data",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankAccount"
-                },
-                "examples": {
-                  "example-1": {
-                    "description": "Example Bank Account Creation Response",
-                    "value": {
-                      "id": "d203b77d-c860-491c-a9fa-bf4110e4e8a7",
-                      "status": "PENDING",
-                      "accountNumber": null,
-                      "routingNumber": null,
-                      "accountName": null,
-                      "bankName": null,
-                      "bankContact": null,
-                      "swiftCode": null,
-                      "bankAddress": null,
-                      "createdAt": "2021-03-29T14:45:20.140Z",
-                      "updatedAt": "2021-03-29T14:45:30.430Z"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": ["ein", "entityName"],
-                "properties": {
-                  "ein": {
-                    "type": "string",
-                    "maxLength": 11
-                  },
-                  "entityName": {
-                    "type": "string",
-                    "maxLength": 36
-                  }
-                }
-              },
-              "examples": {
-                "example-1": {
-                  "description": "Example Bank Account Creation Request",
-                  "value": {
-                    "ein": "12-3456789",
-                    "entityName": "Example LLC"
-                  }
-                }
-              }
-            }
-          },
-          "required": true
-        }
-      },
-      "get": {
-        "x-controller-name": "BankAccountController",
-        "x-operation-name": "listBankAcounts",
-        "tags": ["Banking"],
-        "operationId": "getBankAccounts",
-        "summary": "List Bank Accounts",
-        "description": "List Bank Accounts for the current user",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/List",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "itemType": {
-                        "$ref": "#/components/schemas/BankAccount",
-                        "definitions": {
-                          "BankAccount": {
-                            "$ref": "#/components/schemas/BankAccount"
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "examples": {
-                  "example-1": {
-                    "description": "Example Formation Request for EIN",
-                    "value": [
-                      {
-                        "id": "d203b77d-c860-491c-a9fa-bf4110e4e8a7",
-                        "status": "OPEN",
-                        "accountNumber": "111111111",
-                        "routingNumber": "912312312",
-                        "accountName": "Test Account",
-                        "bankName": "The Provident Bank"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "perPage",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 100
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "minimum": 0
-            }
-          },
-          {
-            "name": "filter",
-            "in": "query",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankAccount.Filter"
-                }
-              }
-            }
-          }
-        ]
-      }
-    },
-    "/banking/ach-beneficiaries/{beneficiaryId}": {
-      "put": {
-        "x-controller-name": "BankingBeneficiariesController",
-        "x-operation-name": "updateACHBeneficiaryById",
-        "tags": ["Banking"],
-        "operationId": "updateACHBeneficiaryById",
-        "summary": "Update an ACH Beneficiary",
-        "description": "Update an ACH Beneficiary with the supplied data",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankingBeneficiary"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "beneficiaryId",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "nameOnAccount",
-                  "accountNumber",
-                  "routingNumber",
-                  "accountType"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "phone": {
-                    "type": "string"
-                  },
-                  "nameOnAccount": {
-                    "type": "string"
-                  },
-                  "accountNumber": {
-                    "type": "string"
-                  },
-                  "routingNumber": {
-                    "type": "string"
-                  },
-                  "accountType": {
-                    "type": "string"
-                  },
-                  "type": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "x-parameter-index": 1
-        }
-      }
-    },
-    "/banking/beneficiaries/{beneficiaryId}": {
-      "put": {
-        "x-controller-name": "BankingBeneficiariesController",
-        "x-operation-name": "updateBeneficiaryById",
-        "tags": ["Banking"],
-        "operationId": "updateBeneficiaryById",
-        "summary": "Update a Beneficiary",
-        "description": "Update a Beneficiary with the supplied data",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankingBeneficiary"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "beneficiaryId",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "name",
-                  "routingNumber",
-                  "accountNumber",
-                  "bankName",
-                  "bankAddress",
-                  "addressOnAccount",
-                  "type"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "string"
-                  },
-                  "ownerId": {
-                    "type": "string"
-                  },
-                  "tenantId": {
-                    "type": "string"
-                  },
-                  "serviceObjectId": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "phone": {
-                    "type": "string"
-                  },
-                  "routingNumber": {
-                    "type": "string"
-                  },
-                  "accountNumber": {
-                    "type": "string"
-                  },
-                  "bankName": {
-                    "type": "string"
-                  },
-                  "bankAddress": {
-                    "type": "object",
-                    "properties": {
-                      "street_1": {
-                        "type": "string"
-                      },
-                      "street_2": {
-                        "type": "string"
-                      },
-                      "city": {
-                        "type": "string"
-                      },
-                      "postal_code": {
-                        "type": "string"
-                      },
-                      "region": {
-                        "type": "string",
-                        "maxLength": 2
-                      },
-                      "country": {
-                        "type": "string",
-                        "maxLength": 2
-                      }
-                    }
-                  },
-                  "addressOnAccount": {
-                    "type": "object",
-                    "properties": {
-                      "street_1": {
-                        "type": "string"
-                      },
-                      "street_2": {
-                        "type": "string"
-                      },
-                      "city": {
-                        "type": "string"
-                      },
-                      "postal_code": {
-                        "type": "string"
-                      },
-                      "region": {
-                        "type": "string",
-                        "maxLength": 2
-                      },
-                      "country": {
-                        "type": "string",
-                        "maxLength": 2
-                      }
-                    }
-                  },
-                  "type": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "x-parameter-index": 1
-        }
-      },
-      "delete": {
-        "x-controller-name": "BankingBeneficiariesController",
-        "x-operation-name": "softDeleteById",
-        "tags": ["Banking"],
-        "operationId": "deleteBeneficiary",
-        "summary": "Delete a Beneficiary",
-        "description": "Delete the specified beneficiary",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request"
-          }
-        },
-        "parameters": [
-          {
-            "name": "beneficiaryId",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
-      }
-    },
-    "/banking/beneficiaries/{id}": {
-      "get": {
-        "x-controller-name": "BankingBeneficiariesController",
-        "x-operation-name": "getBankingBeneficiaryById",
-        "tags": ["Banking"],
-        "operationId": "getBankingBeneficiary",
-        "summary": "Get Banking Beneficiary by Id",
-        "description": "Get Banking Beneficiaries with the provided Id",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankingBeneficiary"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ]
-      }
-    },
-    "/banking/beneficiaries": {
-      "post": {
-        "x-controller-name": "BankingBeneficiariesController",
-        "x-operation-name": "createBankingBeneficiary",
-        "tags": ["Banking"],
-        "operationId": "createBankingBeneficiary",
-        "summary": "Create a Banking Beneficiary",
-        "description": "Create a Banking Beneficiary with the supplied data",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankingBeneficiary"
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "name",
-                  "routingNumber",
-                  "accountNumber",
-                  "bankName",
-                  "bankAddress",
-                  "addressOnAccount"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "phone": {
-                    "type": "string"
-                  },
-                  "routingNumber": {
-                    "type": "string"
-                  },
-                  "accountNumber": {
-                    "type": "string"
-                  },
-                  "bankName": {
-                    "type": "string"
-                  },
-                  "bankAddress": {
-                    "type": "object",
-                    "properties": {
-                      "street_1": {
-                        "type": "string"
-                      },
-                      "street_2": {
-                        "type": "string"
-                      },
-                      "city": {
-                        "type": "string"
-                      },
-                      "postal_code": {
-                        "type": "string"
-                      },
-                      "region": {
-                        "type": "string",
-                        "maxLength": 2
-                      },
-                      "country": {
-                        "type": "string",
-                        "maxLength": 2
-                      }
-                    }
-                  },
-                  "addressOnAccount": {
-                    "type": "object",
-                    "properties": {
-                      "street_1": {
-                        "type": "string"
-                      },
-                      "street_2": {
-                        "type": "string"
-                      },
-                      "city": {
-                        "type": "string"
-                      },
-                      "postal_code": {
-                        "type": "string"
-                      },
-                      "region": {
-                        "type": "string",
-                        "maxLength": 2
-                      },
-                      "country": {
-                        "type": "string",
-                        "maxLength": 2
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "get": {
-        "x-controller-name": "BankingBeneficiariesController",
-        "x-operation-name": "listBankingBeneficiaries",
-        "tags": ["Banking"],
-        "operationId": "getBankingBeneficiaries",
-        "summary": "List Banking Beneficiaries",
-        "description": "List Banking Beneficiaries for the current user",
-        "security": [
-          {
-            "oAuth2": ["clientCredentials", "authorizationCode"]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expected response to a valid request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BankingBeneficiariesList"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "perPage",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 100
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "minimum": 0
             }
           }
         ]
@@ -40666,6 +39321,181 @@
             "type": "string"
           },
           "object_type": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateBusinessAccountRequest": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "established_on": {
+            "type": "string"
+          },
+          "incorporation_state": {
+            "type": "string"
+          },
+          "legal_structure": {
+            "type": "string"
+          },
+          "mailing_address": {
+            "type": "object",
+            "properties": {
+              "street_line_1": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "postal_code": {
+                "type": "string"
+              }
+            }
+          },
+          "naics": {
+            "type": "string"
+          },
+          "naics_description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "person_applications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "roles": {
+                  "type": "array"
+                },
+                "ownership_percentage": {
+                  "type": "integer"
+                },
+                "title": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "physical_address": {
+            "street_line_1": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            }
+          },
+          "urls": {
+            "type": "array"
+          },
+          "tin": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateBusinessAccountResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "established_on": {
+            "type": "string"
+          },
+          "incorporation_state": {
+            "type": "string"
+          },
+          "legal_structure": {
+            "type": "string"
+          },
+          "mailing_address": {
+            "type": "object",
+            "properties": {
+              "street_line_1": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "postal_code": {
+                "type": "string"
+              }
+            }
+          },
+          "naics": {
+            "type": "string"
+          },
+          "naics_description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "person_applications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "roles": {
+                  "type": "array"
+                },
+                "ownership_percentage": {
+                  "type": "integer"
+                },
+                "title": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "physical_address": {
+            "street_line_1": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "postal_code": {
+              "type": "string"
+            }
+          },
+          "urls": {
+            "type": "array"
+          },
+          "tin": {
             "type": "string"
           }
         }
