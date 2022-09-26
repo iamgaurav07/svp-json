@@ -2,13 +2,13 @@
   "openapi": "3.0.0",
   "info": {
     "title": "TWO12 API Reference",
-    "description": "<aside class=\"warning\">Note:  This API specification is currently beta.  The schema definitions as described are not subject to change.  However new fields or schemas may be added.  Please contact <a href=\"mailto:support@svp.two.co\">support@svp.two.co</a> for questions or feedback.</aside>\n\nThe TWO12 API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer).  Our API has predictable resource-oriented URLs, accepts and returns [JSON-encoded](http://www.json.org/) request and responses bodies, and uses standard HTTP response codes, authentication, and verbs.\n\nThe TWO12 API may differ for every account as we release new versions and tailor functionality based on customer needs.  The API specification below is universally available.\n\n## Cross-Origin Resource Sharing\nThis API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/). And that allows cross-domain communication from the browser.\n\nAll responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.\n## Request Basics\n### Headers\nCurrently, this API only communicates with JSON, so in some situations you may need to set `Accept` or `Content-Type` to `application/json`.\nTwo12 Technology enables platforms and applications for a variety of organizations and users. To ensure an orderly separation of resource ownership this API requires a tenant identification in all requests.  In the request header, set the value `x-tenant-id` to your id. All requests without this value will be rejected with a 401 response.\n",
-    "version": "1",
-    "termsOfService": "https://svp.TWO12.co",
+    "description": "<aside class=\"warning\">\n\nNote:  This API specification is currently alpha.  The schema definitions as described are subject to change.  New fields or schemas will be added.  Please contact <a href=\"mailto:support@two12.co\">support@two12.co</a> for questions or feedback.</aside>\n\nThe TWO12 API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer).  Our API has predictable resource-oriented URLs, accepts and returns [JSON-encoded](http://www.json.org/) request and response bodies, and uses standard HTTP response codes, authentication, and verbs.\n\nThe TWO12 API may differ for every account as we release new versions and tailor functionality based on customer needs.\n\n## Request Basics\n### Headers\nCurrently, this API only communicates with JSON, so in some situations you may need to set `Accept` or `Content-Type` to `application/JSON.\nTWO12 Technology enables platforms and applications for various organizations and users. To ensure an orderly separation of resource ownership, this API requires tenant identification in all requests.  In the request header, set the value `x-tenant-id` to your id. All requests without this value will be rejected with a 401 response.\n",
+    "version": "Version 0.2",
+    "termsOfService": "https://two12.co/terms",
     "contact": {
       "name": "API Support",
-      "url": "https://svp.two12.co",
-      "email": "info@svp.two12.co"
+      "url": "https://svp.TWO12.co",
+      "email": "info@svp.TWO12.co"
     }
   },
   "paths": {
