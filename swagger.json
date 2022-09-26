@@ -172,7 +172,7 @@
       "get": {
         "x-controller-name": "CaptableController",
         "x-operation-name": "getAllCaptable",
-        "summary": "Fetch Captables",
+        "summary": "Fetch Cap tables",
         "tags": ["Cap table"],
         "operationId": "",
         "deprecated": false,
