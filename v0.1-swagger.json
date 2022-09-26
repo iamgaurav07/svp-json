@@ -10324,27 +10324,27 @@
     }
   },
   "components": {
-    "securitySchemes": {
-      "oAuth2": {
-        "type": "oauth2",
-        "description": "This API only supports [OAuth 2.0](https://oauth.net/2/) for authentication and authorization. Specifically, it supports two options for OAuth2 grants, Client Credential and Authorization Code\nOAuth 2.0 is the industry-standard protocol for authorization. OAuth 2.0 focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. This list describes the components of an OAuth2 grant flow:\n<ul> <li>Client Application — the application that needs to access the protected resource.</li> <li>Resource Owner — the owner of a protected resource, this is typically a user.  A protected resource could be a bank account.</li> <li>Authorization Endpoint(s) — the API service that issues auth tokens.</li> <li>Resource Endpoint(s) — the API service that returns the requested protected resource.</li> </ul>\n\nThe Client Credentials grant type is used by clients to obtain an access token outside of the context of a user.  This is typically used by clients to access resources about themselves rather than to access a user's resources.\n<img src=\"./images/spec/oauth2-client-credentials.png\" />\nThe process to obtain a token:\n<ol> <li>The Client Application sends an request to the Authorization Endpoing (`/oauth2/token`) with the client id and client secret in the request body. This request may include requested scopes.</li> <li>In the response, the Authorization Endpoint sends an Access Token (JWT).</li> <li>The Client Application uses the Access Token to call Resource Endpoints.</li> </ol>\n\nThe Authorization Code grant type is used by confidential and public clients to exchange an authorization code for an access token.  After the user returns to the client via the redirect URL, the application will get the authorization code from the URL and use it to request an access token.\n<img src=\"./images/spec/oauth2-auth-code.png\" />\n<ol> <li>The Client initiates the flow by redirecting the User Agent of the Resource Owner to the Authorization Server. The Client includes its Client ID, requested scopes, and the redirect URI.</li> <li>Resource Owner authorizes the Client by granting permissions requested by the Client.</li> <li>Authorization Server redirects the User Agent back to the Client (using redirect URI from point 1). The redirect URI includes a temporary Authorization Code (as a query param).</li> <li>Client requests an Access Token from the Authorization Server. The request includes Client ID, Client Secret, and Authorization Code received in the previous step.</li> <li>If everything is valid, the Authorization Server returns Access Token and, optionally, a Refresh Token.</li> <li>The client uses the Access Token to call the Resource Server on behalf of the Resource Owner.</li> </ol>\n",
-        "flows": {
-          "clientCredentials": {
-            "tokenUrl": "/oauth2/token",
-            "refreshUrl": "/oauth2/refresh",
-            "scopes": {
-              "read": "Grant read-only access to all your data except for the account and user info",
-              "write": "Grant write-only access to all your data except for the account and user info"
-            }
-          },
-          "authorizationCode": {
-            "authorizationUrl": "http://localhost:8081/auth/realms/gbt/protocol/openid-connect/auth",
-            "tokenUrl": "http://localhost:8081/auth/realms/gbt/protocol/openid-connect/token",
-            "scopes": {}
-          }
-        }
-      }
-    },
+    // "securitySchemes": {
+    //   "oAuth2": {
+    //     "type": "oauth2",
+    //     "description": "This API only supports [OAuth 2.0](https://oauth.net/2/) for authentication and authorization. Specifically, it supports two options for OAuth2 grants, Client Credential and Authorization Code\nOAuth 2.0 is the industry-standard protocol for authorization. OAuth 2.0 focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. This list describes the components of an OAuth2 grant flow:\n<ul> <li>Client Application — the application that needs to access the protected resource.</li> <li>Resource Owner — the owner of a protected resource, this is typically a user.  A protected resource could be a bank account.</li> <li>Authorization Endpoint(s) — the API service that issues auth tokens.</li> <li>Resource Endpoint(s) — the API service that returns the requested protected resource.</li> </ul>\n\nThe Client Credentials grant type is used by clients to obtain an access token outside of the context of a user.  This is typically used by clients to access resources about themselves rather than to access a user's resources.\n<img src=\"./images/spec/oauth2-client-credentials.png\" />\nThe process to obtain a token:\n<ol> <li>The Client Application sends an request to the Authorization Endpoing (`/oauth2/token`) with the client id and client secret in the request body. This request may include requested scopes.</li> <li>In the response, the Authorization Endpoint sends an Access Token (JWT).</li> <li>The Client Application uses the Access Token to call Resource Endpoints.</li> </ol>\n\nThe Authorization Code grant type is used by confidential and public clients to exchange an authorization code for an access token.  After the user returns to the client via the redirect URL, the application will get the authorization code from the URL and use it to request an access token.\n<img src=\"./images/spec/oauth2-auth-code.png\" />\n<ol> <li>The Client initiates the flow by redirecting the User Agent of the Resource Owner to the Authorization Server. The Client includes its Client ID, requested scopes, and the redirect URI.</li> <li>Resource Owner authorizes the Client by granting permissions requested by the Client.</li> <li>Authorization Server redirects the User Agent back to the Client (using redirect URI from point 1). The redirect URI includes a temporary Authorization Code (as a query param).</li> <li>Client requests an Access Token from the Authorization Server. The request includes Client ID, Client Secret, and Authorization Code received in the previous step.</li> <li>If everything is valid, the Authorization Server returns Access Token and, optionally, a Refresh Token.</li> <li>The client uses the Access Token to call the Resource Server on behalf of the Resource Owner.</li> </ol>\n",
+    //     "flows": {
+    //       "clientCredentials": {
+    //         "tokenUrl": "/oauth2/token",
+    //         "refreshUrl": "/oauth2/refresh",
+    //         "scopes": {
+    //           "read": "Grant read-only access to all your data except for the account and user info",
+    //           "write": "Grant write-only access to all your data except for the account and user info"
+    //         }
+    //       },
+    //       "authorizationCode": {
+    //         "authorizationUrl": "http://localhost:8081/auth/realms/gbt/protocol/openid-connect/auth",
+    //         "tokenUrl": "http://localhost:8081/auth/realms/gbt/protocol/openid-connect/token",
+    //         "scopes": {}
+    //       }
+    //     }
+    //   }
+    // },
     "schemas": {
       "Account": {
         "title": "Account",
