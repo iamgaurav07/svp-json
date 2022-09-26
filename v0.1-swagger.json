@@ -40368,9 +40368,18 @@
       "name": "Upload documents",
       "description": "Upload Documents"
     },
+    
     {
       "name": "Invite LPs",
       "description": "Invide Lps (Deal docs and Commits)"
+    },
+    {
+      "name": "Banking",
+      "description": "Everything about banking"
+    },
+    {
+      "name": "KYC",
+      "description": "Background and Monitored Lists checks for KYC"
     },
     {
       "name": "Captable",
@@ -40400,10 +40409,7 @@
       "name": "Assets",
       "description": "Assets represent the investment vehicle for a deal.  An asset can take one of many forms, such as, shares of common stock in a company, real estate, crypocurrency, or even fractional ownership in a private jet.  The object specification is general enough to include a complete description of the asset, supporting documentation, and profiles of the key team members."
     },
-    {
-      "name": "Banking",
-      "description": "Everything about banking"
-    },
+    
     {
       "name": "Closes",
       "description": "A Close groups Subscriptions together for completion of the investment process. A close can represent the close of the entire deal or just a subset of investments (i.e. a tranche)."
@@ -40463,10 +40469,6 @@
     {
       "name": "Identity",
       "description": "Operations related to validating individual identities"
-    },
-    {
-      "name": "KYC",
-      "description": "Background and Monitored Lists checks for KYC"
     },
     {
       "name": "Documents",
