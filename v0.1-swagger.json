@@ -40,16 +40,12 @@
             "content": {
               "application/json": {
                 "example": {
-                  "data": [
-                    {
-                      "_id": "62basd1210353542024952cc770",
-                      "firstName": "John",
-                      "lastName": "Doe",
-                      "email": "john@example.com",
-                      "amount": "6,000",
-                      "companyUrl": "https://www.example.com"
-                    }
-                  ]
+                  "_id": "62basd1210353542024952cc770",
+                  "firstName": "John",
+                  "lastName": "Doe",
+                  "email": "john@example.com",
+                  "amount": "6,000",
+                  "companyUrl": "https://www.example.com"
                 }
               }
             }
