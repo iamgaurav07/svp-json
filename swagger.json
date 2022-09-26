@@ -1822,291 +1822,50 @@
         }
       }
     },
-    "/accreditations/count": {
-      "get": {
-        "x-controller-name": "AccreditationController",
-        "x-operation-name": "count",
-        "tags": ["Accreditation"],
-        "responses": {
-          "200": {
-            "description": "Accreditation model count",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/loopback.Count"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "where",
-            "in": "query",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "title": "Validation.WhereFilter",
-                  "additionalProperties": true,
-                  "x-typescript-type": "@loopback/repository#Where<Validation>"
-                }
-              }
-            }
-          }
-        ],
-        "operationId": "AccreditationController.count"
-      }
-    },
-    "/accreditations/{id}": {
-      "put": {
-        "x-controller-name": "AccreditationController",
-        "x-operation-name": "replaceById",
-        "tags": ["Accreditation"],
-        "responses": {
-          "204": {
-            "description": "No Content",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "Accreditation PUT success"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReplaceAccreditation"
-              }
-            }
-          },
-          "x-parameter-index": 1
-        },
-        "operationId": "AccreditationController.replaceById"
-      },
-      "patch": {
-        "x-controller-name": "AccreditationController",
-        "x-operation-name": "updateById",
-        "tags": ["Accreditation"],
-        "responses": {
-          "204": {
-            "description": "No Content",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "Accreditation PATCH success"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValidationPartial"
-              }
-            }
-          },
-          "x-parameter-index": 1
-        },
-        "operationId": "AccreditationController.updateById"
-      },
-      "get": {
-        "x-controller-name": "AccreditationController",
-        "x-operation-name": "findById",
-        "tags": ["Accreditation"],
-        "responses": {
-          "200": {
-            "description": "Accreditation model instance",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Accreditation"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          },
-          {
-            "name": "filter",
-            "in": "query",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Validation.Filter"
-                }
-              }
-            }
-          }
-        ],
-        "operationId": "AccreditationController.findById"
-      },
-      "delete": {
-        "x-controller-name": "AccreditationController",
-        "x-operation-name": "deleteById",
-        "tags": ["Accreditation"],
-        "responses": {
-          "204": {
-            "description": "No Content",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "Accreditation DELETE success"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "operationId": "AccreditationController.deleteById"
-      }
-    },
     "/accreditations": {
-      "post": {
+      "get": {
         "x-controller-name": "AccreditationController",
-        "x-operation-name": "create",
+        "x-operation-name": "getAccreditation",
         "tags": ["Accreditation"],
+        "parameters": [
+        ],
         "responses": {
           "200": {
             "description": "Accreditation model instance",
             "content": {
               "application/json": {
+                "example": {
+                  "id": "VXNlcjox",
+                  "user_id": "VXNlcjox",
+                  "type": "individual",
+                  "indicated_unaccredited": null,
+                  "accreditations": [
+                    {
+                      "assertion_type": "income",
+                      "certified_at": 1568474142,
+                      "created_at": 1568560542,
+                      "expires_at": 1571152542,
+                      "id": "VXNlckFjY3JlZGl0YXRpb246MQ==",
+                      "status": "current",
+                      "first_name": "Snake",
+                      "last_name": "Plissken",
+                      "documents": [
+                        {
+                          "download_url": "https://api.parallelmarkets.com/files/123?token=abc123",
+                          "download_url_expires": 30,
+                          "type": "certification-letter"
+                        }
+                      ]
+                    }
+                  ]
+                },
                 "schema": {
-                  "$ref": "#/components/schemas/Validation"
+                  "$ref": "#/components/schemas/AccreditationResponse"
                 }
               }
             }
           }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewAccreditation"
-              }
-            }
-          }
-        },
-        "operationId": "AccreditationController.create"
-      },
-      "patch": {
-        "x-controller-name": "AccreditationController",
-        "x-operation-name": "updateAll",
-        "tags": ["Accreditation"],
-        "responses": {
-          "200": {
-            "description": "Accreditation PATCH success count",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/loopback.Count"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "where",
-            "in": "query",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "title": "Validation.WhereFilter",
-                  "additionalProperties": true,
-                  "x-typescript-type": "@loopback/repository#Where<Validation>"
-                }
-              }
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValidationPartial"
-              }
-            }
-          }
-        },
-        "operationId": "AccreditationController.updateAll"
-      },
-      "get": {
-        "x-controller-name": "AccreditationController",
-        "x-operation-name": "find",
-        "tags": ["Accreditation"],
-        "responses": {
-          "200": {
-            "description": "Array of Accreditation model instances",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ValidationExcluding_providerMeta_"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "filter",
-            "in": "query",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Validation.Filter1"
-                }
-              }
-            }
-          }
-        ],
-        "operationId": "AccreditationController.find"
+        }
       }
     },
     "/assets/documents-upload/{assetId}": {
@@ -10605,8 +10364,7 @@
           "providerMetaId": {
             "type": "string"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "NewAccreditation": {
         "title": "NewAccreditation",
@@ -10674,6 +10432,75 @@
         },
         "additionalProperties": false,
         "x-typescript-type": "Omit<Validation, 'id' | 'ownerId' | 'tenantId'>"
+      },
+      "AccreditationResponse": {
+        "type": "object",
+        "properties": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "user_id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "indicated_unaccredited": {
+              "type": "any"
+            },
+            "accreditations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "assertion_type": {
+                    "type": "string"
+                  },
+                  "certified_at": {
+                    "type": "integer"
+                  },
+                  "created_at": {
+                    "type": "integer"
+                  },
+                  "expires_at": {
+                    "type": "integer"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  },
+                  "documents": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "download_url": {
+                          "type": "string"
+                        },
+                        "download_url_expires": {
+                          "type": "integer"
+                        },
+                        "type": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "ValidationExcluding_providerMeta_": {
         "title": "ValidationExcluding_providerMeta_",
