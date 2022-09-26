@@ -15,7 +15,7 @@
     "/sign-up": {
       "post": {
         "x-controller-name": "organizerSignUp",
-        "tags":["Organizer Sign-Up"],
+        "tags": ["Organizer Sign-Up"],
         "operationId": "",
         "deprecated": false,
         "parameters": [],
@@ -56,7 +56,7 @@
     "/companySurvey": {
       "get": {
         "x-controller-name": "companySurvey",
-        "tags":["Survey"],
+        "tags": ["Survey"],
         "operationId": "",
         "deprecated": false,
         "parameters": [
@@ -94,7 +94,7 @@
       },
       "post": {
         "x-controller-name": "companySurvey",
-        "tags":["Survey"],
+        "tags": ["Survey"],
         "operationId": "",
         "deprecated": false,
         "parameters": [],
@@ -6237,18 +6237,48 @@
         ]
       }
     },
-    "/identity/kyc": {
+    "apply/kyc": {
       "post": {
         "x-controller-name": "KycController",
-        "x-operation-name": "create",
-        "tags": ["Identity", "KYC"],
+        "x-operation-name": "createKyc",
+        "tags": ["KYC"],
         "responses": {
           "200": {
-            "description": "KYC model instance",
             "content": {
               "application/json": {
+                "example": {
+                  "object_id": "apsn_11h5e0ya9hxknt",
+                  "object_type": "person",
+                  "middesk_full": null,
+                  "middesk": null,
+                  "apply_true": null,
+                  "updated_at": "2022-06-08T20:16:10Z",
+                  "id": "akyc_11h5ejd29hz86r",
+                  "alloy_full": {
+                    "error": null,
+                    "summary": {
+                      "tags": ["FakeKYCTag"],
+                      "score": 0.1,
+                      "result": "success",
+                      "outcome": "Approved",
+                      "services": {
+                        "mockservice1": "executed",
+                        "mockservice2": "executed"
+                      }
+                    },
+                    "diligence": {
+                      "kyc": "fake"
+                    }
+                  },
+                  "alloy": {
+                    "status": "ok",
+                    "entity_token": null
+                  },
+                  "created_at": "2022-04-13T22:07:30Z",
+                  "kyc_product_id": null
+                },
                 "schema": {
-                  "$ref": "#/components/schemas/Kyc"
+                  "$ref": "#/components/schemas/CreateKYCResponse"
                 }
               }
             }
@@ -6257,38 +6287,46 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/KycCheckRequest"
+              "example": {
+                "kyc_product_id": "123123123",
+                "object_id": "123123123sddfwe123",
+                "object_type": "person"
               },
-              "examples": {
-                "example-1": {
-                  "description": "Data to KYC Check",
-                  "value": {
-                    "firstName": "John",
-                    "lastName": "Doe",
-                    "email": "jdoe@test.com",
-                    "address": {
-                      "street1": "123 E St",
-                      "street2": "Unit 2",
-                      "city": "Salt Lake City",
-                      "region": "Utah",
-                      "country": "United States of America",
-                      "postalCode": "84121"
-                    },
-                    "dateOfBirth": "02-21-1972",
-                    "identificationNumbers": [
-                      {
-                        "type": "ssn",
-                        "value": "111-11-1111"
-                      }
-                    ]
-                  }
+              "schema": {
+                "$ref": "#/components/schemas/CreateKYCRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "apply/kyc_product/{kyc_product_id}": {
+      "get": {
+        "x-controller-name": "KycController",
+        "x-operation-name": "create",
+        "tags": ["KYC"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "kyc_product_id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "created_at": "2022-04-15T06:59:14Z",
+                  "updated_at": "2022-04-15T06:59:14Z",
+                  "id": "akpt_11h5j5y2q7mp",
+                  "product": "person",
+                  "apply_type": "person"
                 }
               }
             }
           }
-        },
-        "operationId": "KycController.create"
+        }
       }
     },
     "/identity/validations/count": {
@@ -40347,6 +40385,23 @@
             "type": "string"
           }
         }
+      },
+      "CreateKYCResponse": {
+        "type": "object"
+      },
+      "CreateKYCRequest": {
+        "type": "object",
+        "properties": {
+          "kyc_product_id": {
+            "type": "string"
+          },
+          "object_id": {
+            "type": "string"
+          },
+          "object_type": {
+            "type": "string"
+          }
+        }
       }
     }
   },
@@ -40368,7 +40423,7 @@
       "name": "Upload documents",
       "description": "Upload Documents"
     },
-    
+
     {
       "name": "Invite LPs",
       "description": "Invide Lps (Deal docs and Commits)"
@@ -40409,7 +40464,7 @@
       "name": "Assets",
       "description": "Assets represent the investment vehicle for a deal.  An asset can take one of many forms, such as, shares of common stock in a company, real estate, crypocurrency, or even fractional ownership in a private jet.  The object specification is general enough to include a complete description of the asset, supporting documentation, and profiles of the key team members."
     },
-    
+
     {
       "name": "Closes",
       "description": "A Close groups Subscriptions together for completion of the investment process. A close can represent the close of the entire deal or just a subset of investments (i.e. a tranche)."
