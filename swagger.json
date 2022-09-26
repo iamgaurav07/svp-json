@@ -1596,13 +1596,129 @@
       }
     },
     "/ach": {
-      "post": {},
-      "get": {}
+      "post": {
+        "x-controller-name": "BankingController",
+        "x-operation-name": "createACH",
+        "tags": ["Banking"],
+        "summary": "Create ACH",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "account_id": "acct_11gjtpb030qh99",
+                "amount": "100.00",
+                "counterparty_id": "cp_11gn77yy4kyqts",
+                "direction": "credit",
+                "sec_code": "ccd"
+              },
+              "schema": {
+                "$ref": "#/components/schemas/CreateACH"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "description": null,
+                  "amount": "100.00",
+                  "service": "standard",
+                  "counterparty_id": "cp_11gn77yy4kyqts",
+                  "bankdata": null,
+                  "bank_id": "bank_treasuryprime",
+                  "account_id": "acct_11gjtpb030qh99",
+                  "addenda": [],
+                  "org_id": "org_1fc9c4m1qh0",
+                  "batch_key": null,
+                  "effective_date": "2021-09-28",
+                  "updated_at": "2021-09-28T23:12:10Z",
+                  "status": "pending",
+                  "id": "ach_11gn78aa4kznww",
+                  "error": null,
+                  "sec_code": "ccd",
+                  "direction": "credit",
+                  "created_at": "2021-09-28T23:12:10Z",
+                  "userdata": null
+                }
+              }
+            },
+            "schema": {
+              "$ref": "#/components/schemas/RetrieveACH"
+            }
+          }
+        }
+      },
+      "get": {
+        "x-controller-name": "BankingController",
+        "x-operation-name": "retrieveAllACH",
+        "tags": ["Banking"],
+        "summary": "Retrieve All ACH",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "description": null,
+                      "amount": "100.00",
+                      "service": "standard",
+                      "counterparty_id": "cp_11gn77yy4kyqts",
+                      "bankdata": null,
+                      "bank_id": "bank_treasuryprime",
+                      "account_id": "acct_11gjtpb030qh99",
+                      "addenda": [],
+                      "org_id": "org_1fc9c4m1qh0",
+                      "batch_key": null,
+                      "effective_date": "2021-09-28",
+                      "updated_at": "2021-09-28T23:14:31Z",
+                      "status": "canceled",
+                      "id": "ach_11gn78aa4kznww",
+                      "error": null,
+                      "sec_code": "ccd",
+                      "direction": "credit",
+                      "created_at": "2021-09-28T23:12:10Z",
+                      "userdata": null
+                    },
+                    {
+                      "description": null,
+                      "amount": "100.00",
+                      "service": "standard",
+                      "counterparty_id": "cp_11gmsmv73g1x3b",
+                      "bankdata": null,
+                      "bank_id": "bank_treasuryprime",
+                      "account_id": "acct_11gjtpb030qh99",
+                      "addenda": [],
+                      "org_id": "org_1fc9c4m1qh0",
+                      "batch_key": null,
+                      "effective_date": "2021-09-27",
+                      "updated_at": "2021-09-23T20:00:04Z",
+                      "status": "sent",
+                      "id": "ach_11gmsmys3g25h6",
+                      "error": null,
+                      "sec_code": "ccd",
+                      "direction": "debit",
+                      "created_at": "2021-09-23T19:22:01Z",
+                      "userdata": null
+                    }
+                  ]
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveAllACH"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "/ach/{ach_id}": {
       "patch": {
         "x-controller-name": "BankingController",
-        "x-operation-name": "updateBusinessApplication",
+        "x-operation-name": "updateACH",
         "tags": ["Banking"],
         "summary": "Update ACH",
         "parameters": [
@@ -39996,6 +40112,96 @@
         "properties": {
           "status": {
             "type": "string"
+          }
+        }
+      },
+      "CreateACH": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "string"
+          },
+          "counterparty_id": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string"
+          },
+          "sec_code": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveAllACH": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "amount": {
+                  "type": "string"
+                },
+                "service": {
+                  "type": "string"
+                },
+                "counterparty_id": {
+                  "type": "string"
+                },
+                "bankdata": {
+                  "type": "string"
+                },
+                "bank_id": {
+                  "type": "string"
+                },
+                "account_id": {
+                  "type": "string"
+                },
+                "addenda": {
+                  "type": "array"
+                },
+                "org_id": {
+                  "type": "string"
+                },
+                "batch_key": {
+                  "type": "string"
+                },
+                "effective_date": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "date"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "any"
+                },
+                "sec_code": {
+                  "type": "string"
+                },
+                "direction": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "date"
+                },
+                "userdata": {
+                  "type": "any"
+                }
+              }
+            }
           }
         }
       }
