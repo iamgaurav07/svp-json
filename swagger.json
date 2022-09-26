@@ -173,7 +173,7 @@
         "x-controller-name": "CaptableController",
         "x-operation-name": "getAllCaptable",
         "summary": "Fetch Captables",
-        "tags": ["Captable"],
+        "tags": ["Cap table"],
         "operationId": "",
         "deprecated": false,
         "security": [
@@ -269,7 +269,7 @@
       "post": {
         "x-controller-name": "CaptableController",
         "x-operation-name": "createCaptable",
-        "tags": ["Captable"],
+        "tags": ["Cap table"],
         "summary": "Add round",
         "operationId": "",
         "deprecated": false,
@@ -426,7 +426,7 @@
         "x-controller-name": "CaptableController",
         "x-operation-name": "updateCaptable",
         "summary": "Update round",
-        "tags": ["Captable"],
+        "tags": ["Cap table"],
         "operationId": "",
         "deprecated": false,
         "security": [
@@ -584,7 +584,7 @@
         "x-controller-name": "CaptableController",
         "x-operation-name": "deleteCaptable",
         "summary": "Delete round",
-        "tags": ["Captable"],
+        "tags": ["Cap table"],
         "operationId": "",
         "deprecated": false,
         "security": [
@@ -699,7 +699,7 @@
         "x-controller-name": "CaptableController",
         "x-operation-name": "createParticipant",
         "summary": "Add Participant",
-        "tags": ["Captable"],
+        "tags": ["Cap table"],
         "operationId": "",
         "deprecated": false,
         "security": [
@@ -854,7 +854,7 @@
         "x-controller-name": "CaptableController",
         "x-operation-name": "editParticipant",
         "summary": "Update Participant",
-        "tags": ["Captable"],
+        "tags": ["Cap table"],
         "operationId": "",
         "deprecated": false,
         "security": [
@@ -1015,7 +1015,7 @@
         "x-controller-name": "CaptableController",
         "x-operation-name": "deleteParticipant",
         "summary": "Delete Participant",
-        "tags": ["Captable"],
+        "tags": ["Cap table"],
         "operationId": "",
         "deprecated": false,
         "security": [
@@ -40709,8 +40709,8 @@
       "description": "Background and Monitored Lists checks for KYC"
     },
     {
-      "name": "Captable",
-      "description": "Captable apis."
+      "name": "Cap table",
+      "description": "Cap table apis."
     },
     {
       "name": "Transfer Agent",
