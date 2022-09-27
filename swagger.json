@@ -2453,11 +2453,64 @@
         "x-operation-name": "createWire",
         "tags": ["Banking"],
         "summary": "Create Wire",
-        "requestBody": {},
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "account_id": "casdf2312312312dd123123",
+                "amount": "1001.00",
+                "counterparty_id": "casdf2312312312dd123123",
+                "instructions": "Test Steps Here",
+                "intermediary": {
+                  "name": "Bank Test",
+                  "routing_number": "121122676",
+                  "address": {
+                    "street_line_1": "111 Random",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "postal_code": "94157"
+                  }
+                }
+              },
+              "schema": {
+                "$ref": "#/components/schemas/WireRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "content": {
-              "application/json": {}
+              "application/json": {
+                "example": {
+                  "amount": "1001.00",
+                  "counterparty_id": "cp_11gn80994nxmd7",
+                  "bankdata": null,
+                  "account_id": "acct_11gjtpb030qh99",
+                  "org_id": "org_1fc9c4m1qh0",
+                  "instructions": "Test Steps Here",
+                  "intermediary": {
+                    "name": "Bank Test",
+                    "routing_number": "121122676",
+                    "address": {
+                      "street_line_1": "111 Random",
+                      "street_line_2": null,
+                      "city": "San Francisco",
+                      "state": "CA",
+                      "postal_code": "94157"
+                    }
+                  },
+                  "updated_at": "2021-11-29T09:43:11Z",
+                  "status": "pending",
+                  "id": "wire_11gt985f74zewr",
+                  "error": null,
+                  "created_at": "2021-11-29T09:43:11Z",
+                  "userdata": null
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/WireResponse"
+                }
+              }
             }
           }
         }
@@ -2471,7 +2524,46 @@
         "responses": {
           "200": {
             "content": {
-              "application/json": {}
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "amount": "100.00",
+                      "counterparty_id": "cp_11gn80jr4nydq4",
+                      "bankdata": null,
+                      "account_id": "acct_11gjtpb030qh99",
+                      "org_id": "org_1fc9c4m1qh0",
+                      "instructions": null,
+                      "intermediary": null,
+                      "updated_at": "2021-09-29T06:06:48Z",
+                      "status": "pending",
+                      "id": "wire_11gn80kr4nyg9p",
+                      "error": null,
+                      "created_at": "2021-09-29T06:06:48Z",
+                      "userdata": null
+                    },
+                    {
+                      "amount": "1001.00",
+                      "counterparty_id": "cp_11gn80994nxmd7",
+                      "bankdata": null,
+                      "account_id": "acct_11gjtpb030qh99",
+                      "org_id": "org_1fc9c4m1qh0",
+                      "instructions": null,
+                      "intermediary": null,
+                      "updated_at": "2021-09-29T06:05:17Z",
+                      "status": "canceled",
+                      "id": "wire_11gn80bg4nxtds",
+                      "error": null,
+                      "created_at": "2021-09-29T06:02:24Z",
+                      "userdata": null
+                    }
+                  ],
+                  "total_estimated": 10
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveAllWire"
+                }
+              }
             }
           }
         }
@@ -2568,11 +2660,29 @@
             }
           }
         ],
-        "requestBody": {},
         "responses": {
           "200": {
             "content": {
-              "application/json": {}
+              "application/json": {
+                "example": {
+                  "amount": "1001.00",
+                  "counterparty_id": "cp_11gn80994nxmd7",
+                  "bankdata": null,
+                  "account_id": "acct_11gjtpb030qh99",
+                  "org_id": "org_1fc9c4m1qh0",
+                  "instructions": null,
+                  "intermediary": null,
+                  "updated_at": "2021-09-29T06:02:24Z",
+                  "status": "pending",
+                  "id": "wire_11gn80bg4nxtds",
+                  "error": null,
+                  "created_at": "2021-09-29T06:02:24Z",
+                  "userdata": null
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveWire"
+                }
+              }
             }
           }
         }
@@ -33698,6 +33808,105 @@
                 }
               }
             }
+          },
+          "updated_at": {
+            "type": "date"
+          },
+          "status": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "error": {
+            "type": "any"
+          },
+          "created_at": {
+            "type": "date"
+          },
+          "userdata": {
+            "type": "any"
+          }
+        }
+      },
+      "RetrieveAllWire": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "string"
+                },
+                "counterparty_id": {
+                  "type": "string"
+                },
+                "bankdata": {
+                  "type": "any"
+                },
+                "account_id": {
+                  "type": "string"
+                },
+                "org_id": {
+                  "type": "string"
+                },
+                "instructions": {
+                  "type": "string"
+                },
+                "intermediary": {
+                  "type": "object"
+                },
+                "updated_at": {
+                  "type": "date"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "error": {
+                  "type": "any"
+                },
+                "created_at": {
+                  "type": "date"
+                },
+                "userdata": {
+                  "type": "any"
+                }
+              }
+            }
+          },
+          "total_estimated": {
+            "type": "integer"
+          }
+        }
+      },
+      "RetrieveWire": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "string"
+          },
+          "counterparty_id": {
+            "type": "string"
+          },
+          "bankdata": {
+            "type": "any"
+          },
+          "account_id": {
+            "type": "string"
+          },
+          "org_id": {
+            "type": "string"
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "intermediary": {
+            "type": "object"
           },
           "updated_at": {
             "type": "date"
