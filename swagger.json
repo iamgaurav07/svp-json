@@ -261,6 +261,28 @@
         }
       }
     },
+    "/invite/lp": {
+      "post": {
+        "x-controller-name": "InviteLPController",
+        "x-operation-name": "inviteLps",
+        "summary": "Invite Lps",
+        "tags": ["Invite LPs"],
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "responses": {
+          "200": {}
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {}
+          }
+        }
+        
+      }
+    },
     "/captable/all": {
       "get": {
         "x-controller-name": "CaptableController",
