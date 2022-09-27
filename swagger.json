@@ -34065,7 +34065,7 @@
   "tags": [
     {
       "name": "Ping",
-      "description": "Ping"
+      "description": "System ping and other health checks"
     },
     {
       "name": "Organizer Sign-Up",
@@ -34150,24 +34150,12 @@
       "description": "Formations, filings and compliance."
     },
     {
-      "name": "Metadata",
-      "description": "Metadata provides data model representations in various formats"
-    },
-    {
-      "name": "Ping",
-      "description": "System ping and other health checks"
-    },
-    {
       "name": "Product",
       "description": "Products configure operating costs and allowances."
     },
     {
       "name": "Profiles",
       "description": "A Profile contains all the details for a individual, trust, joint account, etc.  These profiles can be defined and used for a variety of purposes, such as: organizing deals, making investments, or creating assets. A profile is used to complete tasks such as generating documents and performing KYC/KYB"
-    },
-    {
-      "name": "Subscriptions",
-      "description": "A Subscription is the investment into a Deal."
     },
     {
       "name": "Users",
