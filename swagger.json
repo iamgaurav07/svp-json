@@ -12,6 +12,26 @@
     }
   },
   "paths": {
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "tags": ["Ping"],
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": "TWO12 APIs Reference"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/sign-up": {
       "post": {
         "x-controller-name": "organizerSignUp",
@@ -280,7 +300,6 @@
             "application/json": {}
           }
         }
-        
       }
     },
     "/captable/all": {
@@ -2267,9 +2286,7 @@
         "responses": {
           "200": {
             "content": {
-              "application/json": {
-
-              }
+              "application/json": {}
             }
           }
         }
@@ -2285,9 +2302,7 @@
         "responses": {
           "200": {
             "content": {
-              "application/json": {
-
-              }
+              "application/json": {}
             }
           }
         }
@@ -33298,6 +33313,10 @@
     }
   ],
   "tags": [
+    {
+      "name": "Ping",
+      "description": "Ping"
+    },
     {
       "name": "Organizer Sign-Up",
       "description": "Organizer Sign Up"
