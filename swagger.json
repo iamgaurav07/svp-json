@@ -446,7 +446,8 @@
               "application/json": {
                 "example": {
                   "email": "example@sample.com",
-                  "username": "example-123"
+                  "username": "example-123",
+                  "link": "https://reset-password.com?id=example-123&&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9l"
                 }
               }
             }
@@ -457,8 +458,18 @@
             "application/json": {
               "example": {
                 "email": "example@sample.com",
-                "username": "example-123",
-                "link": "https://reset-password.com?id=example-123&&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9l"
+                "username": "example-123"
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  }
+                }
               }
             }
           }
