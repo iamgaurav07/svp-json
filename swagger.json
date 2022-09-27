@@ -3,7 +3,7 @@
   "info": {
     "title": "TWO12 API Reference",
     "description": "<aside class=\"warning\">\n\nNote:  This API specification is currently alpha.  The schema definitions as described are subject to change.  New fields or schemas will be added.  Please contact <a href=\"mailto:support@two12.co\">support@two12.co</a> for questions or feedback.</aside>\n\nThe TWO12 API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer).  Our API has predictable resource-oriented URLs, accepts and returns [JSON-encoded](http://www.json.org/) request and response bodies, and uses standard HTTP response codes, authentication, and verbs.\n\nThe TWO12 API may differ for every account as we release new versions and tailor functionality based on customer needs.\n\n## Request Basics\n### Headers\nCurrently, this API only communicates with JSON, so in some situations you may need to set `Accept` or `Content-Type` to `application/JSON.\nTWO12 Technology enables platforms and applications for various organizations and users. To ensure an orderly separation of resource ownership, this API requires tenant identification in all requests.  In the request header, set the value `x-tenant-id` to your id. All requests without this value will be rejected with a 401 response.\n",
-    "version": "Version 0.5",
+    "version": "Version 0.5.1",
     "termsOfService": "https://two12.co/terms",
     "contact": {
       "name": "API Support",
@@ -2320,8 +2320,10 @@
           "200": {
             "content": {
               "application/json": {
-                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-                "success": true
+                "example": {
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+                  "success": true
+                }
               }
             }
           }
