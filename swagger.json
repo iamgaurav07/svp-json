@@ -465,6 +465,21 @@
         }
       }
     },
+    "/invite/survey/send-info": {
+      "post": {
+        "x-controller-name": "InviteInvestorController",
+        "x-operation-name": "sendInfoFromSurvey",
+        "summary": "Send information from survey",
+        "tags": ["Invite Investors"],
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "requestBody": {},
+        "responses": {}
+      }
+    },
     "/captable/all": {
       "get": {
         "x-controller-name": "CaptableController",
