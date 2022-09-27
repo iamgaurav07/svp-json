@@ -81,9 +81,10 @@
         "deprecated": false,
         "parameters": [
           {
-            "in": "path",
+            "in": "query",
             "name": "companyId",
-            "required": true
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
