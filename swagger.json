@@ -2257,6 +2257,38 @@
         }
       }
     },
+    "/account/form-d": {
+      "get": {
+        "tags": ["Annual Accounting & Tax Docs"],
+        "summary": "Form D",
+        "requestBody": {},
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/k1": {
+      "get": {
+        "tags": ["Annual Accounting & Tax Docs"],
+        "summary": "K1",
+        "requestBody": {},
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+
+              }
+            }
+          }
+        }
+      }
+    },
     "/oauth2/refresh": {
       "post": {
         "x-controller-name": "AuthController",
@@ -33375,6 +33407,10 @@
     {
       "name": "Identity",
       "description": "Operations related to validating individual identities"
+    },
+    {
+      "name": "Annual Accounting & Tax Docs",
+      "description": "Annual Accounting & Tax Docs"
     }
   ]
 }
