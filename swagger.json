@@ -2259,6 +2259,8 @@
     },
     "/account/form-d": {
       "get": {
+        "x-controller-name": "AccountController",
+        "x-operation-name": "getFormD",
         "tags": ["Annual Accounting & Tax Docs"],
         "summary": "Form D",
         "requestBody": {},
@@ -2275,6 +2277,8 @@
     },
     "/account/k1": {
       "get": {
+        "x-controller-name": "AccountController",
+        "x-operation-name": "getFormD",
         "tags": ["Annual Accounting & Tax Docs"],
         "summary": "K1",
         "requestBody": {},
