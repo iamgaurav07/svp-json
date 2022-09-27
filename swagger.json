@@ -326,6 +326,7 @@
       "post": {
         "x-controller-name": "InviteInvestorController",
         "x-operation-name": "inviteInvestors",
+        "summary": "Invite investor",
         "tags": ["Invite Investors"],
         "security": [
           {
@@ -422,6 +423,42 @@
                 "dateOfBirth": "",
                 "isProspect": false,
                 "prospect": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/invite/generate-credentials": {
+      "post": {
+        "x-controller-name": "InviteInvestorController",
+        "x-operation-name": "generateCredentials",
+        "summary": "Generate credentials to login",
+        "tags": ["Invite Investors"],
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "email": "example@sample.com",
+                  "username": "example-123"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "email": "example@sample.com",
+                "username": "example-123",
+                "link": "https://reset-password.com?id=example-123&&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9l"
               }
             }
           }
