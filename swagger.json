@@ -322,12 +322,11 @@
         }
       }
     },
-    "/invite/lp": {
+    "/invite/investor": {
       "post": {
-        "x-controller-name": "InviteLPController",
-        "x-operation-name": "inviteLps",
-        "summary": "Invite Lps",
-        "tags": ["Invite LPs"],
+        "x-controller-name": "InviteInvestorController",
+        "x-operation-name": "inviteInvestors",
+        "tags": ["Invite Investors"],
         "security": [
           {
             "oAuth2": ["authorization"]
@@ -33488,8 +33487,8 @@
     },
 
     {
-      "name": "Invite LPs",
-      "description": "Invide Lps (Deal docs and Commits)"
+      "name": "Invite Investors",
+      "description": "Entered by Organizer or Uploaded from XLS"
     },
     {
       "name": "Banking",
