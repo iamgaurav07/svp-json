@@ -1355,8 +1355,21 @@
           "200": {
             "content": {
               "application/json": {
-                "example": {},
-                "schema": {}
+                "example": {
+                  "message": "Participant deleted successfully",
+                  "success": true
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "success": {
+                      "type": "boolean"
+                    }
+                  }
+                }
               }
             }
           }
