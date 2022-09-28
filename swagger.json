@@ -743,7 +743,9 @@
           "200": {
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "message": "Doc signed"
+                }
               }
             }
           }
@@ -761,12 +763,33 @@
             "oAuth2": ["authorization"]
           }
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "companyId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "606b6259de5b6d0012c089ea"
+          },
+          {
+            "in": "query",
+            "name": "isCommited",
+            "schema": {
+              "type": "boolean"
+            },
+            "required": true,
+            "example": false
+          }
+        ],
         "responses": {
           "200": {
             "content": {
               "application/json": {
-                "example": {}
+                "example": {
+                  "message": "Investor committed to $$"
+                }
               }
             }
           }
