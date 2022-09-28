@@ -2474,6 +2474,43 @@
         }
       }
     },
+    "/generate-ein": {
+      "post": {
+        "x-controller-name": "SVPController",
+        "x-operation-name": "generateEIN",
+        "tags": ["SPV Creation"],
+        "summary": "Generate EIN",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "4321ad3dcfff1123122a23"
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "name": "John",
+                  "ein": "xx-xxxxxxx"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/accreditations": {
       "get": {
         "x-controller-name": "AccreditationController",
