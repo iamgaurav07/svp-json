@@ -323,9 +323,7 @@
       }
     },
     "/documents/": {
-      "post": {
-
-      }
+      "post": {}
     },
     "/invite/investor": {
       "post": {
@@ -2511,6 +2509,135 @@
                   },
                   "created_at": "2022-04-13T22:07:30Z",
                   "kyc_product_id": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity": {
+      "get": {
+        "x-controller-name": "KycController",
+        "x-operation-name": "getBusinessIdentity",
+        "summary": "Retrieve Identity",
+        "tags": ["KYC"],
+        "parameters": [
+          {
+            "in": "headers",
+            "name": "Authentication",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "id": "QnVzaW5lc3M6MjI2Mg==",
+                  "type": "business",
+                  "user_id": "VXNlcjoxMDM4NA==",
+                  "user_providing_for": "controlled-business",
+                  "access_expires_at": null,
+                  "access_revoked_by": null,
+                  "identity_details": {
+                    "name": "Hic Sunt Leones LLC",
+                    "incorporation_country": "US",
+                    "incorporation_region": "Lagalos",
+                    "incorporation_state": "NC",
+                    "business_type": "C Corporation",
+                    "completed_at": "2021-06-29T13:32:21Z",
+                    "direct_beneficial_owners": [
+                      {
+                        "id": "QnVzaW5lc3M6MjI2NA==",
+                        "type": "business",
+                        "ownership_percent": 0.25,
+                        "profile": {
+                          "name": "Parent Company",
+                          "business_type": "C Corporation",
+                          "primary_contact": {
+                            "email": "me@gobl.in",
+                            "first_name": "Sevro",
+                            "last_name": "Barca"
+                          }
+                        }
+                      },
+                      {
+                        "id": "QnVzaW5lc3M6MjEzOQ==",
+                        "type": "individual",
+                        "ownership_percent": 0.5,
+                        "access_expires_at": null,
+                        "access_revoked_by": null,
+                        "profile": {
+                          "email": "ly@r.ia",
+                          "first_name": "Lyria",
+                          "last_name": "de Lagalos"
+                        }
+                      }
+                    ],
+                    "control_persons": [
+                      {
+                        "id": "QnVzaW5lc3M6MjEzOQ==",
+                        "type": "individual",
+                        "title": "Gamma",
+                        "access_expires_at": null,
+                        "access_revoked_by": null,
+                        "profile": {
+                          "email": "ly@r.ia",
+                          "first_name": "Lyria",
+                          "last_name": "de Lagalos"
+                        }
+                      },
+                      {
+                        "id": "QnVzQlc3M6MjEzO",
+                        "type": "individual",
+                        "title": "Mustang",
+                        "access_expires_at": null,
+                        "access_revoked_by": null,
+                        "profile": {
+                          "email": "virginada@example.com",
+                          "first_name": "Virgina",
+                          "last_name": "au Augustus"
+                        }
+                      }
+                    ],
+                    "created_by": {
+                      "email": "ly@r.ia",
+                      "first_name": "Lyria",
+                      "last_name": "de Lagalos"
+                    },
+                    "expires_at": "2021-09-07T15:04:15Z",
+                    "foreign_tax_id": "ftid_0123456789",
+                    "identity_files": [
+                      {
+                        "download_url": "http://localhost/file",
+                        "download_url_expires": 30,
+                        "type": "formation-document"
+                      }
+                    ],
+                    "primary_contact": {
+                      "email": "ly@r.ia",
+                      "first_name": "Lyria",
+                      "last_name": "de Lagalos"
+                    },
+                    "principal_location": {
+                      "address_one": "11 Merge St",
+                      "address_two": null,
+                      "city": "Durham",
+                      "country": "US",
+                      "postal_code": "27701",
+                      "region": null,
+                      "state": "NC"
+                    },
+                    "risk_monitor_matches": [],
+                    "type": "business",
+                    "us_tax_id": "333-22-4444",
+                    "user_session": {
+                      "maybe_anonymizing_proxy": false
+                    }
+                  }
                 }
               }
             }
