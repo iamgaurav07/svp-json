@@ -2430,6 +2430,50 @@
         }
       }
     },
+    "/llc-entity": {
+      "post": {
+        "x-controller-name": "SVPController",
+        "x-operation-name": "createLlcEntity",
+        "tags": ["SPV Creation"],
+        "summary": "Create Series LLC Entity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "4321ad3dcfff1123122a23",
+                "entityName": "Example llc"
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string"
+                  },
+                  "entityName": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "entityName": "Example llc",
+                  "name": "John",
+                  "email": "example@sample.com",
+                  "role": "string",
+                  "portfolioVisibility": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/accreditations": {
       "get": {
         "x-controller-name": "AccreditationController",
@@ -18950,6 +18994,10 @@
     {
       "name": "Invite Investors",
       "description": "Entered by Organizer or Uploaded from XLS"
+    },
+    {
+      "name": "SPV Creation",
+      "description": "SPV Creation"
     },
     {
       "name": "Banking",
