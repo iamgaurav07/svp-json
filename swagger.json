@@ -239,7 +239,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "responses": {
@@ -332,7 +332,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "requestBody": {
@@ -383,7 +383,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "requestBody": {
@@ -434,7 +434,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "requestBody": {
@@ -483,7 +483,7 @@
         "tags": ["Investor"],
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "responses": {
@@ -590,7 +590,7 @@
         "tags": ["Investor"],
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "responses": {
@@ -637,7 +637,7 @@
         "tags": ["Investor"],
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "requestBody": {
@@ -716,7 +716,7 @@
         "tags": ["Investor"],
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "parameters": [
@@ -760,7 +760,7 @@
         "tags": ["Investor"],
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "parameters": [
@@ -805,7 +805,7 @@
         "tags": ["Investor"],
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "parameters": [
@@ -851,7 +851,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "parameters": [
@@ -1003,7 +1003,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "parameters": [],
@@ -1159,7 +1159,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "parameters": [],
@@ -1317,7 +1317,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "requestBody": {
@@ -1432,7 +1432,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "requestBody": {
@@ -1587,7 +1587,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "requestBody": {
@@ -1748,7 +1748,7 @@
         "deprecated": false,
         "security": [
           {
-            "oAuth2": ["authorization"]
+            "OAuth2": ["authorization"]
           }
         ],
         "requestBody": {
@@ -3342,7 +3342,7 @@
         }
       }
     },
-    "/oauth2/refresh": {
+    "/OAuth2/refresh": {
       "post": {
         "x-controller-name": "AuthController",
         "x-operation-name": "refreshToken",
@@ -3385,7 +3385,7 @@
         }
       }
     },
-    "/oauth2/token": {
+    "/OAuth2/token": {
       "post": {
         "x-controller-name": "AuthController",
         "x-operation-name": "createToken",
@@ -3431,13 +3431,13 @@
   },
   "components": {
     "securitySchemes": {
-      "oAuth2": {
-        "type": "oauth2",
-        "description": "TWO12's API implementation only supports [OAuth 2.0](https://oauth.net/2/) for authentication and authorization. \n\nThe process to obtain a token is:\n<ol> <li> TWO12 will deliver a client secret key for each of its Enterprise customers </li><li>The Client Application sends an request to the Authorization Endpoint (`/spv/oauth2/token`) with the client id and client secret in the request body. </li> <li>In the response, the Authorization Endpoint sends an Access Token (JWT) with a configurable expiry period (default 6 hours).</li> <li>The Client Application uses the Access Token to call the API endpoints.</li> </ol>",
+      "OAuth2": {
+        "type": "OAuth2",
+        "description": "TWO12's API implementation only supports [OAuth 2.0](https://OAuth.net/2/) for authentication and authorization. \n\nThe process to obtain a token is:\n<ol> <li> TWO12 will deliver a client secret key for each of its Enterprise customers </li><li>The Client Application sends an request to the Authorization Endpoint (`/spv/OAuth2/token`) with the client id and client secret in the request body. </li> <li>In the response, the Authorization Endpoint sends an Access Token (JWT) with a configurable expiry period (default 6 hours).</li> <li>The Client Application uses the Access Token to call the API endpoints.</li> </ol>",
         "flows": {
           "clientCredentials": {
-            "tokenUrl": "/spv/oauth2/token",
-            "refreshUrl": "/spv/oauth2/refresh"
+            "tokenUrl": "/spv/OAuth2/token",
+            "refreshUrl": "/spv/OAuth2/refresh"
           }
         }
       }
@@ -19141,7 +19141,7 @@
   },
   "security": [
     {
-      "oAuth2": []
+      "OAuth2": []
     }
   ],
   "tags": [
