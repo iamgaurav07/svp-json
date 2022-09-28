@@ -2524,11 +2524,12 @@
         "tags": ["KYC"],
         "parameters": [
           {
-            "in": "headers",
-            "name": "Authentication",
+            "in": "query",
+            "name": "companyId",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
