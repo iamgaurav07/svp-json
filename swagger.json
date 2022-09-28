@@ -480,7 +480,7 @@
         "x-controller-name": "InviteInvestorController",
         "x-operation-name": "inviteInvestors",
         "summary": "Invite investor",
-        "tags": ["Invite Investors"],
+        "tags": ["Investor"],
         "security": [
           {
             "oAuth2": ["authorization"]
@@ -587,7 +587,7 @@
         "x-controller-name": "InviteInvestorController",
         "x-operation-name": "generateCredentials",
         "summary": "Generate credentials to login",
-        "tags": ["Invite Investors"],
+        "tags": ["Investor"],
         "security": [
           {
             "oAuth2": ["authorization"]
@@ -634,7 +634,7 @@
         "x-controller-name": "InviteInvestorController",
         "x-operation-name": "sendInfoFromSurvey",
         "summary": "Send information from survey",
-        "tags": ["Invite Investors"],
+        "tags": ["Investor"],
         "security": [
           {
             "oAuth2": ["authorization"]
@@ -701,6 +701,97 @@
                     "entityJurisdictionOfOrganization": "string",
                     "entityLegalNameOfSigner": "string"
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/investor/sign-doc": {
+      "post": {
+        "x-controller-name": "InviteInvestorController",
+        "x-operation-name": "investorSignDoc",
+        "summary": "Investor to sign docs",
+        "tags": ["Investor"],
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/investor/commit": {
+      "post": {
+        "x-controller-name": "InviteInvestorController",
+        "x-operation-name": "investorCommitToDollor",
+        "summary": "Investor will commit to $$",
+        "tags": ["Investor"],
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/investor/investing-as": {
+      "post": {
+        "x-controller-name": "InviteInvestorController",
+        "x-operation-name": "indiOrEntity",
+        "summary": "Investing as individual or Entity",
+        "description": "Investor will specify whether investing as individual or Entity",
+        "tags": ["Investor"],
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "isIndividual",
+            "schema": {
+              "type": "boolean"
+            },
+            "required": true,
+            "example": true
+          },
+          {
+            "in": "query",
+            "name": "companyId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "606b6259de5b6d0012c089ea"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Investor specific status changed"
                 }
               }
             }
@@ -19029,7 +19120,7 @@
       "description": "Upload Documents"
     },
     {
-      "name": "Invite Investors",
+      "name": "Investor",
       "description": "Entered by Organizer or Uploaded from XLS"
     },
     {
