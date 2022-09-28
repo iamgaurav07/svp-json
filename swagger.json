@@ -719,7 +719,26 @@
             "oAuth2": ["authorization"]
           }
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "companyId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "606b6259de5b6d0012c089ea"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "document"
+          }
+        ],
         "responses": {
           "200": {
             "content": {
