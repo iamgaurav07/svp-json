@@ -322,6 +322,11 @@
         }
       }
     },
+    "/documents/": {
+      "post": {
+
+      }
+    },
     "/invite/investor": {
       "post": {
         "x-controller-name": "InviteInvestorController",
@@ -2548,11 +2553,26 @@
         "x-operation-name": "getFormD",
         "tags": ["Annual Accounting & Tax Docs"],
         "summary": "Form D",
-        "requestBody": {},
+        "parameters": [
+          {
+            "in": "query",
+            "name": "companyId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
         "responses": {
           "200": {
             "content": {
-              "application/json": {}
+              "application/json": {
+                "example": {
+                  "link": "https://example.co?data=1St_8G1SvVW3E3rwJdQWGtMTWVauAtS83YTx-_CgZykg",
+                  "type": "pdf",
+                  "success": true
+                }
+              }
             }
           }
         }
@@ -2564,11 +2584,26 @@
         "x-operation-name": "getFormD",
         "tags": ["Annual Accounting & Tax Docs"],
         "summary": "K1",
-        "requestBody": {},
+        "parameters": [
+          {
+            "in": "query",
+            "name": "companyId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
         "responses": {
           "200": {
             "content": {
-              "application/json": {}
+              "application/json": {
+                "example": {
+                  "link": "https://example.co?data=1St_8G1SvVW3E3rwJdQWGtMTWVauAtS83YTx-_CgZykg",
+                  "type": "pdf",
+                  "success": true
+                }
+              }
             }
           }
         }
