@@ -322,8 +322,158 @@
         }
       }
     },
-    "/documents/": {
-      "post": {}
+    "/documents/upload-ppm": {
+      "post": {
+        "x-controller-name": "DocumentController",
+        "x-operation-name": "uploadPpmDocument",
+        "summary": "Upload Private Placement Memorandum",
+        "tags": ["Documents"],
+        "operationId": "",
+        "deprecated": false,
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "6334048426f1a50013703705",
+                "serverId": "433af12048426f1a50013703705"
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string"
+                  },
+                  "serverId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "companyId": "6334048426f1a50013703705",
+                  "serverId": "433af12048426f1a50013703705",
+                  "date": "2022-09-23T08:29:00.000Z",
+                  "agreementPdf": "6f2bcd45-b2d4-4682-91d0-5f600d1032b3_example_agreement.pdf",
+                  "type": "ppm"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents/upload-oa": {
+      "post": {
+        "x-controller-name": "DocumentController",
+        "x-operation-name": "uploadOaDocument",
+        "summary": "Upload Operating Agreement",
+        "tags": ["Documents"],
+        "operationId": "",
+        "deprecated": false,
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "6334048426f1a50013703705",
+                "serverId": "433af12048426f1a50013703705"
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string"
+                  },
+                  "serverId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "companyId": "6334048426f1a50013703705",
+                  "serverId": "433af12048426f1a50013703705",
+                  "date": "2022-09-23T08:29:00.000Z",
+                  "agreementPdf": "6f2bcd45-b2d4-4682-91d0-5f600d1032b3_example_agreement.pdf",
+                  "type": "operating_agreement"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/documents/upload-sa": {
+      "post": {
+        "x-controller-name": "DocumentController",
+        "x-operation-name": "uploadSaDocument",
+        "summary": "Upload Subscription Agreement",
+        "tags": ["Documents"],
+        "operationId": "",
+        "deprecated": false,
+        "security": [
+          {
+            "oAuth2": ["authorization"]
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "6334048426f1a50013703705",
+                "serverId": "433af12048426f1a50013703705"
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string"
+                  },
+                  "serverId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "companyId": "6334048426f1a50013703705",
+                  "serverId": "433af12048426f1a50013703705",
+                  "date": "2022-09-23T08:29:00.000Z",
+                  "agreementPdf": "6f2bcd45-b2d4-4682-91d0-5f600d1032b3_example_agreement.pdf",
+                  "type": "subscription_agreement"
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "/invite/investor": {
       "post": {
