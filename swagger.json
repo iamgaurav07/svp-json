@@ -11,6 +11,9 @@
       "email": "info@svp.TWO12.co"
     }
   },
+  "servers": {
+    "url": "https://example.io/v1"
+  },
   "paths": {
     "/token": {
       "get": {
