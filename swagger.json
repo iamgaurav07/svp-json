@@ -11,6 +11,18 @@
       "email": "info@svp.TWO12.co"
     }
   },
+  "servers": {
+    "test": {
+      "url": "test.mykafkacluster.org:8092",
+      "protocol": "kafka-secure",
+      "description": "Test broker",
+      "security": [
+        {
+          "saslScram": []
+        }
+      ]
+    }
+  },
   "paths": {
     "/ping": {
       "get": {
