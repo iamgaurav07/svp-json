@@ -11,19 +11,87 @@
       "email": "info@svp.TWO12.co"
     }
   },
-  "servers": {
-    "test": {
-      "url": "test.mykafkacluster.org:8092",
-      "protocol": "kafka-secure",
-      "description": "Test broker",
-      "security": [
-        {
-          "saslScram": []
-        }
-      ]
-    }
-  },
   "paths": {
+    "/token": {
+      "get": {
+        "x-controller-name": "TokenController",
+        "tags": ["Token"],
+        "operationId": "generateToken",
+        "summary": "Generate Token",
+        "deprecated": false,
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
+          },
+          {
+            "in": "query",
+            "name": "secreat-key",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "c-1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "token": "TWO12 APIs Reference"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/token/refresh": {
+      "get": {
+        "x-controller-name": "TokenController",
+        "tags": ["Token"],
+        "operationId": "refreshToken",
+        "summary": "Refresh Token",
+        "deprecated": false,
+        "parameters": [
+          {
+            "in": "query",
+            "name": "client-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
+          },
+          {
+            "in": "query",
+            "name": "secreat-key",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "c-1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "token": "TWO12 APIs Reference"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/ping": {
       "get": {
         "x-controller-name": "PingController",
@@ -10371,311 +10439,6 @@
         },
         "additionalProperties": false
       },
-      "TaxService": {},
-      "NewProductLineWithSelectionsInTenant": {
-        "title": "NewProductLineWithSelectionsInTenant",
-        "type": "object",
-        "description": "\n\n (tsType: @loopback/repository-json-schema#Optional<Omit<ProductLineWithSelections, 'id'>, 'tenantId'>, schemaOptions: { title: 'NewProductLineWithSelectionsInTenant', exclude: [ 'id' ], optional: [ 'tenantId' ] })",
-        "properties": {
-          "productLineId": {
-            "type": "string"
-          },
-          "profileId": {
-            "type": "string"
-          },
-          "dealId": {
-            "type": "string"
-          },
-          "tenantId": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": true
-      },
-      "Tenant": {
-        "title": "Tenant",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The tenant's system ID to identify this tenant",
-            "title": "Tenant ID",
-            "maxLength": 63
-          },
-          "name": {
-            "type": "string",
-            "description": "Plain text name used to identify this tenant",
-            "title": "Tenant Name",
-            "maxLength": 256
-          },
-          "owner": {
-            "type": "object",
-            "title": "Owner",
-            "description": "Owner is the primary contact for this tenant",
-            "properties": {
-              "name": {
-                "type": "string",
-                "title": "Name"
-              },
-              "email": {
-                "type": "string",
-                "title": "Email"
-              },
-              "phone": {
-                "type": "string",
-                "title": "Phone"
-              }
-            }
-          },
-          "address": {
-            "$ref": "#/components/schemas/Address"
-          },
-          "url": {
-            "type": "string",
-            "description": "A url for linking to a tenant webpage or homepage",
-            "title": "Tenant URL",
-            "maxLength": 256,
-            "format": "url"
-          },
-          "hideCopyright": {
-            "type": "boolean",
-            "default": false,
-            "title": "Hide Copyright",
-            "description": "If the copyright notice can be hidden in applications"
-          },
-          "settings": {
-            "type": "object",
-            "title": "Tenant Settings",
-            "description": "General settings for this tenant",
-            "properties": {
-              "emails": {
-                "type": "object",
-                "title": "Default Email Addresses",
-                "properties": {
-                  "fromAddress": {
-                    "type": "string"
-                  }
-                }
-              },
-              "showCarryRecipientsForInvestors": {
-                "type": "boolean",
-                "default": false,
-                "title": "Show Carry Recipients for Investors",
-                "description": "Investor will be able to see carry recipient(s) on deal summary page"
-              },
-              "canSelfApproveWires": {
-                "type": "boolean",
-                "default": true,
-                "title": "Can Self-Approve Wires"
-              },
-              "use506cAccreditation": {
-                "type": "boolean",
-                "default": false,
-                "title": "Use 506c Accreditation"
-              },
-              "parallelMarketsClientId": {
-                "type": "string",
-                "title": "Parallel Markets Client Id",
-                "description": "Id to use with Parallel Markets integration (provided by Parallel Markets)"
-              },
-              "runKYCOnUserSignup": {
-                "type": "boolean",
-                "default": true,
-                "title": "Run KYC on User Signup"
-              },
-              "manageSeriesNumbers": {
-                "type": "boolean",
-                "default": false,
-                "title": "Manage Series Numbers"
-              }
-            }
-          },
-          "inverted": {
-            "type": "boolean"
-          },
-          "theme": {
-            "type": "object"
-          },
-          "assets": {
-            "type": "object",
-            "properties": {
-              "images": {
-                "type": "object",
-                "properties": {
-                  "logo": {
-                    "type": "string"
-                  },
-                  "logoInverted": {
-                    "type": "string"
-                  }
-                }
-              },
-              "colors": {
-                "type": "object",
-                "properties": {
-                  "primaryColor": {
-                    "type": "string"
-                  },
-                  "secondaryColor": {
-                    "type": "string"
-                  },
-                  "backgroundColor": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "dealLimit": {
-            "type": "number"
-          },
-          "dealLimits": {
-            "type": "object",
-            "properties": {
-              "maxDealCount": {
-                "type": "integer"
-              },
-              "maxInvestorCount": {
-                "type": "integer"
-              },
-              "maxTargetRaiseAmount": {
-                "type": "integer"
-              },
-              "perDealMaxInvestorCount": {
-                "type": "integer"
-              },
-              "perDealMaxTargetRaiseAmount": {
-                "type": "integer"
-              }
-            }
-          },
-          "bankingLimits": {
-            "type": "object",
-            "properties": {
-              "ach": {
-                "type": "object",
-                "properties": {
-                  "credit": {
-                    "type": "object",
-                    "properties": {
-                      "daily": {
-                        "type": "integer"
-                      },
-                      "transaction": {
-                        "type": "integer"
-                      }
-                    }
-                  },
-                  "debit": {
-                    "type": "object",
-                    "properties": {
-                      "daily": {
-                        "type": "integer"
-                      },
-                      "transaction": {
-                        "type": "integer"
-                      }
-                    }
-                  }
-                }
-              },
-              "wire": {
-                "type": "object",
-                "properties": {
-                  "credit": {
-                    "type": "object",
-                    "properties": {
-                      "daily": {
-                        "type": "integer"
-                      },
-                      "transaction": {
-                        "type": "integer"
-                      }
-                    }
-                  },
-                  "debit": {
-                    "type": "object",
-                    "properties": {
-                      "daily": {
-                        "type": "integer"
-                      },
-                      "transaction": {
-                        "type": "integer"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "saasPackageType": {
-            "type": "object",
-            "properties": {
-              "sassPackageType": {
-                "enum": ["Bronze", "Silver", "Gold", "Tiered"],
-                "title": "Saas PackageType",
-                "description": "SaaS Package Type (Bronze, Silver, Gold, Tiered)"
-              },
-              "monthlyRecurringPrice": {
-                "type": "number",
-                "title": "Price",
-                "description": "Monthly Recurring Price"
-              },
-              "noOfContractedSPVs": {
-                "type": "number",
-                "title": "Contracted SPVs",
-                "description": "Number of Contracted SPVs"
-              },
-              "noOfSPVsconsumed": {
-                "type": "number",
-                "title": "SPVs consumed",
-                "description": "Number of SPVs consumed"
-              },
-              "spvsremaining": {
-                "type": "number",
-                "title": "SPVs remaining",
-                "description": "Contracted SPVs remaining"
-              }
-            },
-            "title": "Pricing Plans:"
-          },
-          "closedStats": {
-            "type": "string"
-          },
-          "createBankAccount": {
-            "type": "boolean",
-            "default": true,
-            "title": "Auto create new bank account?",
-            "description": "Auto create new bank account new bank account manager"
-          },
-          "omdUrls": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "files": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "realmId": {
-            "type": "string"
-          },
-          "parentTenantId": {
-            "type": "string"
-          },
-          "managerId": {
-            "type": "string"
-          },
-          "masterEntityId": {
-            "type": "string"
-          }
-        },
-        "required": ["name", "url"],
-        "additionalProperties": false
-      },
       "TenantPartial": {
         "title": "TenantPartial",
         "type": "object",
@@ -19157,6 +18920,10 @@
     }
   ],
   "tags": [
+    {
+      "name": "Token",
+      "description": "Generate and Refresh token"
+    },
     {
       "name": "Ping",
       "description": "System ping and other health checks"
