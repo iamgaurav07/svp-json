@@ -250,10 +250,10 @@
           "200": {
             "content": {
               "application/json": {
-                "example": {
-                  "data": [
-                    {
-                      "_id": "603123123123e2099f0018a",
+                "example": [
+                  {
+                    "_id": "633ad6ffb85ef019f51252e3",
+                    "data": {
                       "legalNameOfSubscriber": "string",
                       "subscriptionAmount": "string",
                       "emailForSigning": "string",
@@ -262,6 +262,8 @@
                       "isUsEntity": "string",
                       "tin": "string",
                       "address": "",
+                      "companyId": "633ac3395f236a133c8edbfa",
+                      "companyParticipantId": "633ac3395f236a133c8edc00",
                       "individualOrEntity": "string",
                       "individualStatus": "string",
                       "residence": "string",
@@ -278,8 +280,12 @@
                       "entityJurisdictionOfOrganization": "string",
                       "entityLegalNameOfSigner": "string"
                     },
-                    {
-                      "_id": "603123123123e2099f0018a",
+                    "companyId": "633ac3395f236a133c8edbfa",
+                    "__v": 0
+                  },
+                  {
+                    "_id": "633ad7469f953f1a931c7fb2",
+                    "data": {
                       "legalNameOfSubscriber": "string",
                       "subscriptionAmount": "string",
                       "emailForSigning": "string",
@@ -288,6 +294,8 @@
                       "isUsEntity": "string",
                       "tin": "string",
                       "address": "",
+                      "companyId": "633ac3395f236a133c8edbfa",
+                      "companyParticipantId": "633ac3395f236a133c8edc00",
                       "individualOrEntity": "string",
                       "individualStatus": "string",
                       "residence": "string",
@@ -303,9 +311,11 @@
                       "additionalCertificationForExceptedInvestmentCompany": "string",
                       "entityJurisdictionOfOrganization": "string",
                       "entityLegalNameOfSigner": "string"
-                    }
-                  ]
-                }
+                    },
+                    "companyId": "633ac3395f236a133c8edbfa",
+                    "__v": 0
+                  }
+                ]
               }
             }
           }
