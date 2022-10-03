@@ -231,7 +231,7 @@
         }
       }
     },
-    "/company/survey": {
+    "/company-survey": {
       "get": {
         "x-controller-name": "companySurvey",
         "tags": ["Survey"],
