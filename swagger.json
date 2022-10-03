@@ -329,6 +329,8 @@
                 "isUsEntity": "string",
                 "tin": "string",
                 "address": "",
+                "companyId": "4321ad3dcfff1123122a23",
+                "companyParticipantId": "609be8223442a8001346b766",
                 "individualOrEntity": "string",
                 "individualStatus": "string",
                 "residence": "string",
@@ -363,6 +365,8 @@
                   "filledOutThisSpvFormBefore": "string",
                   "phoneNumber": "string",
                   "isUsEntity": "string",
+                  "companyId": "string",
+                  "companyParticipantId": "string",
                   "tin": "string",
                   "address": "",
                   "individualOrEntity": "string",
@@ -18004,6 +18008,12 @@
             "type": "string"
           },
           "isUsEntity": {
+            "type": "string"
+          },
+          "companyParticipantId": {
+            "type": "string"
+          },
+          "companyId": {
             "type": "string"
           },
           "tin": {
