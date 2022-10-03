@@ -159,9 +159,7 @@
           "200": {
             "content": {
               "application/json": {
-                "example": {
-                  "data": "TWO12 APIs Reference"
-                }
+                "example": "Welcome to TWO12 backend"
               }
             }
           }
