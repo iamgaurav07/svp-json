@@ -193,12 +193,46 @@
             "content": {
               "application/json": {
                 "example": {
-                  "_id": "62basd1210353542024952cc770",
-                  "firstName": "John",
-                  "lastName": "Doe",
-                  "email": "john@example.com",
-                  "amount": "6,000",
-                  "companyUrl": "https://www.example.com"
+                  "data": {
+                    "companyDetails": {
+                      "_id": "633ac1d0b54a12a120650b88e",
+                      "companyName": "TWO12",
+                      "companyEmail": "two12@yopmail.com"
+                    },
+                    "companyPartipantId": "633ac1d0b124a45120650b894"
+                  },
+                  "success": true,
+                  "message": "Company has been successfully created"
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "companyDetails": {
+                          "type": "object",
+                          "properties": {
+                            "_id": {
+                              "type": "string"
+                            },
+                            "companyName": {
+                              "type": "string"
+                            },
+                            "companyEmail": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "success": {
+                          "type": "boolean"
+                        },
+                        "message": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
