@@ -18990,12 +18990,12 @@
   ],
   "tags": [
     {
-      "name": "Token",
-      "description": "Generate and Refresh token"
-    },
-    {
       "name": "Ping",
       "description": "System ping and other health checks"
+    },
+    {
+      "name": "Token",
+      "description": "Generate and Refresh token"
     },
     {
       "name": "Organizer Sign-Up",
