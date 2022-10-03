@@ -167,11 +167,12 @@
         }
       }
     },
-    "/sign-up": {
+    "/companySpv": {
       "post": {
         "x-controller-name": "organizerSignUp",
         "tags": ["Organizer Sign-Up"],
         "operationId": "",
+        "summary": "Company Register",
         "deprecated": false,
         "parameters": [],
         "requestBody": {
