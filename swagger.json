@@ -200,9 +200,7 @@
                       "companyEmail": "two12@yopmail.com"
                     },
                     "companyPartipantId": "633ac1d0b124a45120650b894"
-                  },
-                  "success": true,
-                  "message": "Company has been successfully created"
+                  }
                 },
                 "schema": {
                   "type": "object",
@@ -223,12 +221,6 @@
                               "type": "string"
                             }
                           }
-                        },
-                        "success": {
-                          "type": "boolean"
-                        },
-                        "message": {
-                          "type": "string"
                         }
                       }
                     }
