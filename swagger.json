@@ -27,7 +27,7 @@
         "parameters": [
           {
             "in": "query",
-            "name": "client-id",
+            "name": "client_id",
             "schema": {
               "type": "string"
             },
@@ -36,7 +36,7 @@
           },
           {
             "in": "query",
-            "name": "secreat-key",
+            "name": "secreat_key",
             "schema": {
               "type": "string"
             },
