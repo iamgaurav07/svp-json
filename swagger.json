@@ -235,6 +235,7 @@
       "get": {
         "x-controller-name": "companySurvey",
         "tags": ["Survey"],
+        "summary": "Retrieve All Surveys",
         "operationId": "",
         "deprecated": false,
         "parameters": [
@@ -325,6 +326,7 @@
         "x-controller-name": "companySurvey",
         "tags": ["Survey"],
         "operationId": "",
+        "summary": "Create Survey",
         "deprecated": false,
         "parameters": [],
         "requestBody": {
