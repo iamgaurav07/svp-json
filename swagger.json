@@ -36,7 +36,7 @@
           },
           {
             "in": "query",
-            "name": "secreat_key",
+            "name": "secret_key",
             "schema": {
               "type": "string"
             },
@@ -101,7 +101,7 @@
           },
           {
             "in": "query",
-            "name": "secreat_key",
+            "name": "secret_key",
             "schema": {
               "type": "string"
             },
