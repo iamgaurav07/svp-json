@@ -178,11 +178,8 @@
           "content": {
             "application/json": {
               "example": {
-                "firstName": "John",
-                "lastName": "Doe",
-                "email": "john@example.com",
-                "amount": "6,000",
-                "companyUrl": "https://www.example.com"
+                "legelName": "TWO12",
+                "email": "john@example.com"
               },
               "schema": {
                 "$ref": "#/components/schemas/OrganizerSignUp"
@@ -17954,19 +17951,10 @@
       "OrganizerSignUp": {
         "type": "object",
         "properties": {
-          "firstName": {
-            "type": "string"
-          },
-          "lastName": {
+          "legalName": {
             "type": "string"
           },
           "email": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "string"
-          },
-          "companyUrl": {
             "type": "string"
           }
         }
