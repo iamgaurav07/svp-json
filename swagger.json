@@ -147,10 +147,11 @@
         }
       }
     },
-    "/ping": {
+    "/healthz": {
       "get": {
         "x-controller-name": "PingController",
         "tags": ["Ping"],
+        "summary": "Health check",
         "operationId": "",
         "deprecated": false,
         "parameters": [],
