@@ -518,7 +518,7 @@
             "application/json": {
               "example": {
                 "companyId": "6334048426f1a50013703705",
-                "serverId": "433af12048426f1a50013703705"
+                "companyParticipantId": "433af12048426f1a50013703705"
               },
               "schema": {
                 "type": "object",
@@ -526,7 +526,7 @@
                   "companyId": {
                     "type": "string"
                   },
-                  "serverId": {
+                  "companyParticipantId": {
                     "type": "string"
                   }
                 }
@@ -540,7 +540,7 @@
               "application/json": {
                 "example": {
                   "companyId": "6334048426f1a50013703705",
-                  "serverId": "433af12048426f1a50013703705",
+                  "companyParticipantId": "433af12048426f1a50013703705",
                   "date": "2022-09-23T08:29:00.000Z",
                   "agreementPdf": "6f2bcd45-b2d4-4682-91d0-5f600d1032b3_example_agreement.pdf",
                   "type": "ppm"
@@ -569,7 +569,7 @@
             "application/json": {
               "example": {
                 "companyId": "6334048426f1a50013703705",
-                "serverId": "433af12048426f1a50013703705"
+                "companyParticipantId": "433af12048426f1a50013703705"
               },
               "schema": {
                 "type": "object",
@@ -577,7 +577,7 @@
                   "companyId": {
                     "type": "string"
                   },
-                  "serverId": {
+                  "companyParticipantId": {
                     "type": "string"
                   }
                 }
@@ -591,7 +591,7 @@
               "application/json": {
                 "example": {
                   "companyId": "6334048426f1a50013703705",
-                  "serverId": "433af12048426f1a50013703705",
+                  "companyParticipantId": "433af12048426f1a50013703705",
                   "date": "2022-09-23T08:29:00.000Z",
                   "agreementPdf": "6f2bcd45-b2d4-4682-91d0-5f600d1032b3_example_agreement.pdf",
                   "type": "operating_agreement"
@@ -620,7 +620,7 @@
             "application/json": {
               "example": {
                 "companyId": "6334048426f1a50013703705",
-                "serverId": "433af12048426f1a50013703705"
+                "companyParticipantId": "433af12048426f1a50013703705"
               },
               "schema": {
                 "type": "object",
@@ -628,7 +628,7 @@
                   "companyId": {
                     "type": "string"
                   },
-                  "serverId": {
+                  "companyParticipantId": {
                     "type": "string"
                   }
                 }
@@ -642,7 +642,7 @@
               "application/json": {
                 "example": {
                   "companyId": "6334048426f1a50013703705",
-                  "serverId": "433af12048426f1a50013703705",
+                  "companyParticipantId": "433af12048426f1a50013703705",
                   "date": "2022-09-23T08:29:00.000Z",
                   "agreementPdf": "6f2bcd45-b2d4-4682-91d0-5f600d1032b3_example_agreement.pdf",
                   "type": "subscription_agreement"
