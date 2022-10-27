@@ -178,7 +178,7 @@
           "content": {
             "application/json": {
               "example": {
-                "legelName": "TWO12",
+                "legalName": "TWO12",
                 "email": "john@example.com"
               },
               "schema": {
