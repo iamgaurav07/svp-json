@@ -13,7 +13,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:2020"
+      "url": "https://sandbox.two12.co"
     }
   ],
   "paths": {
