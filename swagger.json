@@ -80,71 +80,6 @@
         }
       }
     },
-    "/token/refresh": {
-      "get": {
-        "x-controller-name": "TokenController",
-        "tags": ["Token"],
-        "operationId": "refreshToken",
-        "summary": "Refresh Token",
-        "deprecated": false,
-        "parameters": [
-          {
-            "in": "query",
-            "name": "client_id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "example": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
-          },
-          {
-            "in": "query",
-            "name": "secret_key",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "example": "c-1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
-          }
-        ],
-        "responses": {
-          "200": {
-            "headers": {
-              "Access-Control-Allow-Origin": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Access-Control-Allow-Methods": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Access-Control-Allow-Headers": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "example": {
-                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "token": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/healthz": {
       "get": {
         "x-controller-name": "PingController",
@@ -164,7 +99,7 @@
         }
       }
     },
-    "/companySpv": {
+    "/spv-company": {
       "post": {
         "x-controller-name": "organizerSignUp",
         "tags": ["Organizer Sign-Up"],
@@ -176,8 +111,9 @@
           "content": {
             "application/json": {
               "example": {
-                "legalName": "TWO12",
-                "email": "john@example.com"
+                "targetCompany":"TWO12",
+                "companyName":"Example LLC",
+                "companyEmail":"example@yopmail.co"
               },
               "schema": {
                 "$ref": "#/components/schemas/OrganizerSignUp"
@@ -17995,10 +17931,13 @@
       "OrganizerSignUp": {
         "type": "object",
         "properties": {
-          "legalName": {
+          "targetCompany": {
             "type": "string"
           },
-          "email": {
+          "companyName": {
+            "type": "string"
+          },
+          "companyEmail": {
             "type": "string"
           }
         }
