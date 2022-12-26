@@ -7,7 +7,7 @@
     "termsOfService": "https://two12.co/terms",
     "contact": {
       "name": "API Support",
-      "url": "https://svp.TWO12.co",
+      "url": "https://sandbox.two12.co",
       "email": "info@svp.TWO12.co"
     }
   },
@@ -31,17 +31,15 @@
             "schema": {
               "type": "string"
             },
-            "required": true,
-            "example": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
+            "required": true
           },
           {
             "in": "query",
-            "name": "secret_key",
+            "name": "companyParticipantId",
             "schema": {
               "type": "string"
             },
-            "required": true,
-            "example": "c-1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed"
+            "required": true
           }
         ],
         "responses": {
