@@ -44,23 +44,6 @@
         ],
         "responses": {
           "200": {
-            "headers": {
-              "Access-Control-Allow-Origin": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Access-Control-Allow-Methods": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "Access-Control-Allow-Headers": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
             "content": {
               "application/json": {
                 "example": {
@@ -3543,13 +3526,17 @@
   },
   "components": {
     "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      },
       "OAuth2": {
         "type": "OAuth2",
         "description": "TWO12's API implementation only supports [OAuth 2.0](https://OAuth.net/2/) for authentication and authorization. \n\nThe process to obtain a token is:\n<ol> <li> TWO12 will deliver a client secret key for each of its Enterprise customers </li><li>The Client Application sends an request to the Authorization Endpoint (`/spv/OAuth2/token`) with the client id and client secret in the request body. </li> <li>In the response, the Authorization Endpoint sends an Access Token (JWT) with a configurable expiry period (default 6 hours).</li> <li>The Client Application uses the Access Token to call the API endpoints.</li> </ol>",
         "flows": {
           "clientCredentials": {
-            "tokenUrl": "/token",
-            "refreshUrl": "/token/refresh"
+            "tokenUrl": "/token"
           }
         }
       }
