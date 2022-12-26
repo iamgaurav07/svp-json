@@ -3437,49 +3437,6 @@
         }
       }
     },
-    "/OAuth2/refresh": {
-      "post": {
-        "x-controller-name": "AuthController",
-        "x-operation-name": "refreshToken",
-        "tags": ["OAuth2"],
-        "operationId": "refreshToken",
-        "summary": "Refresh an Auth Token",
-        "description": "Refresh a token",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-                  "success": true
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "example": {
-                "client-id": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
-                "screat-id": "c-1b9d6bcdbbfd4b2d9b5dab8dfbbd4bed"
-              },
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "client-id": {
-                    "type": "string"
-                  }
-                },
-                "screat-id": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/OAuth2/token": {
       "post": {
         "x-controller-name": "AuthController",
@@ -3503,10 +3460,6 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "example": {
-                "client-id": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
-                "screat-id": "c-1b9d6bcdbbfd4b2d9b5dab8dfbbd4bed"
-              },
               "schema": {
                 "type": "object",
                 "properties": {
@@ -3514,7 +3467,7 @@
                     "type": "string"
                   }
                 },
-                "screat-id": {
+                "companyParticipantId": {
                   "type": "string"
                 }
               }
