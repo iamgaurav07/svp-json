@@ -151,7 +151,7 @@
         "x-controller-name": "organizerSignUp",
         "tags": ["Organizer Sign-Up"],
         "operationId": "",
-        "summary": "Company Register",
+        "summary": "Company details",
         "deprecated": false,
         "parameters": [
           {
@@ -162,24 +162,24 @@
             }
           }
         ]
-      },
-      "/company-participant": {
-        "get": {
-          "x-controller-name": "organizerSignUp",
-          "tags": ["Organizer Sign-Up"],
-          "operationId": "",
-          "summary": "Company Register",
-          "deprecated": false,
-          "parameters": [
-            {
-              "name": "companyId",
-              "in": "query",
-              "schema": {
-                "type": "string"
-              }
+      }
+    },
+    "/spv-company/company-participant": {
+      "get": {
+        "x-controller-name": "organizerSignUp",
+        "tags": ["Organizer Sign-Up"],
+        "operationId": "",
+        "summary": "Retrieve all company participants",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
-          ]
-        }
+          }
+        ]
       }
     },
     "/company-survey": {
