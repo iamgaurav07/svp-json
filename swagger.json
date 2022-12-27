@@ -185,19 +185,17 @@
             "content": {
               "application/json": {
                 "example": {
-                  "data": {
-                    "data": [
-                      {
-                        "_id": "636f80242c2060689443195d",
-                        "company": {
-                          "_id": "636f80242c20606894431958",
-                          "targetCompany": "TWO12",
-                          "companyName": "SPV-TWO12"
-                        }
+                  "data": [
+                    {
+                      "_id": "636f80242c2060689443195d",
+                      "company": {
+                        "_id": "636f80242c20606894431958",
+                        "targetCompany": "TWO12",
+                        "companyName": "SPV-TWO12"
                       }
-                    ],
-                    "success": true
-                  }
+                    }
+                  ],
+                  "success": true
                 },
                 "schema": {
                   "type": "object",
