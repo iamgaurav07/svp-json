@@ -2141,29 +2141,31 @@
       }
     },
     "/data-room/file": {
-      "x-controller-name": "DataRoomController",
-      "tags": ["Document upload & eSign"],
-      "summary": "Upload documents",
-      "operationId": "",
-      "deprecated": false,
-      "parameters": [],
-      "requestBody": {
-        "content": {
-          "multipart/form-data": {
-            "x-parser": "stream",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "file": {
-                  "type": "string",
-                  "format": "binary"
+      "post": {
+        "x-controller-name": "DataRoomController",
+        "tags": ["Document upload & eSign"],
+        "summary": "Upload documents",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "x-parser": "stream",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
                 }
               }
             }
-          }
-        },
-        "description": "Request body for multipart/form-data based file upload",
-        "required": true
+          },
+          "description": "Request body for multipart/form-data based file upload",
+          "required": true
+        }
       }
     }
   },
