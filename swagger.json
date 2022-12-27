@@ -726,6 +726,176 @@
           }
         }
       }
+    },
+    "/portCo": {
+      "get": {
+        "x-controller-name": "PortCoInfoController",
+        "tags": ["PortCo Information"],
+        "summary": "Retrieve portCo information",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "websites": ["https://two12.co", "https://two12.com"],
+                      "tagline": "Product driven startup finance",
+                      "categories": "IT",
+                      "description": "Product driven startup finance",
+                      "videos": ["https://two12.co", "https://two12.com"],
+                      "founders": [
+                        {
+                          "name": "John",
+                          "linkedin": "https://linkedin.com",
+                          "profilePic": "https://example.com/dummy.png"
+                        }
+                      ],
+                      "investmentDocs": [
+                        {
+                          "path": "https://s3.amazonaws.com/docs.two12.co/805ff990-2054-4452-96f5-6eed9ae99656_dummy.pdf",
+                          "filename": "805ff990-2054-4452-96f5-6eed9ae99656_dummy.pdf"
+                        }
+                      ],
+                      "_id": "638f6ef3dce3613af48e6e6c",
+                      "companyId": "6388c6731e3a4500111ca4df",
+                      "companyName": "TWO12",
+                      "address_line1": "Address line 1",
+                      "address_line2": "Address line 2",
+                      "city": "Austin",
+                      "state": "Texas ",
+                      "country": "US",
+                      "deck": "https://www.w3.org/Provider/Style/dummy.html",
+                      "closing_date": "2023-12-01T00:00:00.000Z",
+                      "traction": "",
+                      "createdAt": "2022-12-06T16:33:55.135Z",
+                      "updatedAt": "2022-12-06T16:33:55.135Z",
+                      "__v": 0
+                    }
+                  ],
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "x-controller-name": "PortCoInfoController",
+        "tags": ["PortCo Information"],
+        "summary": "Create portCo information",
+        "operationId": "",
+        "deprecated": false,
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Portfolio company added successfully",
+                  "data": {
+                    "websites": ["https://two12.co", "https://two12.com"],
+                    "tagline": "Product driven startup finance",
+                    "categories": "IT",
+                    "description": "Product driven startup finance",
+                    "videos": ["https://two12.co", "https://two12.com"],
+                    "founders": [
+                      {
+                        "name": "John",
+                        "linkedin": "https://linkedin.com",
+                        "profilePic": "https://example.com/dummy.png"
+                      }
+                    ],
+                    "investmentDocs": [
+                      {
+                        "path": "https://s3.amazonaws.com/docs.two12.co/805ff990-2054-4452-96f5-6eed9ae99656_dummy.pdf",
+                        "filename": "805ff990-2054-4452-96f5-6eed9ae99656_dummy.pdf"
+                      }
+                    ],
+                    "_id": "638f6ef3dce3613af48e6e6c",
+                    "companyId": "6388c6731e3a4500111ca4df",
+                    "companyName": "TWO12",
+                    "address_line1": "Address line 1",
+                    "address_line2": "Address line 2",
+                    "city": "Austin",
+                    "state": "Texas ",
+                    "country": "US",
+                    "deck": "https://www.w3.org/Provider/Style/dummy.html",
+                    "closing_date": "2023-12-01T00:00:00.000Z",
+                    "traction": "",
+                    "createdAt": "2022-12-06T16:33:55.135Z",
+                    "updatedAt": "2022-12-06T16:33:55.135Z",
+                    "__v": 0
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "x-controller-name": "PortCoInfoController",
+        "tags": ["PortCo Information"],
+        "summary": "Update portCo information",
+        "operationId": "",
+        "deprecated": false,
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "websites": ["https://two12.co", "https://two12.com"],
+                    "tagline": "Product driven startup finance",
+                    "categories": "IT",
+                    "description": "Product driven startup finance",
+                    "videos": ["https://two12.co", "https://two12.com"],
+                    "founders": [
+                      {
+                        "name": "John",
+                        "linkedin": "https://linkedin.com",
+                        "profilePic": "https://example.com/dummy.png"
+                      }
+                    ],
+                    "investmentDocs": [
+                      {
+                        "path": "https://s3.amazonaws.com/docs.two12.co/805ff990-2054-4452-96f5-6eed9ae99656_dummy.pdf",
+                        "filename": "805ff990-2054-4452-96f5-6eed9ae99656_dummy.pdf"
+                      }
+                    ],
+                    "_id": "638f6ef3dce3613af48e6e6c",
+                    "companyId": "6388c6731e3a4500111ca4df",
+                    "companyName": "TWO12",
+                    "address_line1": "Address line 1",
+                    "address_line2": "Address line 2",
+                    "city": "Austin",
+                    "state": "Texas ",
+                    "country": "US",
+                    "deck": "https://www.w3.org/Provider/Style/dummy.html",
+                    "closing_date": "2023-12-01T00:00:00.000Z",
+                    "traction": "",
+                    "createdAt": "2022-12-06T16:33:55.135Z",
+                    "updatedAt": "2022-12-06T16:33:55.135Z",
+                    "__v": 0
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -16166,6 +16336,10 @@
     {
       "name": "Banking",
       "description": "Banking apis"
+    },
+    {
+      "name": "PortCo Information",
+      "description": "Portfolio company information apis"
     }
   ]
 }
