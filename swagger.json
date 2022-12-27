@@ -580,45 +580,6 @@
           }
         }
       }
-    },
-    "/OAuth2/token": {
-      "post": {
-        "x-controller-name": "AuthController",
-        "x-operation-name": "createToken",
-        "tags": ["OAuth2"],
-        "operationId": "createToken",
-        "summary": "Create an Auth Token",
-        "description": "Create a token for use with the API",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "example": {
-                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-                  "success": true
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "client-id": {
-                    "type": "string"
-                  }
-                },
-                "companyParticipantId": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
