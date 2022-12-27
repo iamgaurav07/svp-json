@@ -2168,6 +2168,38 @@
           },
           "description": "Request body for multipart/form-data based file upload",
           "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "conversionStatus": {
+                        "scheduled": false
+                      },
+                      "sharing": {
+                        "companyParticipantIds": [],
+                        "companyIds": []
+                      },
+                      "converted": false,
+                      "visitsCount": 0,
+                      "type": "GENERAL",
+                      "size": "13264",
+                      "_id": "63a2eab579a30be38062e38b",
+                      "company": "6388bf2372d1ec70ce96e542",
+                      "location": "1368973e-ad92-44da-a37a-29b4167609eb_dummy.pdf",
+                      "name": "dummy.pdf",
+                      "parent": "63a1c8ad7973d8a69427ab2d"
+                    }
+                  ],
+                  "success": true,
+                  "message": "Files have been successfully uploaded"
+                }
+              }
+            }
+          }
         }
       }
     }
