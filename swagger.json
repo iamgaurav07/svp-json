@@ -1283,6 +1283,531 @@
           }
         }
       }
+    },
+    "/kyc": {
+      "get": {
+        "x-controller-name": "KycKybAccreditationContoller",
+        "tags": ["KYC/KYB/Accreditation"],
+        "summary": "Get Kyc details",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "inquiryId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "type": "inquiry",
+                  "id": "inq_9MN2VYx4KjZ7go9KSuUk1W3Z",
+                  "attributes": {
+                    "status": "completed",
+                    "reference-id": null,
+                    "note": null,
+                    "behaviors": {
+                      "request-spoof-attempts": 0,
+                      "user-agent-spoof-attempts": 0,
+                      "distraction-events": 1,
+                      "hesitation-baseline": 39595,
+                      "hesitation-count": 7,
+                      "hesitation-time": 27719,
+                      "shortcut-copies": 0,
+                      "shortcut-pastes": 0,
+                      "autofill-cancels": 9,
+                      "autofill-starts": 0,
+                      "devtools-open": false,
+                      "completion-time": 40.585583285,
+                      "hesitation-percentage": 70.00631392852632,
+                      "behavior-threat-level": "low"
+                    },
+                    "tags": [],
+                    "creator": "API",
+                    "reviewer-comment": null,
+                    "created-at": "2022-12-13T11:25:43.000Z",
+                    "started-at": "2022-12-13T11:25:57.000Z",
+                    "completed-at": "2022-12-13T11:26:24.000Z",
+                    "failed-at": null,
+                    "marked-for-review-at": null,
+                    "decisioned-at": null,
+                    "expired-at": null,
+                    "redacted-at": null,
+                    "previous-step-name": "verification_selfie",
+                    "next-step-name": "success",
+                    "fields": {}
+                  },
+                  "relationships": {
+                    "account": {
+                      "data": {
+                        "type": "account",
+                        "id": "act_ieU3JixNapupDi6Tm8E9NfFr"
+                      }
+                    },
+                    "template": {
+                      "data": null
+                    },
+                    "inquiry-template": {
+                      "data": {
+                        "type": "inquiry-template",
+                        "id": "itmpl_uAA47KUGACTY8ZWY6YZwYqyr"
+                      }
+                    },
+                    "inquiry-template-version": {
+                      "data": {
+                        "type": "inquiry-template-version",
+                        "id": "itmplv_sLfEL9AVStU5zTg21bDRPTbX"
+                      }
+                    },
+                    "reviewer": {
+                      "data": null
+                    },
+                    "reports": {
+                      "data": []
+                    },
+                    "verifications": {
+                      "data": [
+                        {
+                          "type": "verification/government-id",
+                          "id": "ver_Zp3CbbxYrCmZxyY9QYpRxHg7"
+                        },
+                        {
+                          "type": "verification/selfie",
+                          "id": "ver_n7vqK5wRymyFXgPwvUtHNbgF"
+                        }
+                      ]
+                    },
+                    "sessions": {
+                      "data": [
+                        {
+                          "type": "inquiry-session",
+                          "id": "iqse_dDHjUmJgepxttM9XMATa4uix"
+                        }
+                      ]
+                    },
+                    "documents": {
+                      "data": [
+                        {
+                          "type": "document/government-id",
+                          "id": "doc_k1TNk5KkxYZaMFRByUgC6b9h"
+                        }
+                      ]
+                    },
+                    "selfies": {
+                      "data": [
+                        {
+                          "type": "selfie/profile-and-center",
+                          "id": "self_LGxkGVVb491KzMrE8BvU2HgB"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "x-controller-name": "KycKybAccreditationContoller",
+        "tags": ["KYC/KYB/Accreditation"],
+        "summary": "Verify Kyc",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "inquiryId": "inq_dZCyAt3KwbqbSy3zFKtJQVGV",
+                "companyId": "63971a047bca2300128ba103"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "_id": "6398726bec4b8e7a3ea321ba",
+                  "inquiryId": "inq_9MN2VYx4KjZ7go9KSuUk1W3Z",
+                  "companyId": "63971a047bca2300128ba103",
+                  "companyParticipantId": "63710c3bd3e82300125f6764",
+                  "status": "completed",
+                  "type": "KYC",
+                  "createdAt": "2022-12-13T12:39:07.435Z",
+                  "updatedAt": "2022-12-13T12:39:07.435Z",
+                  "__v": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/kyc/link": {
+      "get": {
+        "x-controller-name": "KycKybAccreditationContoller",
+        "tags": ["KYC/KYB/Accreditation"],
+        "summary": "Get Kyc link",
+        "operationId": "",
+        "deprecated": false
+      }
+    },
+    "/kyb": {
+      "get": {
+        "x-controller-name": "KycKybAccreditationContoller",
+        "tags": ["KYC/KYB/Accreditation"],
+        "summary": "Get KYB details",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "inquiryId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "type": "inquiry",
+                  "id": "inq_9MN2VYx4KjZ7go9KSuUk1W3Z",
+                  "attributes": {
+                    "status": "completed",
+                    "reference-id": null,
+                    "note": null,
+                    "behaviors": {
+                      "request-spoof-attempts": 0,
+                      "user-agent-spoof-attempts": 0,
+                      "distraction-events": 1,
+                      "hesitation-baseline": 39595,
+                      "hesitation-count": 7,
+                      "hesitation-time": 27719,
+                      "shortcut-copies": 0,
+                      "shortcut-pastes": 0,
+                      "autofill-cancels": 9,
+                      "autofill-starts": 0,
+                      "devtools-open": false,
+                      "completion-time": 40.585583285,
+                      "hesitation-percentage": 70.00631392852632,
+                      "behavior-threat-level": "low"
+                    },
+                    "tags": [],
+                    "creator": "API",
+                    "reviewer-comment": null,
+                    "created-at": "2022-12-13T11:25:43.000Z",
+                    "started-at": "2022-12-13T11:25:57.000Z",
+                    "completed-at": "2022-12-13T11:26:24.000Z",
+                    "failed-at": null,
+                    "marked-for-review-at": null,
+                    "decisioned-at": null,
+                    "expired-at": null,
+                    "redacted-at": null,
+                    "previous-step-name": "verification_selfie",
+                    "next-step-name": "success",
+                    "fields": {}
+                  },
+                  "relationships": {
+                    "account": {
+                      "data": {
+                        "type": "account",
+                        "id": "act_ieU3JixNapupDi6Tm8E9NfFr"
+                      }
+                    },
+                    "template": {
+                      "data": null
+                    },
+                    "inquiry-template": {
+                      "data": {
+                        "type": "inquiry-template",
+                        "id": "itmpl_uAA47KUGACTY8ZWY6YZwYqyr"
+                      }
+                    },
+                    "inquiry-template-version": {
+                      "data": {
+                        "type": "inquiry-template-version",
+                        "id": "itmplv_sLfEL9AVStU5zTg21bDRPTbX"
+                      }
+                    },
+                    "reviewer": {
+                      "data": null
+                    },
+                    "reports": {
+                      "data": []
+                    },
+                    "verifications": {
+                      "data": [
+                        {
+                          "type": "verification/government-id",
+                          "id": "ver_Zp3CbbxYrCmZxyY9QYpRxHg7"
+                        },
+                        {
+                          "type": "verification/selfie",
+                          "id": "ver_n7vqK5wRymyFXgPwvUtHNbgF"
+                        }
+                      ]
+                    },
+                    "sessions": {
+                      "data": [
+                        {
+                          "type": "inquiry-session",
+                          "id": "iqse_dDHjUmJgepxttM9XMATa4uix"
+                        }
+                      ]
+                    },
+                    "documents": {
+                      "data": [
+                        {
+                          "type": "document/government-id",
+                          "id": "doc_k1TNk5KkxYZaMFRByUgC6b9h"
+                        }
+                      ]
+                    },
+                    "selfies": {
+                      "data": [
+                        {
+                          "type": "selfie/profile-and-center",
+                          "id": "self_LGxkGVVb491KzMrE8BvU2HgB"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "x-controller-name": "KycKybAccreditationContoller",
+        "tags": ["KYC/KYB/Accreditation"],
+        "summary": "Verify KYB",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "inquiryId": "inq_dZCyAt3KwbqbSy3zFKtJQVGV",
+                "companyId": "63971a047bca2300128ba103"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "_id": "6398726bec4b8e7a3ea321ba",
+                  "inquiryId": "inq_9MN2VYx4KjZ7go9KSuUk1W3Z",
+                  "companyId": "63971a047bca2300128ba103",
+                  "companyParticipantId": "63710c3bd3e82300125f6764",
+                  "status": "completed",
+                  "type": "KYB",
+                  "createdAt": "2022-12-13T12:39:07.435Z",
+                  "updatedAt": "2022-12-13T12:39:07.435Z",
+                  "__v": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/kyb/link": {
+      "get": {
+        "x-controller-name": "KycKybAccreditationContoller",
+        "tags": ["KYC/KYB/Accreditation"],
+        "summary": "Get KYB link",
+        "operationId": "",
+        "deprecated": false
+      }
+    },
+    "/Accreditation": {
+      "get": {
+        "x-controller-name": "KycKybAccreditationContoller",
+        "tags": ["KYC/KYB/Accreditation"],
+        "summary": "Get Accreditation details",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "inquiryId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "type": "inquiry",
+                  "id": "inq_9MN2VYx4KjZ7go9KSuUk1W3Z",
+                  "attributes": {
+                    "status": "completed",
+                    "reference-id": null,
+                    "note": null,
+                    "behaviors": {
+                      "request-spoof-attempts": 0,
+                      "user-agent-spoof-attempts": 0,
+                      "distraction-events": 1,
+                      "hesitation-baseline": 39595,
+                      "hesitation-count": 7,
+                      "hesitation-time": 27719,
+                      "shortcut-copies": 0,
+                      "shortcut-pastes": 0,
+                      "autofill-cancels": 9,
+                      "autofill-starts": 0,
+                      "devtools-open": false,
+                      "completion-time": 40.585583285,
+                      "hesitation-percentage": 70.00631392852632,
+                      "behavior-threat-level": "low"
+                    },
+                    "tags": [],
+                    "creator": "API",
+                    "reviewer-comment": null,
+                    "created-at": "2022-12-13T11:25:43.000Z",
+                    "started-at": "2022-12-13T11:25:57.000Z",
+                    "completed-at": "2022-12-13T11:26:24.000Z",
+                    "failed-at": null,
+                    "marked-for-review-at": null,
+                    "decisioned-at": null,
+                    "expired-at": null,
+                    "redacted-at": null,
+                    "previous-step-name": "verification_selfie",
+                    "next-step-name": "success",
+                    "fields": {}
+                  },
+                  "relationships": {
+                    "account": {
+                      "data": {
+                        "type": "account",
+                        "id": "act_ieU3JixNapupDi6Tm8E9NfFr"
+                      }
+                    },
+                    "template": {
+                      "data": null
+                    },
+                    "inquiry-template": {
+                      "data": {
+                        "type": "inquiry-template",
+                        "id": "itmpl_uAA47KUGACTY8ZWY6YZwYqyr"
+                      }
+                    },
+                    "inquiry-template-version": {
+                      "data": {
+                        "type": "inquiry-template-version",
+                        "id": "itmplv_sLfEL9AVStU5zTg21bDRPTbX"
+                      }
+                    },
+                    "reviewer": {
+                      "data": null
+                    },
+                    "reports": {
+                      "data": []
+                    },
+                    "verifications": {
+                      "data": [
+                        {
+                          "type": "verification/government-id",
+                          "id": "ver_Zp3CbbxYrCmZxyY9QYpRxHg7"
+                        },
+                        {
+                          "type": "verification/selfie",
+                          "id": "ver_n7vqK5wRymyFXgPwvUtHNbgF"
+                        }
+                      ]
+                    },
+                    "sessions": {
+                      "data": [
+                        {
+                          "type": "inquiry-session",
+                          "id": "iqse_dDHjUmJgepxttM9XMATa4uix"
+                        }
+                      ]
+                    },
+                    "documents": {
+                      "data": [
+                        {
+                          "type": "document/government-id",
+                          "id": "doc_k1TNk5KkxYZaMFRByUgC6b9h"
+                        }
+                      ]
+                    },
+                    "selfies": {
+                      "data": [
+                        {
+                          "type": "selfie/profile-and-center",
+                          "id": "self_LGxkGVVb491KzMrE8BvU2HgB"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "x-controller-name": "KycKybAccreditationContoller",
+        "tags": ["KYC/KYB/Accreditation"],
+        "summary": "Verify Accreditation",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "inquiryId": "inq_dZCyAt3KwbqbSy3zFKtJQVGV",
+                "companyId": "63971a047bca2300128ba103"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "_id": "6398726bec4b8e7a3ea321ba",
+                  "inquiryId": "inq_9MN2VYx4KjZ7go9KSuUk1W3Z",
+                  "companyId": "63971a047bca2300128ba103",
+                  "companyParticipantId": "63710c3bd3e82300125f6764",
+                  "status": "completed",
+                  "type": "Accreditation",
+                  "createdAt": "2022-12-13T12:39:07.435Z",
+                  "updatedAt": "2022-12-13T12:39:07.435Z",
+                  "__v": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Accreditation/link": {
+      "get": {
+        "x-controller-name": "KycKybAccreditationContoller",
+        "tags": ["KYC/KYB/Accreditation"],
+        "summary": "Get Accreditation link",
+        "operationId": "",
+        "deprecated": false
+      }
     }
   },
   "components": {
@@ -16731,6 +17256,10 @@
     {
       "name": "Investor",
       "description": "Investor or company participant apis"
+    },
+    {
+      "name": "KYC/KYB/Accreditation",
+      "description": "KYC, KYB & Accreditation apis"
     }
   ]
 }
