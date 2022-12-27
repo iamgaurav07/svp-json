@@ -2103,6 +2103,42 @@
           }
         }
       }
+    },
+    "/transfer-agent": {
+      "get": {
+        "x-controller-name": "TransferAgentController",
+        "tags": ["Transfer Agent"],
+        "summary": "Get transfer agent list",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "x-controller-name": "TransferAgentController",
+        "tags": ["Transfer Agent"],
+        "summary": "Delete transfer agent list",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -17559,6 +17595,10 @@
     {
       "name": "Captable",
       "description": "Captable apis"
+    },
+    {
+      "name": "Transfer Agent",
+      "description": "Transfer agent apis"
     }
   ]
 }
