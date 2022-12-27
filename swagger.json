@@ -543,9 +543,9 @@
         }
       },
       "post": {
-        "x-controller-name": "CompanySurveyController",
-        "tags": ["Company survey"],
-        "summary": "Create company survey",
+        "x-controller-name": "EinRequestController",
+        "tags": ["EIN request"],
+        "summary": "Create EIN request",
         "operationId": "",
         "deprecated": false,
         "requestBody": {
