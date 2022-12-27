@@ -2150,7 +2150,6 @@
       "requestBody": {
         "content": {
           "multipart/form-data": {
-            "x-parser": "stream",
             "schema": {
               "type": "object",
               "properties": {
