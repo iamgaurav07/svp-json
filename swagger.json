@@ -94,9 +94,9 @@
           "content": {
             "application/json": {
               "example": {
-                "targetCompany":"TWO12",
-                "companyName":"Example LLC",
-                "companyEmail":"example@yopmail.co"
+                "targetCompany": "TWO12",
+                "companyName": "Example LLC",
+                "companyEmail": "example@yopmail.co"
               },
               "schema": {
                 "$ref": "#/components/schemas/OrganizerSignUp"
@@ -179,7 +179,63 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "data": [
+                      {
+                        "_id": "636f80242c2060689443195d",
+                        "company": {
+                          "_id": "636f80242c20606894431958",
+                          "targetCompany": "TWO12",
+                          "companyName": "SPV-TWO12"
+                        }
+                      }
+                    ],
+                    "success": true
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": {
+                            "type": "string"
+                          },
+                          "company": {
+                            "type": "object",
+                            "properties": {
+                              "_id": {
+                                "type": "string"
+                              },
+                              "targetCompany": {
+                                "type": "string"
+                              },
+                              "companyName": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "success": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/company-survey": {
