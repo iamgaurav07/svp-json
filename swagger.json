@@ -505,6 +505,82 @@
         }
       }
     },
+    "/ein-request": {
+      "get": {
+        "x-controller-name": "EinRequestController",
+        "tags": ["EIN request"],
+        "summary": "Retrieve EIN request status",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "status": 0,
+                    "_id": "6388d5a8bb0ae300110af20d",
+                    "companyId": "6388d234bb0ae300110af1e1",
+                    "companyParticipantId": "6388d234bb0ae300110af1e6",
+                    "createdAt": "2022-12-01T16:26:16.126Z",
+                    "updatedAt": "2022-12-01T16:26:16.126Z",
+                    "__v": 0
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "x-controller-name": "CompanySurveyController",
+        "tags": ["Company survey"],
+        "summary": "Create company survey",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "6388d234bb0ae300110af1e1",
+                "companyParticipantId": "6388d234bb0ae300110af1e6"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Request has been sent to Paralegal",
+                  "data": {
+                    "status": 0,
+                    "_id": "6388d5a8bb0ae300110af20d",
+                    "companyId": "6388d234bb0ae300110af1e1",
+                    "companyParticipantId": "6388d234bb0ae300110af1e6",
+                    "createdAt": "2022-12-01T16:26:16.126Z",
+                    "updatedAt": "2022-12-01T16:26:16.126Z",
+                    "__v": 0
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/OAuth2/token": {
       "post": {
         "x-controller-name": "AuthController",
@@ -15975,6 +16051,10 @@
     {
       "name": "Company survey",
       "description": "Company survey apis"
+    },
+    {
+      "name": "EIN Request",
+      "description": "EIN request apis"
     },
     {
       "name": "Documents",
