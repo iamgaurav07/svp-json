@@ -344,7 +344,166 @@
           }
         }
       },
-      "post": {}
+      "post": {
+        "x-controller-name": "CompanySurveyController",
+        "tags": ["Company survey"],
+        "summary": "Create company survey",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "63710c3bd3e82300125f675f",
+                "firstName": "John",
+                "lastName": "Doe",
+                "subscriptionAmount": "",
+                "emailForSigning": "john.doe@yopmail.com",
+                "phoneNumber": "9999999999",
+                "isUsEntity": "Yes",
+                "date_of_birth": "1967-12-15T15:42:00.000Z",
+                "tin": "11-123123",
+                "street_line_1": "590, Mall Road",
+                "city": "Austin",
+                "state": "TX",
+                "postal_code": "123123",
+                "country": "United States",
+                "countryIsoCode": "US",
+                "individualOrEntity": "Individual",
+                "individualStatus": "Single Individual",
+                "residence": "",
+                "spouseNameAndEmail": "",
+                "nonIndividualsStatus": "",
+                "irsFormType": "W-9",
+                "accreditedInvestorStatus": "[INDIVIDUAL] If an individual, Subscriber has a net worth, either individually or upon a joint basis with Subscriber’s spouse, of at least $1,000,000, or has had an individual income in excess of $200,000 for each of the two most recent years, or a joint income with Subscriber’s spouse in excess of $300,000 in each of those years, and has a reasonable expectation of reaching the same income level in the current year.",
+                "qualifiedPurchaserStatus": "[INDIVIDUAL] Any natural Person who is deemed to be a “knowledgeable employee” of the Company as such term is defined in Rule 3c-5(a)(4) of the Investment Company Act.",
+                "nameOfTheWiringBank": "Bank Of America",
+                "wiringBankLocation": "Yes",
+                "isCustomerOfWiringBank": "Yes",
+                "isExceptedInvestmentCompany": "",
+                "additionalCertificationForExceptedInvestmentCompany": "",
+                "entityJurisdictionOfOrganization": "",
+                "entityLegalNameOfSigner": "",
+                "isFollowingRepresentations": "INDIVIDUAL",
+                "portCoName": "TWO12 llc",
+                "portCoValuation": "100000000",
+                "deadline": "2023-06-30T15:42:00.000Z",
+                "businessName": "TWO12",
+                "businessDescription": "TWO12 description",
+                "businessPhoneNumber": "9999999999",
+                "businessStreetLine1": "80",
+                "businessCity": "Austin",
+                "businessState": "TX",
+                "businessCountry": "United State",
+                "businessCountryIsoCode": "TX",
+                "businessPostalCode": "123123",
+                "designation": "CEO",
+                "naics": 43,
+                "naicsDescription": "",
+                "ownership_percentage": "30",
+                "urls": "https://two12.co",
+                "legal_structure": "llc",
+                "incorporation_state": "DE",
+                "established_on": "1967-12-15T15:42:00.000Z",
+                "isEin": "YES",
+                "bankType": "SYNDICATE BANK",
+                "ein": "11-1231231"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "isWhiteLebal": true,
+                    "_id": "6388ccb5277fe900113f74cd",
+                    "data": {
+                      "companyId": "63710c3bd3e82300125f675f",
+                      "firstName": "John",
+                      "lastName": "Doe",
+                      "subscriptionAmount": "",
+                      "emailForSigning": "john.doe@yopmail.com",
+                      "phoneNumber": "9999999999",
+                      "isUsEntity": "Yes",
+                      "date_of_birth": "1967-12-15T15:42:00.000Z",
+                      "tin": "11-123123",
+                      "street_line_1": "590, Mall Road",
+                      "city": "Austin",
+                      "state": "TX",
+                      "postal_code": "123123",
+                      "country": "United States",
+                      "countryIsoCode": "US",
+                      "individualOrEntity": "Individual",
+                      "individualStatus": "Single Individual",
+                      "residence": "",
+                      "spouseNameAndEmail": "",
+                      "nonIndividualsStatus": "",
+                      "irsFormType": "W-9",
+                      "accreditedInvestorStatus": "[INDIVIDUAL] If an individual, Subscriber has a net worth, either individually or upon a joint basis with Subscriber’s spouse, of at least $1,000,000, or has had an individual income in excess of $200,000 for each of the two most recent years, or a joint income with Subscriber’s spouse in excess of $300,000 in each of those years, and has a reasonable expectation of reaching the same income level in the current year.",
+                      "qualifiedPurchaserStatus": "[INDIVIDUAL] Any natural Person who is deemed to be a “knowledgeable employee” of the Company as such term is defined in Rule 3c-5(a)(4) of the Investment Company Act.",
+                      "nameOfTheWiringBank": "Bank Of America",
+                      "wiringBankLocation": "Yes",
+                      "isCustomerOfWiringBank": "Yes",
+                      "isExceptedInvestmentCompany": "",
+                      "additionalCertificationForExceptedInvestmentCompany": "",
+                      "entityJurisdictionOfOrganization": "",
+                      "entityLegalNameOfSigner": "",
+                      "isFollowingRepresentations": "INDIVIDUAL",
+                      "portCoName": "TWO12 llc",
+                      "portCoValuation": "100000000",
+                      "deadline": "2023-06-30T15:42:00.000Z",
+                      "portCoFiles": [
+                        {
+                          "conversionStatus": {
+                            "scheduled": false
+                          },
+                          "sharing": {
+                            "companyParticipantIds": [],
+                            "companyIds": []
+                          },
+                          "converted": false,
+                          "visitsCount": 0,
+                          "type": "GENERAL",
+                          "size": "13264",
+                          "_id": "6388cbb1277fe900113f74be",
+                          "company": "63710c3bd3e82300125f675f",
+                          "location": "eb701396-cfb0-4f39-bce5-bc30f1bc4e80_dummy.pdf",
+                          "name": "dummy.pdf"
+                        }
+                      ],
+                      "irsDocuments": [
+                        {
+                          "conversionStatus": {
+                            "scheduled": false
+                          },
+                          "sharing": {
+                            "companyParticipantIds": [],
+                            "companyIds": []
+                          },
+                          "converted": false,
+                          "visitsCount": 0,
+                          "type": "GENERAL",
+                          "size": "13264",
+                          "_id": "6388cbb3bb0ae300110af1c2",
+                          "company": "63710c3bd3e82300125f675f",
+                          "location": "62b5cf9f-bd26-4b1f-9105-9c5c4b9edb53_dummy.pdf",
+                          "name": "dummy.pdf"
+                        }
+                      ]
+                    },
+                    "companyId": "63710c3bd3e82300125f675f",
+                    "__v": 0
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      }
     },
     "/OAuth2/token": {
       "post": {
