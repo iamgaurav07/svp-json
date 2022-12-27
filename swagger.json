@@ -2201,6 +2201,156 @@
             }
           }
         }
+      },
+      "put": {
+        "x-controller-name": "DataRoomController",
+        "tags": ["Document upload & eSign"],
+        "summary": "Update documents name",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "id": "63a2e34e2784dee0c2e5fb57",
+                "name": "test.pdf"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "conversionStatus": {
+                      "scheduled": false
+                    },
+                    "sharing": {
+                      "companyParticipantIds": [],
+                      "companyIds": []
+                    },
+                    "converted": false,
+                    "visitsCount": 0,
+                    "type": "GENERAL",
+                    "size": "13264",
+                    "_id": "63a2e34e2784dee0c2e5fb57",
+                    "company": "6388bf2372d1ec70ce96e542",
+                    "location": "ab4123e1-fe0f-4b77-858a-5c3aa63d1c6e_dummy.pdf",
+                    "name": "test.pdf",
+                    "parent": "6388bf2372d1ec70ce96e544"
+                  },
+                  "success": true,
+                  "message": "File has been successfully renamed"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "x-controller-name": "DataRoomController",
+        "tags": ["Document upload & eSign"],
+        "summary": "Delete documents by id",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "id": "63a2e34e2784dee0c2e5fb57"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "conversionStatus": {
+                      "scheduled": false
+                    },
+                    "sharing": {
+                      "companyParticipantIds": [],
+                      "companyIds": []
+                    },
+                    "converted": false,
+                    "visitsCount": 0,
+                    "type": "GENERAL",
+                    "size": "13264",
+                    "_id": "63a2eab579a30be38062e38b",
+                    "company": "6388bf2372d1ec70ce96e542",
+                    "location": "1368973e-ad92-44da-a37a-29b4167609eb_dummy.pdf",
+                    "name": "dummy.pdf",
+                    "parent": "63a1c8ad7973d8a69427ab2d"
+                  },
+                  "success": true,
+                  "message": "File has been successfully deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data-room/ir/tree": {
+      "get": {
+        "x-controller-name": "DataRoomController",
+        "tags": ["Document upload & eSign"],
+        "summary": "Retrieve all documents",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "_id": "63a1c8ad7973d8a69427ab2d",
+                    "sharing": {
+                      "companyParticipantIds": [],
+                      "companyIds": []
+                    },
+                    "type": "GENERAL",
+                    "folders": [],
+                    "files": [
+                      {
+                        "_id": "63a2f432c1f824e6a1d77011",
+                        "converted": false,
+                        "visitsCount": 0,
+                        "size": "13264",
+                        "sharing": {
+                          "companyParticipantIds": [],
+                          "companyIds": []
+                        },
+                        "location": "3dce4542-6ef2-4ff7-ba2c-5dee4fe04264_dummy.pdf",
+                        "name": "dummy.pdf"
+                      }
+                    ],
+                    "company": "6388bf2372d1ec70ce96e542",
+                    "name": "IR",
+                    "__v": 4
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
