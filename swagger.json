@@ -580,6 +580,152 @@
           }
         }
       }
+    },
+    "/banking/account": {
+      "get": {
+        "x-controller-name": "BankingController",
+        "tags": ["Banking"],
+        "summary": "Retrieve bank account details (Grasshopper)",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "account_product_id": "apt_11hjnvrydnp81z",
+                  "address": {
+                    "street_line_1": "302",
+                    "street_line_2": null,
+                    "city": "Austin",
+                    "state": "TX",
+                    "postal_code": "123123"
+                  },
+                  "account_type": "checking",
+                  "bank_id": "bank_treasuryprime",
+                  "person_ids": ["psn_11hsytv8gnd6a5"],
+                  "available_balance": "0.00",
+                  "name": "Two12",
+                  "org_id": "org_1gdfvb3bbd3",
+                  "updated_at": "2022-12-18T19:35:09Z",
+                  "currency": "USD",
+                  "routing_number": "000000000",
+                  "status": "open",
+                  "primary_person_id": "psn_11hsytv8gnd6a5",
+                  "account_number": "137020584869",
+                  "locked": false,
+                  "id": "acct_11hsytv8gnd69z",
+                  "funded": false,
+                  "business_ids": ["com_11hsytv8gnd6a2"],
+                  "current_balance": "0.00",
+                  "created_at": "2022-12-18T19:35:04Z",
+                  "lock": null,
+                  "userdata": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/banking/spv-bank": {
+      "get": {
+        "x-controller-name": "BankingController",
+        "tags": ["Banking"],
+        "summary": "Retrieve bank account details (Syndicate Bank / Manual Bank)",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "x-controller-name": "BankingController",
+        "tags": ["Banking"],
+        "summary": "Save bank account details (Syndicate Bank / Manual Bank)",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "6388bf2372d1ec70ce96e542",
+                "name": "John",
+                "bankName": "Bank Of America",
+                "achRoutingNumber": "000000000",
+                "wireRoutingNumber": "000000000",
+                "bankType": "SYNDICATE BANK"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "x-controller-name": "BankingController",
+        "tags": ["Banking"],
+        "summary": "Update bank account details (Syndicate Bank / Manual Bank)",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "id": "63a0c2ceb8002e73aa3d1f55",
+                "companyId": "6388bf2372d1ec70ce96e542",
+                "name": "John",
+                "bankName": "Bank Of America",
+                "achRoutingNumber": "000000000",
+                "wireRoutingNumber": "000000000",
+                "bankType": "SYNDICATE BANK"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -16018,48 +16164,8 @@
       "description": "EIN request apis"
     },
     {
-      "name": "Documents",
-      "description": "Upload Documents"
-    },
-    {
-      "name": "Investor",
-      "description": "Entered by Organizer or Uploaded from XLS"
-    },
-    {
-      "name": "SPV Creation",
-      "description": "SPV Creation"
-    },
-    {
       "name": "Banking",
-      "description": "Everything about banking"
-    },
-    {
-      "name": "KYC",
-      "description": "Background and Monitored Lists checks for KYC"
-    },
-    {
-      "name": "Cap table",
-      "description": "Cap table apis."
-    },
-    {
-      "name": "Transfer Agent",
-      "description": "Tranfer agent apis."
-    },
-    {
-      "name": "OAuth2",
-      "description": "This set of authorization endpoints describe how to securely communicate with the API."
-    },
-    {
-      "name": "Accreditation",
-      "description": "Accreditations and Accreditation Providers"
-    },
-    {
-      "name": "Invites",
-      "description": "Used for onboarding new users. The invite object can conveniently create all the objects required when a new user is created."
-    },
-    {
-      "name": "Annual Accounting & Tax Docs",
-      "description": "Annual Accounting & Tax Docs"
+      "description": "Banking apis"
     }
   ]
 }
