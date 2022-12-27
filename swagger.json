@@ -1288,7 +1288,7 @@
       "get": {
         "x-controller-name": "KycKybAccreditationContoller",
         "tags": ["KYC/KYB/Accreditation"],
-        "summary": "Get Kyc details",
+        "summary": "Get KYC details",
         "operationId": "",
         "deprecated": false,
         "parameters": [
@@ -1416,7 +1416,7 @@
       "post": {
         "x-controller-name": "KycKybAccreditationContoller",
         "tags": ["KYC/KYB/Accreditation"],
-        "summary": "Verify Kyc",
+        "summary": "Verify KYC",
         "operationId": "",
         "deprecated": false,
         "requestBody": {
@@ -1454,7 +1454,7 @@
       "get": {
         "x-controller-name": "KycKybAccreditationContoller",
         "tags": ["KYC/KYB/Accreditation"],
-        "summary": "Get Kyc link",
+        "summary": "Get KYC link",
         "operationId": "",
         "deprecated": false
       }
@@ -1807,6 +1807,301 @@
         "summary": "Get Accreditation link",
         "operationId": "",
         "deprecated": false
+      }
+    },
+    "/spv-captable": {
+      "get": {
+        "x-controller-name": "CaptableController",
+        "tags": ["Captable"],
+        "summary": "Retrieve spv captable",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "x-controller-name": "CaptableController",
+        "tags": ["Captable"],
+        "summary": "Create captable",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "6388bf2372d1ec70ce96e542",
+                "issueDate": "2022-12-14T11:46:27.903Z",
+                "roundName": "Round 2",
+                "leadPartner": "TWO12",
+                "projectContact": "",
+                "contactEmail": "",
+                "attributeInvestmentToProRata": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "_id": "639a276c6580ba2ca08573ae",
+                    "companyId": "6388bf2372d1ec70ce96e542",
+                    "issueDate": "2022-12-14T11:46:27.903Z",
+                    "roundName": "Round 2",
+                    "leadPartner": "TWO12",
+                    "projectContact": "",
+                    "contactEmail": "",
+                    "attributeInvestmentToProRata": false,
+                    "__v": 0
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "x-controller-name": "CaptableController",
+        "tags": ["Captable"],
+        "summary": "Update captable",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "id": "6399b7b43894391a94192433",
+                "issueDate": "2022-12-14T11:46:27.903Z",
+                "roundName": "Round 1",
+                "leadPartner": "TWO12",
+                "projectContact": "",
+                "contactEmail": "",
+                "attributeInvestmentToProRata": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "_id": "6399b7b43894391a94192433",
+                    "companyId": "636f80242c20606894431958",
+                    "issueDate": "2022-12-14T11:46:27.903Z",
+                    "roundName": "Round 1",
+                    "leadPartner": "TWO12",
+                    "projectContact": "",
+                    "contactEmail": "",
+                    "attributeInvestmentToProRata": false,
+                    "__v": 0
+                  },
+                  "success": true,
+                  "message": "Investment has been successfully edited"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "x-controller-name": "CaptableController",
+        "tags": ["Captable"],
+        "summary": "Delete captable",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "id": "6399b7b43894391a94192433",
+                "companyId": "636f80242c20606894431958"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "_id": "6399b7b43894391a94192433",
+                    "companyId": "636f80242c20606894431958",
+                    "issueDate": "2022-12-14T11:46:27.903Z",
+                    "roundName": "Round 1",
+                    "leadPartner": "TWO12",
+                    "projectContact": "",
+                    "contactEmail": "",
+                    "attributeInvestmentToProRata": false,
+                    "__v": 0
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "spv-captable/all": {
+      "get": {
+        "x-controller-name": "CaptableController",
+        "tags": ["Captable"],
+        "summary": "Retrieve all spv captable",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "_id": "6399b7b43894391a94192433",
+                      "companyId": "636f80242c20606894431958",
+                      "issueDate": "2022-12-14T11:46:27.903Z",
+                      "roundName": "Round 1",
+                      "leadPartner": "TWO12",
+                      "projectContact": "",
+                      "contactEmail": "",
+                      "attributeInvestmentToProRata": false,
+                      "__v": 0,
+                      "participants": [
+                        {
+                          "_id": "6399bbad3894391a94192449",
+                          "capTableId": "6399b7b43894391a94192433",
+                          "investmentAmount": "5000",
+                          "investmentDate": "2022-12-14T11:46:27.903Z",
+                          "companyId": "636f80242c20606894431958",
+                          "companyParticipantId": {
+                            "_id": "636f80242c2060689443195d",
+                            "role": "FOUNDER",
+                            "accessControl": "FULL",
+                            "investmentDocuments": [],
+                            "certificates": [],
+                            "email": "gaurav@two12.co",
+                            "partnerNumber": "120fdf99-bdf5-44fe-ae8f-e3e338b7c7ae",
+                            "firstName": "SPV-TWO12",
+                            "vestingPauseDates": []
+                          },
+                          "attributeInvestmentToProRata": false,
+                          "__v": 0,
+                          "investorId": {
+                            "personalInfo": {
+                              "first_name": "SPV-TWO12",
+                              "email": "gaurav@two12.co"
+                            },
+                            "_id": "62f110cbe1536a00134ff471"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "fund": 0,
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "x-controller-name": "CaptableController",
+        "tags": ["Captable"],
+        "summary": "Delete all participants",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "636f80242c20606894431958"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "n": 0,
+                    "ok": 1,
+                    "deletedCount": 0
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "spv-captable/rounds": {
+      "get": {
+        "x-controller-name": "CaptableController",
+        "tags": ["Captable"],
+        "summary": "Retrieve rounds",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "_id": "6399b7b43894391a94192433",
+                      "companyId": "636f80242c20606894431958",
+                      "roundName": "Round 1"
+                    }
+                  ],
+                  "success": true
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -17260,6 +17555,10 @@
     {
       "name": "KYC/KYB/Accreditation",
       "description": "KYC, KYB & Accreditation apis"
+    },
+    {
+      "name": "Captable",
+      "description": "Captable apis"
     }
   ]
 }
