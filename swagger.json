@@ -2150,17 +2150,20 @@
       "requestBody": {
         "content": {
           "multipart/form-data": {
+            "x-parser": "stream",
             "schema": {
               "type": "object",
               "properties": {
-                "files": {
+                "file": {
                   "type": "string",
                   "format": "binary"
                 }
               }
             }
           }
-        }
+        },
+        "description": "Request body for multipart/form-data based file upload",
+        "required": true
       }
     }
   },
