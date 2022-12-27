@@ -2139,6 +2139,30 @@
           }
         }
       }
+    },
+    "/data-room/file": {
+      "x-controller-name": "DataRoomController",
+      "tags": ["Document upload & eSign"],
+      "summary": "Upload documents",
+      "operationId": "",
+      "deprecated": false,
+      "parameters": [],
+      "requestBody": {
+        "content": {
+          "multipart/form-data": {
+            "x-parser": "stream",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "files": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -17599,6 +17623,10 @@
     {
       "name": "Transfer Agent",
       "description": "Transfer agent apis"
+    },
+    {
+      "name": "Document upload & eSign",
+      "description": "Document upload and eSignature apis"
     }
   ]
 }
