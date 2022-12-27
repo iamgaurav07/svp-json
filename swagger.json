@@ -2104,6 +2104,86 @@
         }
       }
     },
+    "/spv-captable/whitelist": {
+      "x-controller-name": "CaptableController",
+      "tags": ["Captable"],
+      "summary": "Retrieve white list users",
+      "operationId": "",
+      "deprecated": false,
+      "parameters": [
+        {
+          "name": "individual",
+          "in": "query",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "content": {
+            "application/json": {
+              "example": {
+                "data": [
+                  {
+                    "_id": "6388bf2372d1ec70ce96e547",
+                    "role": "FOUNDER",
+                    "accessControl": "FULL",
+                    "shareReport": "NONE",
+                    "capTableVisibility": "FULL",
+                    "isSuspended": false,
+                    "isRegistrer": true,
+                    "boardApprover": false,
+                    "collate": false,
+                    "shareImpact": false,
+                    "investmentDocuments": [],
+                    "certificates": [],
+                    "isSpv": true,
+                    "isCf": false,
+                    "isProspect": false,
+                    "simulationVisibility": "FULL",
+                    "investorUpdateVisibility": "NONE",
+                    "taxId": "false",
+                    "subCode": "false",
+                    "sendCapitalCallPaymentConfirmations": true,
+                    "isPrimaryContact": true,
+                    "annualAndQuarterlyReport": true,
+                    "annualMeeting": true,
+                    "capitalAccountStatements": true,
+                    "capitalCalls": true,
+                    "distributions": true,
+                    "general": true,
+                    "legal": true,
+                    "tax": true,
+                    "wireInstructions": true,
+                    "company": "6388bf2372d1ec70ce96e542",
+                    "user": {
+                      "_id": "62f110cbe1536a00134ff471",
+                      "personalInfo": {
+                        "first_name": "Gaurav",
+                        "last_name": "Kumar",
+                        "email": "gaurav@two12.co",
+                        "date": "2022-08-08T13:34:03.120Z"
+                      },
+                      "loginInfo": {
+                        "hasRegistered": true
+                      }
+                    },
+                    "email": "gaurav@two12.co",
+                    "partnerNumber": "055ed1e1-ada0-4118-b015-202ed79c337a",
+                    "firstName": "Gaurav LLC",
+                    "isInvited": true,
+                    "vestingPauseDates": [],
+                    "__v": 0
+                  }
+                ],
+                "success": true
+              }
+            }
+          }
+        }
+      }
+    },
     "/transfer-agent": {
       "get": {
         "x-controller-name": "TransferAgentController",
