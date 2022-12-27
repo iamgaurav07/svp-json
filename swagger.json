@@ -508,7 +508,7 @@
     "/ein-request": {
       "get": {
         "x-controller-name": "EinRequestController",
-        "tags": ["EIN request"],
+        "tags": ["Ein request"],
         "summary": "Retrieve EIN request status",
         "operationId": "",
         "deprecated": false,
@@ -544,7 +544,7 @@
       },
       "post": {
         "x-controller-name": "EinRequestController",
-        "tags": ["EIN request"],
+        "tags": ["Ein request"],
         "summary": "Create EIN request",
         "operationId": "",
         "deprecated": false,
@@ -890,6 +890,393 @@
                     "__v": 0
                   },
                   "success": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/company-investor": {
+      "get": {
+        "x-controller-name": "InvestorController",
+        "tags": ["Investor"],
+        "summary": "Retrieve all company investors",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "_id": "63a9996793dff82b7b051002",
+                      "role": "EMPLOYEE",
+                      "accessControl": "NONE",
+                      "shareReport": "NONE",
+                      "capTableVisibility": "SUMMARY",
+                      "isSuspended": false,
+                      "isRegistrer": false,
+                      "boardApprover": false,
+                      "collate": false,
+                      "shareImpact": false,
+                      "investmentDocuments": [],
+                      "certificates": [],
+                      "isSpv": true,
+                      "isCf": false,
+                      "isProspect": false,
+                      "simulationVisibility": "NONE",
+                      "investorUpdateVisibility": "NONE",
+                      "bmVisibility": "NONE",
+                      "taxId": "false",
+                      "subCode": "false",
+                      "sendCapitalCallPaymentConfirmations": true,
+                      "isPrimaryContact": true,
+                      "annualAndQuarterlyReport": true,
+                      "annualMeeting": true,
+                      "capitalAccountStatements": true,
+                      "capitalCalls": true,
+                      "distributions": true,
+                      "general": true,
+                      "legal": true,
+                      "tax": true,
+                      "wireInstructions": true,
+                      "company": "6388bf2372d1ec70ce96e542",
+                      "user": {
+                        "_id": "6379df36ac5e1e0704811109",
+                        "personalInfo": {
+                          "first_name": "Arjun",
+                          "last_name": "Sonik",
+                          "email": "arjun.sonik@yopmail.com",
+                          "date": "2022-11-20T08:03:02.221Z"
+                        },
+                        "loginInfo": {
+                          "isGoogleAuthorised": false,
+                          "isSuspended": false,
+                          "hasRegistered": true
+                        },
+                        "lastLogin": "2022-12-22T08:54:51.577Z"
+                      },
+                      "partnerNumber": "8ace619e-2320-4210-abf3-8e8510e5b593",
+                      "ventureName": "",
+                      "invitedBy": "",
+                      "former": false,
+                      "firstName": "Arjun",
+                      "lastName": "Sonik",
+                      "isInvited": false,
+                      "email": "arjun.sonik@yopmail.com",
+                      "cfIdentifier": "",
+                      "prospect": "",
+                      "createdDate": "2022-12-26T12:53:59.632Z",
+                      "vestingPauseDates": [],
+                      "__v": 0
+                    }
+                  ],
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "x-controller-name": "InvestorController",
+        "tags": ["Investor"],
+        "summary": "Create company investors",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "firstName": "David",
+                "lastName": "Moyes",
+                "email": "",
+                "companyId": "6388bf2372d1ec70ce96e542",
+                "emailUnknown": true,
+                "entityName": "",
+                "commitedAmount": "6000"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Participant has been added",
+                  "data": {
+                    "user": {
+                      "personalInfo": {
+                        "isGrowthOfficer": false,
+                        "first_name": "David",
+                        "last_name": "Moyes",
+                        "email": "f0a39edf-acc0-492a-9fde-2cc999854ef4@example.com",
+                        "date": "2022-12-26T18:29:39.559Z",
+                        "isComplianceOfficer": false,
+                        "crdNumber": ""
+                      },
+                      "status": {
+                        "kycStatus": "PENDING",
+                        "accreditationStatus": "PENDING",
+                        "amlStatus": "PENDING"
+                      },
+                      "invitedBy": {
+                        "brokerDealers": [],
+                        "companies": ["62f110cbe1536a00134ff471"],
+                        "complianceOfficers": []
+                      },
+                      "loginInfo": {
+                        "isGoogleAuthorised": false,
+                        "isSuspended": false,
+                        "isNew": true,
+                        "hasRegistered": false
+                      },
+                      "_id": "63a9e813c51c54482b90986d",
+                      "__v": 0
+                    },
+                    "companyParticipant": {
+                      "role": "INVESTOR",
+                      "accessControl": "NONE",
+                      "shareReport": "NONE",
+                      "capTableVisibility": "SUMMARY",
+                      "isSuspended": false,
+                      "isRegistrer": false,
+                      "boardApprover": false,
+                      "collate": false,
+                      "shareImpact": false,
+                      "investmentDocuments": [],
+                      "certificates": [],
+                      "isSpv": true,
+                      "isCf": false,
+                      "isProspect": false,
+                      "simulationVisibility": "NONE",
+                      "investorUpdateVisibility": "NONE",
+                      "bmVisibility": "NONE",
+                      "taxId": "false",
+                      "subCode": "false",
+                      "sendCapitalCallPaymentConfirmations": true,
+                      "isPrimaryContact": true,
+                      "annualAndQuarterlyReport": true,
+                      "annualMeeting": true,
+                      "capitalAccountStatements": true,
+                      "capitalCalls": true,
+                      "distributions": true,
+                      "general": true,
+                      "legal": true,
+                      "tax": true,
+                      "wireInstructions": true,
+                      "_id": "63a9e813c51c54482b90986e",
+                      "company": "6388bf2372d1ec70ce96e542",
+                      "user": "63a9e813c51c54482b90986d",
+                      "email": "f0a39edf-acc0-492a-9fde-2cc999854ef4@example.com",
+                      "partnerNumber": "b7e33f92-de3c-4e2c-a4a9-38f929e6d95e",
+                      "ventureName": "",
+                      "invitedBy": "",
+                      "former": false,
+                      "firstName": "David",
+                      "lastName": "Moyes",
+                      "isInvited": false,
+                      "cfIdentifier": "",
+                      "prospect": "",
+                      "createdDate": "2022-12-26T18:29:39.566Z",
+                      "commitedAmount": "",
+                      "vestingPauseDates": [],
+                      "__v": 0
+                    }
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "x-controller-name": "InvestorController",
+        "tags": ["Investor"],
+        "summary": "Create company investors",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "firstName": "Gaurav",
+                "lastName": "Moyes",
+                "email": "",
+                "companyId": "6388bf2372d1ec70ce96e542",
+                "emailUnknown": true,
+                "entityName": "",
+                "commitedAmount": "6000",
+                "companyParticipantId": "63a9996793dff82b7b051002",
+                "partnerNumber": "a4a7045b-1b56-4955-9c1e-af76d2255a58"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Participant has been updated",
+                  "data": {
+                    "user": {
+                      "personalInfo": {
+                        "isGrowthOfficer": false,
+                        "first_name": "David",
+                        "last_name": "Moyes",
+                        "email": "f0a39edf-acc0-492a-9fde-2cc999854ef4@example.com",
+                        "date": "2022-12-26T18:29:39.559Z",
+                        "isComplianceOfficer": false,
+                        "crdNumber": ""
+                      },
+                      "status": {
+                        "kycStatus": "PENDING",
+                        "accreditationStatus": "PENDING",
+                        "amlStatus": "PENDING"
+                      },
+                      "invitedBy": {
+                        "brokerDealers": [],
+                        "companies": ["62f110cbe1536a00134ff471"],
+                        "complianceOfficers": []
+                      },
+                      "loginInfo": {
+                        "isGoogleAuthorised": false,
+                        "isSuspended": false,
+                        "isNew": true,
+                        "hasRegistered": false
+                      },
+                      "_id": "63a9e813c51c54482b90986d",
+                      "__v": 0
+                    },
+                    "companyParticipant": {
+                      "role": "INVESTOR",
+                      "accessControl": "NONE",
+                      "shareReport": "NONE",
+                      "capTableVisibility": "SUMMARY",
+                      "isSuspended": false,
+                      "isRegistrer": false,
+                      "boardApprover": false,
+                      "collate": false,
+                      "shareImpact": false,
+                      "investmentDocuments": [],
+                      "certificates": [],
+                      "isSpv": true,
+                      "isCf": false,
+                      "isProspect": false,
+                      "simulationVisibility": "NONE",
+                      "investorUpdateVisibility": "NONE",
+                      "bmVisibility": "NONE",
+                      "taxId": "false",
+                      "subCode": "false",
+                      "sendCapitalCallPaymentConfirmations": true,
+                      "isPrimaryContact": true,
+                      "annualAndQuarterlyReport": true,
+                      "annualMeeting": true,
+                      "capitalAccountStatements": true,
+                      "capitalCalls": true,
+                      "distributions": true,
+                      "general": true,
+                      "legal": true,
+                      "tax": true,
+                      "wireInstructions": true,
+                      "_id": "63a9e813c51c54482b90986e",
+                      "company": "6388bf2372d1ec70ce96e542",
+                      "user": "63a9e813c51c54482b90986d",
+                      "email": "f0a39edf-acc0-492a-9fde-2cc999854ef4@example.com",
+                      "partnerNumber": "b7e33f92-de3c-4e2c-a4a9-38f929e6d95e",
+                      "ventureName": "",
+                      "invitedBy": "",
+                      "former": false,
+                      "firstName": "David",
+                      "lastName": "Moyes",
+                      "isInvited": false,
+                      "cfIdentifier": "",
+                      "prospect": "",
+                      "createdDate": "2022-12-26T18:29:39.566Z",
+                      "commitedAmount": "",
+                      "vestingPauseDates": [],
+                      "__v": 0
+                    }
+                  },
+                  "success": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/company-investor/resend": {
+      "post": {
+        "x-controller-name": "InvestorController",
+        "tags": ["Investor"],
+        "summary": "Send invitation to company investor or participant",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyParticipantId": "63a9f09ff5a0a04a4fb4bae5",
+                "receiveInvite": false,
+                "comments": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "message": "Registration email have been sent"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/company-investor/invite_all": {
+      "post": {
+        "x-controller-name": "InvestorController",
+        "tags": ["Investor"],
+        "summary": "Send invitation to all company investors or participants",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "companyId": "6388bf2372d1ec70ce96e542",
+                "receiveInvite": true,
+                "comments": "send all"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "message": "Registration emails have been sent"
                 }
               }
             }
@@ -16330,7 +16717,7 @@
       "description": "Company survey apis"
     },
     {
-      "name": "EIN Request",
+      "name": "Ein Request",
       "description": "EIN request apis"
     },
     {
@@ -16340,6 +16727,10 @@
     {
       "name": "PortCo Information",
       "description": "Portfolio company information apis"
+    },
+    {
+      "name": "Investor",
+      "description": "Investor or company participant apis"
     }
   ]
 }
