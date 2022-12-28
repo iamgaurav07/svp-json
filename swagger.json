@@ -2105,79 +2105,81 @@
       }
     },
     "/spv-captable/whitelist": {
-      "x-controller-name": "CaptableController",
-      "tags": ["Captable"],
-      "summary": "Retrieve white list users",
-      "operationId": "",
-      "deprecated": false,
-      "parameters": [
-        {
-          "name": "individual",
-          "in": "query",
-          "schema": {
-            "type": "string"
+      "get": {
+        "x-controller-name": "CaptableController",
+        "tags": ["Captable"],
+        "summary": "Retrieve white list users",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "individual",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
-        }
-      ],
-      "responses": {
-        "200": {
-          "content": {
-            "application/json": {
-              "example": {
-                "data": [
-                  {
-                    "_id": "6388bf2372d1ec70ce96e547",
-                    "role": "FOUNDER",
-                    "accessControl": "FULL",
-                    "shareReport": "NONE",
-                    "capTableVisibility": "FULL",
-                    "isSuspended": false,
-                    "isRegistrer": true,
-                    "boardApprover": false,
-                    "collate": false,
-                    "shareImpact": false,
-                    "investmentDocuments": [],
-                    "certificates": [],
-                    "isSpv": true,
-                    "isCf": false,
-                    "isProspect": false,
-                    "simulationVisibility": "FULL",
-                    "investorUpdateVisibility": "NONE",
-                    "taxId": "false",
-                    "subCode": "false",
-                    "sendCapitalCallPaymentConfirmations": true,
-                    "isPrimaryContact": true,
-                    "annualAndQuarterlyReport": true,
-                    "annualMeeting": true,
-                    "capitalAccountStatements": true,
-                    "capitalCalls": true,
-                    "distributions": true,
-                    "general": true,
-                    "legal": true,
-                    "tax": true,
-                    "wireInstructions": true,
-                    "company": "6388bf2372d1ec70ce96e542",
-                    "user": {
-                      "_id": "62f110cbe1536a00134ff471",
-                      "personalInfo": {
-                        "first_name": "Gaurav",
-                        "last_name": "Kumar",
-                        "email": "gaurav@two12.co",
-                        "date": "2022-08-08T13:34:03.120Z"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "_id": "6388bf2372d1ec70ce96e547",
+                      "role": "FOUNDER",
+                      "accessControl": "FULL",
+                      "shareReport": "NONE",
+                      "capTableVisibility": "FULL",
+                      "isSuspended": false,
+                      "isRegistrer": true,
+                      "boardApprover": false,
+                      "collate": false,
+                      "shareImpact": false,
+                      "investmentDocuments": [],
+                      "certificates": [],
+                      "isSpv": true,
+                      "isCf": false,
+                      "isProspect": false,
+                      "simulationVisibility": "FULL",
+                      "investorUpdateVisibility": "NONE",
+                      "taxId": "false",
+                      "subCode": "false",
+                      "sendCapitalCallPaymentConfirmations": true,
+                      "isPrimaryContact": true,
+                      "annualAndQuarterlyReport": true,
+                      "annualMeeting": true,
+                      "capitalAccountStatements": true,
+                      "capitalCalls": true,
+                      "distributions": true,
+                      "general": true,
+                      "legal": true,
+                      "tax": true,
+                      "wireInstructions": true,
+                      "company": "6388bf2372d1ec70ce96e542",
+                      "user": {
+                        "_id": "62f110cbe1536a00134ff471",
+                        "personalInfo": {
+                          "first_name": "Gaurav",
+                          "last_name": "Kumar",
+                          "email": "gaurav@two12.co",
+                          "date": "2022-08-08T13:34:03.120Z"
+                        },
+                        "loginInfo": {
+                          "hasRegistered": true
+                        }
                       },
-                      "loginInfo": {
-                        "hasRegistered": true
-                      }
-                    },
-                    "email": "gaurav@two12.co",
-                    "partnerNumber": "055ed1e1-ada0-4118-b015-202ed79c337a",
-                    "firstName": "Gaurav LLC",
-                    "isInvited": true,
-                    "vestingPauseDates": [],
-                    "__v": 0
-                  }
-                ],
-                "success": true
+                      "email": "gaurav@two12.co",
+                      "partnerNumber": "055ed1e1-ada0-4118-b015-202ed79c337a",
+                      "firstName": "Gaurav LLC",
+                      "isInvited": true,
+                      "vestingPauseDates": [],
+                      "__v": 0
+                    }
+                  ],
+                  "success": true
+                }
               }
             }
           }
@@ -2427,6 +2429,192 @@
                   },
                   "success": true
                 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data-room/file/signature-request": {
+      "post": {
+        "x-controller-name": "DataRoomController",
+        "tags": ["Document upload & eSign"],
+        "summary": "Signature Request",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "id": "63a2f432c1f824e6a1d77011",
+                "signers": [
+                  {
+                    "name": "Gaurav LLC",
+                    "email": "john@yopmail.com",
+                    "title": "Admin, Founder",
+                    "entity": "Admin, FOUNDER",
+                    "idx": 0,
+                    "signerUserId": "62f110cbe1536a00134ff471",
+                    "companyParticipantId": "6388bf2372d1ec70ce96e547",
+                    "optionLabel": {
+                      "title": "Gaurav LLC - 337a - Admin, FOUNDER",
+                      "entity": "Admin, FOUNDER",
+                      "id": "6388bf2372d1ec70ce96e547",
+                      "signerUserId": "62f110cbe1536a00134ff471",
+                      "userEmail": "john@yopmail.com",
+                      "username": "Gaurav LLC",
+                      "isProspect": false,
+                      "prospect": "",
+                      "isInvited": true
+                    },
+                    "isInvited": true,
+                    "checked": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {},
+                  "success": true,
+                  "message": "New eSignature Request has been successfully created"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data-room/upload-signature": {
+      "patch": {
+        "x-controller-name": "DataRoomController",
+        "tags": ["Document upload & eSign"],
+        "summary": "Upload/Update Signature",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "x-parser": "stream",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "signature": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": {
+                    "personalInfo": {
+                      "isGrowthOfficer": false,
+                      "first_name": "Gaurav",
+                      "last_name": "Kumar",
+                      "email": "gaurav@two12.co",
+                      "date": "2022-08-08T13:34:03.120Z",
+                      "isComplianceOfficer": false,
+                      "crdNumber": "",
+                      "signatureUrl": "https://images.two12.co/bdfba4f6-834b-4442-94ac-df03d03d6550_nguy-ecnh-nguyen-van-binh-signature-png-5.png"
+                    },
+                    "status": {
+                      "kycStatus": "PENDING",
+                      "accreditationStatus": "PENDING",
+                      "amlStatus": "PENDING"
+                    },
+                    "invitedBy": {
+                      "brokerDealers": [],
+                      "companies": ["5eec53938fef13001833804a"],
+                      "complianceOfficers": ["5ecb8650a0a9d1076cbd0482"]
+                    },
+                    "loginInfo": {
+                      "isGoogleAuthorised": false,
+                      "isSuspended": false,
+                      "isNew": false,
+                      "hasRegistered": true
+                    },
+                    "_id": "62f110cbe1536a00134ff471",
+                    "__v": 16,
+                    "lastLogin": "2022-12-21T09:41:37.893Z"
+                  },
+                  "success": true,
+                  "message": "Signature Uploaded Successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data-room/sign-document": {
+      "put": {
+        "x-controller-name": "DataRoomController",
+        "tags": ["Document upload & eSign"],
+        "summary": "Sign Document",
+        "operationId": "",
+        "deprecated": false,
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "id": "63a2fa230812a5ea70a124c5"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data-room/download-latest": {
+      "get": {
+        "x-controller-name": "DataRoomController",
+        "tags": ["Document upload & eSign"],
+        "summary": "Download Document",
+        "operationId": "",
+        "deprecated": false,
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {}
               }
             }
           }
